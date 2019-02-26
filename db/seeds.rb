@@ -38,22 +38,22 @@ green = Organization.create(name: "Green", description: "lorem")
 
 puts 'Creating 6 missions...'
 
-turtle = Mission.create(organization: matho)
-culture = Mission.create(organization: green)
-kids = Mission.create(organization: goodkids)
-music = Mission.create(organization: msf)
-art = Mission.create(organization: nation)
-environment = Mission.create(organization: matho)
+turtle = Mission.create(organization: matho, title: "turtlito")
+culture = Mission.create(organization: green, title: "culture is life")
+kids = Mission.create(organization: goodkids, title: "turtle")
+music = Mission.create(organization: msf, title: "culture ")
+art = Mission.create(organization: nation, title: "culture is ")
+environment = Mission.create(organization: matho, title: "cul life")
 
 
 puts 'Creating 6 mission_users...'
 
-MissionUser.create(user: yoann, mission: turtle, title: "turtle")
-MissionUser.create(user: livia, mission: culture, title: "culture is life")
-MissionUser.create(user: muriel, mission: kids, title: "turtle")
-MissionUser.create(user: bruno, mission: music, title: "culture ")
-MissionUser.create(user: yoann, mission: art, title: "culture is ")
-MissionUser.create(user: livia, mission: environment, title: "cul life")
+MissionUser.create(user: yoann, mission: turtle)
+MissionUser.create(user: livia, mission: culture)
+MissionUser.create(user: muriel, mission: kids)
+MissionUser.create(user: bruno, mission: music)
+MissionUser.create(user: yoann, mission: art)
+MissionUser.create(user: livia, mission: environment)
 
 puts 'Creating 2 reviews...'
 
