@@ -1,11 +1,10 @@
 class MissionsController < ApplicationController
-before_action :set_organization, only: [:show, :edit, :update, :destroy]
-
   def index
     @missions = Mission.all
   end
 
   def show
+    @mission = Mission.find(params[:id])
     @organization = @mission.organization
   end
 
@@ -16,8 +15,8 @@ before_action :set_organization, only: [:show, :edit, :update, :destroy]
 
   def create
     @organization = Organization.find(params[:organization_id])
-    @mission = Mission.new(mission_params)
     @mission.organization = @organization
+    @mission = Mission.new(mission_params)
     if @mission.save
       redirect_to mission_path(@mission)
     else
@@ -26,14 +25,17 @@ before_action :set_organization, only: [:show, :edit, :update, :destroy]
   end
 
   def edit
+    @mission = Mission.find(params[:id])
   end
 
   def update
+    @mission = Mission.find(params[:id])
     mission.update(mission_params)
     redirect_to mission_path(animation)
   end
 
   def destroy
+    mission = Mission.find(params[:id])
     mission.destroy
     redirect_to mission_path
   end
@@ -42,9 +44,5 @@ before_action :set_organization, only: [:show, :edit, :update, :destroy]
 
   def mission_params
     params.require(:mission).permit(:city, :country, :continent, :climate, :great_for, :safety, :tolerance, :skill, :language, :start_date, :end_date)
-  end
-
-  def set_organization
-    @mission = Mission.find(params[:id])
   end
 end
