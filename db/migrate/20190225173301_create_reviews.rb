@@ -5,8 +5,8 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.integer :transparency
       t.integer :social_impact
       t.integer :staff_note
-      t.references :mission_id, foreign_key: true
-      t.references :user_id, foreign_key: true
+      t.references :mission, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
