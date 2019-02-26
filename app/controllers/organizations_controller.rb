@@ -1,5 +1,4 @@
 class OrganizationsController < ApplicationController
-
   def show
     @organization = Organization.find(params[:id])
   end
@@ -18,5 +17,4 @@ class OrganizationsController < ApplicationController
 
   # def destroy
   # end
-
 end
