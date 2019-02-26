@@ -1,2 +1,9 @@
 <h1>Common Good</h1>
 <h2>Yes</h2>
+
+
+<% @organizations.each do |organisation| %>
+<ul>
+  <li><%= organisation.name%></li>
+</ul>
+<% end %>
