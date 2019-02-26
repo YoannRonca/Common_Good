@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @mission = Mission.find(params[:mission_id])
     @review = Review.new(review_params)
     authorize @review
-    @review.animation = @animation
+    @review.mission = @mission
     @review.user = current_user
     if @review.save
       redirect_to mission_path(@mission)
