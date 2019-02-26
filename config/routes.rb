@@ -10,11 +10,12 @@ Rails.application.routes.draw do
   #   end
   # end
 
-  resources :associations do
+  resources :organizations do
     resources :missions, only: [:new, :create]
   end
   resources :missions, except: [:new, :create] do
     resources :reviews, only: [:new, :create]
   end
   resource :dashboard, only: :show
+  resources :profiles, only: :index
 end
