@@ -48,12 +48,12 @@ environment = Mission.create(organization: matho)
 
 puts 'Creating 6 mission_users...'
 
-MissionUser.create(user: yoann, mission: turtle)
-MissionUser.create(user: livia, mission: culture)
-MissionUser.create(user: muriel, mission: kids)
-MissionUser.create(user: bruno, mission: music)
-MissionUser.create(user: yoann, mission: art)
-MissionUser.create(user: livia, mission:  environment)
+MissionUser.create(user: yoann, mission: turtle, title: "turtle")
+MissionUser.create(user: livia, mission: culture, title: "culture is life")
+MissionUser.create(user: muriel, mission: kids, title: "turtle")
+MissionUser.create(user: bruno, mission: music, title: "culture ")
+MissionUser.create(user: yoann, mission: art, title: "culture is ")
+MissionUser.create(user: livia, mission: environment, title: "cul life")
 
 puts 'Creating 2 reviews...'
 
