@@ -1,0 +1,35 @@
+<h1>Profile#show</h1>
+<p>Find me in app/views/profiles/show.html.erb</p>
+<%= current_user.email %>
+
+<div class="wrapper">
+  <div class="mission-list">
+    <h2>Welcome, <%= @user.name %>:</h2>
+    <h3>Upcoming missions:</h3>
+
+    <ul class="list-unstyled">
+      <ul class="list-unstyled">
+        <li>Missions:</li>
+        <li>Starts at:</li>
+        <li>Ends at:</li>
+        <li>Localisation:</li>
+        <li>Status:</li>
+      </ul>
+      <% @user.missions.each do |mission| %>
+
+        <li class="booked">
+
+          <div class="booked-upvote text-center">
+            <p>ab</p>
+          </div>
+
+          <img src=<%= booking.animation.photo %> alt="" class="booked-image img-rounded" style="height: 300, width: 400">
+
+          <div class="status">
+            <p>Pending</p>
+          </div>
+        </li>
+        <% end %>
+    </ul>
+  </div>
+</div>
