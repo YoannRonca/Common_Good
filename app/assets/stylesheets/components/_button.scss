@@ -1,0 +1,29 @@
+.cg-btn {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #f8b864;
+  border-color: #f8b864;
+  color: white;
+}
+
+.thin-btn {
+  color: #f8b864;
+  border: 2px solid #f8b864;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.thin-btn:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+  background-color: #f8b864;
+}
+
+.btn-container {
+  margin-top: 20px;
+  text-align: center;
+}
