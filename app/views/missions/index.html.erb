@@ -4,6 +4,8 @@
 
 <% @missions.each do |mission| %>
 <ul>
-  <li><%= organisation.title%></li>
+  <li><%= mission.title%></li>
 </ul>
 <% end %>
+
+<%= render 'card', missions: @missions %>
