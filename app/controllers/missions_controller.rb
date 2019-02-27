@@ -39,6 +39,14 @@ class MissionsController < ApplicationController
     redirect_to mission_path
   end
 
+  def search
+    if params[:query].present?
+      @missions = Mission.perform_search(params[:query])
+    else
+      @missions = Mission.all
+    end
+  end
+
   private
 
   def mission_params

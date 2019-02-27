@@ -12,8 +12,8 @@
             <%= f.input :password,
                         required: false,
                         input_html: { autocomplete: "current-password" } %>
-            <%= f.input :remember_me, as: :boolean, input_html: { class: 'cust-boolean-input' } if devise_mapping.rememberable? %>
           </div>
+          <fieldset class="form-group boolean optional user_remember_me"><div><input name="user[remember_me]" type="hidden" value="0"><input class="form-check-input boolean optional cust-boolean-input" type="checkbox" value="1" name="user[remember_me]" id="user_remember_me"><label class="form-check-label boolean optional" for="user_remember_me">Remember me</label></div></fieldset>
           <div class="form-actions">
             <%= f.button :submit, "Log in", class: "cg-btn" %>
           </div>
