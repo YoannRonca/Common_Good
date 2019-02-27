@@ -8,13 +8,14 @@
         <%= f.country_select :country %>
         <%= f.input :description%>
         <%= f.input :great_for, collection: Mission::GREATFOR, as: :select%>
-        <%= f.input :cost_of_life%>
+        <%= f.input :cost_of_life, collection: Mission::COSTOFLIFE, as: :select%>
         <%= f.input :tolerance%>
         <%= f.input :skill%>
         <%= f.input :city %>
         <%= f.input :climate, collection: Mission::CLIMATE, as: :select%>
         <%= f.input :safety, collection: Mission::SAFETY, as: :select%>
-        <%= f.input :language%>
+        <%= f.input :language, collection: Mission::LANGUAGE, as: :select%>
+        <%= f.input :sector, collection: Mission::LANGUAGE, as: :select%>
         <%= f.input :start_date%>
         <%= f.input :end_date%>
         <%= f.input :photo %>
