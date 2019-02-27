@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_26_163238) do
+ActiveRecord::Schema.define(version: 2019_02_27_113230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_02_26_163238) do
     t.string "climate"
     t.string "great_for"
     t.string "cost_of_life"
-    t.string "satefy"
+    t.string "safety"
     t.string "tolerance"
     t.string "skill"
     t.string "language"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_02_26_163238) do
     t.integer "global_rating"
     t.string "title"
     t.string "description"
+    t.string "photo"
     t.index ["organization_id"], name: "index_missions_on_organization_id"
   end
 

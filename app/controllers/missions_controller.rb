@@ -18,7 +18,7 @@ before_action :set_organization, only: [:show, :edit, :update, :destroy]
     @organization = Organization.find(params[:organization_id])
     @mission = Mission.new(mission_params)
     @mission.organization = @organization
-    if @mission.save
+    if @mission.save!
       redirect_to mission_path(@mission)
     else
       render :new
@@ -41,7 +41,7 @@ before_action :set_organization, only: [:show, :edit, :update, :destroy]
   private
 
   def mission_params
-    params.require(:mission).permit(:city, :country, :continent, :climate, :great_for, :safety, :tolerance, :skill, :language, :start_date, :end_date)
+    params.require(:mission).permit(:city, :country, :continent, :climate, :great_for, :safety, :tolerance, :skill, :language, :start_date, :end_date, :title, :description, :cost_of_life)
   end
 
   def set_organization
