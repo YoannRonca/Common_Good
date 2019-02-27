@@ -20,6 +20,10 @@ class Mission < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
 
+  include PgSearch
+  pg_search_scope :globar_search
+  :against [:title, :city, :continent, :country, :climate, :great_for, :cost_of_life, :safety, :tolerance, :skill, :language]
+
   CONTINENT = ["Africa", "Asia", "Europe", "North America", "Middle East" "South America", "Oceania"]
   CLIMATE = ["Tropical", "Dry", "Temperate", "Continental", "Polar"]
   GREATFOR = ["Families", "Single", "Couple", "Retirees", "Men", "Women"]
