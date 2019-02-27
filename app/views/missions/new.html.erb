@@ -1,1 +1,28 @@
-new.html.erb
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h2> Add your mission </h2>
+      <%= simple_form_for([@organization, @mission]) do |f| %>
+        <%= f.input :title, placeholder: 'Enter your title' %>
+        <%= f.input :continent, collection: Mission::CONTINENT, as: :select %>
+        <%= f.country_select :country %>
+        <%= f.input :description%>
+        <%= f.input :great_for, collection: Mission::GREATFOR, as: :select%>
+        <%= f.input :cost_of_life%>
+        <%= f.input :tolerance%>
+        <%= f.input :skill%>
+        <%= f.input :city %>
+        <%= f.input :climate, collection: Mission::CLIMATE, as: :select%>
+        <%= f.input :safety, collection: Mission::SAFETY, as: :select%>
+        <%= f.input :language%>
+        <%= f.input :start_date%>
+        <%= f.input :end_date%>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <hr>
+        <%= f.submit class: "btn-medium"%>
+        <%= link_to "Back", organization_path(@organization), class: 'btn btn-medium' %>
+      <% end %>
+      </div>
+  </div>
+</div>

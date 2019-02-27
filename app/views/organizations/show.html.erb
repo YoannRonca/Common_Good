@@ -1,2 +1,13 @@
-<h1>Welcome to my Association</h1>
-<p>Ici on aura la descritpion de l'Asso en question, les missions de l'asso ainsi que les profils liés à elle</p>
+<h1>Organizations#show</h1>
+<!--
+<h1>Welcome to my <%= @organization.name %> </h1>
+<h2>Our job:</h2>
+<p><%= @organization.description %></p> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= link_to "Add a mission", new_organization_mission_path(@organization), class: 'btn btn-medium' %>
+      </div>
+  </div>
+</div>
