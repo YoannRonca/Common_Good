@@ -1,7 +1,13 @@
 class Mission < ApplicationRecord
   include PgSearch
 
-  pg_search_scope :search, against: [:title, :city, :continent, :country, :climate, :great_for, :cost_of_life, :safety, :tolerance, :skill, :language]
+  pg_search_scope :search, against: [:title, :city, :continent, :country, :climate, :great_for, :cost_of_life, :safety, :tolerance, :skill, :language],
+    :associated_against => {
+      :organization => [:name]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 
   mount_uploader :photo, PhotoUploader
 

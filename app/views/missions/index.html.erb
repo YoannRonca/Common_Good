@@ -7,7 +7,13 @@
   <br>What we do; how we help you to find the perfect mission</p>
 </div>
 
-<%= render 'card', organizations: @organizations %>
+<div class="wrapper" id="results">
+  <div class="row">
+    <% @missions.each do |mission| %>
+      <%= render 'mission', mission: mission %>
+    <% end %>
+  </div>
+</div>
 
 
 <div class="wrap">
