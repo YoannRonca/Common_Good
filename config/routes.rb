@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   #   end
   # end
 
+  get '/search', to: 'missions#search', as: 'search'
+
   resources :organizations do
     resources :missions, only: [:new, :create]
   end

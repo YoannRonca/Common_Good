@@ -1,4 +1,8 @@
 class Mission < ApplicationRecord
+  include PgSearch
+
+  pg_search_scope :search, against: [:title, :city, :continent, :country, :climate, :great_for, :cost_of_life, :safety, :tolerance, :skill, :language]
+
   mount_uploader :photo, PhotoUploader
 
   belongs_to :organization
@@ -20,10 +24,6 @@ class Mission < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
 
-  include PgSearch
-  pg_search_scope :globar_search
-  :against [:title, :city, :continent, :country, :climate, :great_for, :cost_of_life, :safety, :tolerance, :skill, :language]
-
   CONTINENT = ["Africa", "Asia", "Europe", "North America", "Middle East" "South America", "Oceania"]
   CLIMATE = ["Tropical", "Dry", "Temperate", "Continental", "Polar"]
   GREATFOR = ["Families", "Single", "Couple", "Retirees", "Men", "Women"]
@@ -31,4 +31,11 @@ class Mission < ApplicationRecord
   LANGUAGE = ["English", "Spanish", "Portuguese", "French", "Chinese", "German"]
   COSTOFLIFE = ["<$500/month", "<$1000/month", "<$2000/month"]
   SECTOR = ["Agriculture", "Arts & Music", " Children & Youth", "Civic Engagement", "Climate change", "Community Development", "Conflict Resolution", "Consumer Protection", "Crime & Safety", "Disability", "Economic Development", "Education", "Energy", "Environment", "Health & Medicine", "Human Rights & Civil Liberties", "Immigrants or Refugees", "LGBTQ", "Poverty", "Race & Ethnicity", "Religion & Spirituality", "Reproductive Health/Rights", "Sexual Abuse & Human Trafficking", "Transparency & Oversight", "Victim Support", "Water & Sanitation", "Women", "Wildlife Protection"]
+
+  def self.perform_search(keyword)
+    if keyword.present?
+    then Mission.search(keyword)
+    else Mission.all
+    end.sort
+  end
 end
