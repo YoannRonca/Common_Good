@@ -1,5 +1,48 @@
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="grida">
+          <div class="box a">PHOTO</div>
+          <div class="box b">PHOTO 2</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <div class="container">
-  <h1><%= @mission.title %></h1>
-  <h1><%= @mission.description %></h1>
-  <h1><%= @mission.organization.name %></h1>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="cardmission" style="background-color: #f7b864;">
+        <div class="card-categorym"></div>
+        <div class="card-descriptionm">
+          <h2><%= @mission.title %></h2>
+          <p>City, Country &#x26F3;</p>
+        </div>
+        <img class="card-userm" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        <a class="card-linkm" href="#" ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="gridb">
+        <div class="bx1"> What would you be doing?
+          <p><%= @mission.description %></p>
+        </div>
+        <div class="bx2"> Get more info about this NGO
+          <p><%= @mission.organization %></p>
+        </div>
+        <div class="bx3"> Languages
+          <p><%= @mission.language %></p>
+        </div>
+        <div class="bx4">What are we looking for?
+          <p><%= @mission.skill %></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
