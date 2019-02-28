@@ -1,6 +1,15 @@
-<div class="banner-principal" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(https://res.cloudinary.com/dgkabaqi8/image/upload/v1551271826/CommonGood/adult-bride-child-1250452.jpg)">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(https://res.cloudinary.com/dgkabaqi8/image/upload/v1551271826/CommonGood/adult-bride-child-1250452.jpg)">
     <div class="banner-content">
       <h1>Common Good</h1>
-      <p>Searchbar here :)</p>
+      <div class="search">
+        <%= form_tag search_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "searchbar my-searchbar",
+          placeholder: "What are you looking for?"
+          %>
+          <i class="fa fa-search"></i>
+        <% end %>
+      </div>
     </div>
 </div>
