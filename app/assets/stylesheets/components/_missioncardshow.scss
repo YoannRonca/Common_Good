@@ -45,9 +45,9 @@
   background: black;
   opacity: 0;
 }
-.missioncard-link:hover {
-  opacity: 0.1;
-}
+  .missioncard-link:hover {
+    opacity: 0.1;
+  }
 .missioncard-organization {
   font-family: arial;
   font-size: 14px;
@@ -77,6 +77,13 @@
 }
 
 .missioncard-btn {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+  background-color: #57ad68;
+}
+
+ .missioncard-btn:hover {
   opacity: 1;
   text-decoration: none;
   color: white;
