@@ -33,6 +33,7 @@ class Mission < ApplicationRecord
   # validates :start_date, presence: true
   # validates :end_date, presence: true
 
+  HOME_CATEGORY = ["urgent", "trustyworth", "recent"]
   CONTINENT = ["Africa", "Asia", "Europe", "North America", "Middle East" "South America", "Oceania"]
   CLIMATE = ["Tropical", "Dry", "Temperate", "Continental", "Polar"]
   GREATFOR = ["Families", "Single", "Couple", "Retirees", "Men", "Women"]

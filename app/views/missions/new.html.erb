@@ -5,6 +5,7 @@
       <%= simple_form_for([@organization, @mission]) do |f| %>
         <%= f.input :title, placeholder: 'Enter your title' %>
         <%= f.input :continent, collection: Mission::CONTINENT, as: :select %>
+        <%= f.input :home_category, collection: Mission::HOME_CATEGORY, as: :select %>
         <%= f.country_select :country %>
         <%= f.input :description%>
         <%= f.input :great_for, collection: Mission::GREATFOR, as: :select%>

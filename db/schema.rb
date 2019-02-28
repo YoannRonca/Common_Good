@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_02_28_155701) do
     t.string "title"
     t.string "description"
     t.string "photo"
+    t.string "home_category"
     t.index ["organization_id"], name: "index_missions_on_organization_id"
   end
 
