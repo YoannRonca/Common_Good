@@ -30,13 +30,13 @@ class MissionsController < ApplicationController
   end
 
   def update
-    mission.update(mission_params)
-    redirect_to mission_path(animation)
+    @mission.update(mission_params)
+    redirect_to mission_path(@mission)
   end
 
   def destroy
-    mission.destroy
-    redirect_to mission_path
+    @mission.destroy
+    redirect_to missions_path
   end
 
   def search
