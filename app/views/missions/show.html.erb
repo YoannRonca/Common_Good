@@ -2,7 +2,12 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="grida">
-        <div class="box a"><%= @mission.photo %></div>
+        <% if @mission.photo.present? %>
+          <div class="box a" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path @mission.photo, height: 300, width: 400, crop: :fill %>')">
+        <% else %>
+          <div class="box a" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1536313243724-6dc3a26bee12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1625&q=80')">
+        <% end %>
+        </div>
         <div class="box b">PHOTO 2</div>
       </div>
     </div>
