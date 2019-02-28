@@ -18,15 +18,17 @@ MissionSector.destroy_all
 puts "Deleting users....."
 User.destroy_all
 
-puts "Deleting missions....."
-Mission.destroy_all
+puts "Deleting orgqnizations....."
+Organization.destroy_all
+# puts "Deleting missions....."
+# Mission.destroy_all
 
 puts 'Creating 4 users...'
 
-yoann = User.create(email: "yoann@gmail.com", password: "123425")
-livia = User.create(email: "livia@gmail.com", password: "564278")
-muriel = User.create(email: "muriel@gmail.com", password: "928765")
-bruno = User.create(email: "bruno@gmail.com", password: "543221")
+yoann = User.create(email: "yoann@gmail.com", password: "123456")
+livia = User.create(email: "livia@gmail.com", password: "123456")
+muriel = User.create(email: "muriel@gmail.com", password: "123456")
+bruno = User.create(email: "bruno@gmail.com", password: "123456")
 
 puts 'Creating 6 organizations...'
 
@@ -38,10 +40,10 @@ green = Organization.create(name: "Green", description: "lorem")
 
 puts 'Creating 6 missions...'
 
-turtle = Mission.create(organization: matho, title: "turtlito")
-culture = Mission.create(organization: green, title: "culture is life")
-kids = Mission.create(organization: goodkids, title: "turtle")
-music = Mission.create(organization: msf, title: "culture ")
+turtle = Mission.create(organization: matho, title: "turtlito", city: 'Paris')
+culture = Mission.create(organization: green, title: "culture is life", city: 'Paris')
+kids = Mission.create(organization: goodkids, title: "turtle", city: 'Paris')
+music = Mission.create(organization: msf, title: "culture ", city: 'Paris')
 art = Mission.create(organization: nation, title: "culture is ")
 environment = Mission.create(organization: matho, title: "cul life")
 
@@ -61,3 +63,61 @@ Review.create(content: "Hello World Great Gig!", transparency: 4, social_impact:
 Review.create(content: "Hello World Great Gig!", transparency: 4, social_impact: 3, staff_note: 4,  user: yoann, mission: culture)
 
 puts 'Finished!'
+
+
+["Agriculture",
+"Arts & Music",
+" Children & Youth",
+"Civic Engagement",
+"Climate change",
+"Community Development",
+"Conflict Resolution",
+"Consumer Protection",
+"Crime & Safety",
+"Disability",
+"Economic Development",
+"Education",
+"Energy",
+"Environment",
+"Health & Medicine",
+"Human Rights & Civil Liberties",
+"Immigrants or Refugees",
+"LGBTQ",
+"Poverty",
+"Race & Ethnicity",
+"Religion & Spirituality",
+"Reproductive Health/Rights",
+"Sexual Abuse & Human Trafficking",
+"Transparency & Oversight",
+"Victim Support",
+"Water & Sanitation",
+"Women",
+"Wildlife Protection"].each do |sector|
+  Sector.create! name: sector
+end
+
+
+MissionSector.create!(
+  mission: turtle,
+  sector: Sector.first
+)
+MissionSector.create!(
+  mission: turtle,
+  sector: Sector.second
+)
+MissionSector.create!(
+  mission: turtle,
+  sector: Sector.third
+)
+MissionSector.create!(
+  mission: culture,
+  sector: Sector.fourth
+)
+MissionSector.create!(
+  mission: culture,
+  sector: Sector.second
+)
+MissionSector.create!(
+  mission: culture,
+  sector: Sector.third
+)
