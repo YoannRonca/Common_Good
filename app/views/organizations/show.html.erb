@@ -9,22 +9,49 @@
 
 
   <div class="card-organization">
-         <p><%= @organization.description %></p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur non debitis unde, voluptate quibusdam hic sit quia modi aperiam voluptatum obcaecati, magni, sunt nulla. Nisi architecto consectetur quisquam velit dolorem.`
+         <p><%= @organization.description %> ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur non debitis unde, voluptate quibusdam hic sit quia modi aperiam voluptatum obcaecati, magni, sunt nulla. Nisi architecto consectetur quisquam velit dolorem.`
          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur non debitis unde, voluptate quibusdam hic sit quia modi aperiam voluptatum obcaecati, magni, sunt nulla. Nisi architecto consectetur quisquam velit dolorem.
          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur non debitis unde, voluptate quibusdam hic sit quia modi aperiam voluptatum obcaecati, magni, sunt nulla. Nisi architecto consectetur quisquam velit dolorem.
          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur non debitis unde, voluptate quibusdam hic sit quia modi aperiam voluptatum obcaecati, magni, sunt nulla. Nisi architecto consectetur quisquam velit dolorem.</p>
   </div>
 </div>
 
-<div class="container" style= "background-color: #f7b864">
+<div class="container marged-bottom" style= "background-color: #f7b864">
+  <h2 class="title1">Our Missions</h2>
   <div class="row">
-    <!-- <div class="col-xs-12 col-sm-4"> -->
-      <h1>Our Missions</h1>
+    <% @organization.missions.each do |mission| %>
+      <div class="col-xs-12 col-sm-4">
+        <%= link_to mission_path(mission) do %>
+          <div class="card"><%= mission.title %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
+<div class= "container">
+  <h3 class="title2">Meet Our Team</h3>
+  <div class="related-posts">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div>
+          <img alt="Staff 1" src="/assets/user3pg.jpg", style="border-radius:50%"/>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div>
+          <img alt="Staff 2" src="/assets/user2.jpg", style="border-radius:50%" />
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div>
+          <img alt="Staff 3" src="/assets/user1.jpg", style="border-radius:50%" />
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 
-<!-- à faire voir les cartes et aussi les avatars staff et volontaires -->
 
