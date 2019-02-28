@@ -50,7 +50,7 @@ class MissionsController < ApplicationController
   private
 
   def mission_params
-    params.require(:mission).permit(:city, :country, :continent, :climate, :great_for, :safety, :tolerance, :skill, :language, :start_date, :end_date, :title, :description, :cost_of_life)
+    params.require(:mission).permit(:city, :country, :continent, :climate, :great_for, :safety, :tolerance, :skill, :language, :start_date, :end_date, :title, :description, :cost_of_life, :photo)
   end
 
   def set_organization
