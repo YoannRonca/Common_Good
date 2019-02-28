@@ -9,10 +9,20 @@
     </div>
   </div>
 
+
   <div class="button-us">
     <div class="btn-container">
       <%= link_to "Add an association", new_organization_path(@organization), class: "thin-btn" %>
     </div>
+
+<div class="wrapper" id="results">
+  <div class="row">
+    <% @missions.each do |mission| %>
+      <%= render 'mission', mission: mission %>
+    <% end %>
+  </div>
+</div>
+
   </div>
 
   <h3 class="divider"><span></span><span>They need you NOW</span><span></span></h3>
