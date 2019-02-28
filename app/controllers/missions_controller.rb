@@ -4,6 +4,9 @@ class MissionsController < ApplicationController
 
   def index
     @missions = Mission.all
+    @missions_urgent = Mission.where(home_category: "urgent")
+    @missions_trustyworth = Mission.where(home_category: "trustyworth")
+    @missions_recent = Mission.where(phome_category: "recent")
   end
 
   def show

@@ -38,14 +38,21 @@ nation = Organization.create(name: "Nation", description: "lorem")
 msf = Organization.create(name: "MSF", description: "lorem")
 green = Organization.create(name: "Green", description: "lorem")
 
-puts 'Creating 6 missions...'
+puts 'Creating 12 missions...'
 
-turtle = Mission.create(organization: matho, title: "turtlito", city: 'Paris')
-culture = Mission.create(organization: green, title: "culture is life", city: 'Paris')
-kids = Mission.create(organization: goodkids, title: "turtle", city: 'Paris')
-music = Mission.create(organization: msf, title: "culture ", city: 'Paris')
-art = Mission.create(organization: nation, title: "culture is ")
-environment = Mission.create(organization: matho, title: "cul life")
+turtle = Mission.create(organization: matho, title: "Save Turtles", city: 'Bogota', home_category: "urgent")
+culture = Mission.create(organization: green, title: "Culture is life", city: 'Paris', home_category: "urgent")
+kids = Mission.create(organization: goodkids, title: "Little kids", city: 'Bogota', home_category: "urgent")
+music = Mission.create(organization: msf, title: "Music ", city: 'Paris', home_category: "trustyworth")
+art = Mission.create(organization: nation, title: "Save the art", home_category: "trustyworth")
+environment = Mission.create(organization: matho, title: "Tree Free", home_category: "trustyworth")
+
+turtle = Mission.create(organization: matho, title: "turtlito", city: 'Fortaleza', home_category: "recent")
+culture = Mission.create(organization: green, title: "Culture", city: 'Paris', home_category: "recent")
+kids = Mission.create(organization: goodkids, title: "Ninos", city: 'Marseille', home_category: "recent")
+music = Mission.create(organization: msf, title: "Safesound ", city: 'Paris', home_category: "recent")
+art = Mission.create(organization: nation, title: "VivaCultura", city: 'Lima', home_category: "recent")
+environment = Mission.create(organization: matho, title: "Eco", city: 'Montreal', home_category: "recent")
 
 
 puts 'Creating 6 mission_users...'
