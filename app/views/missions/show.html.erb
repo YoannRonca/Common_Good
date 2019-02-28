@@ -1,25 +1,32 @@
-  <div class="wrapper">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="grida">
-          <div class="box a">PHOTO</div>
-          <div class="box b">PHOTO 2</div>
-        </div>
+<div class="wrapperm">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="grida">
+        <div class="box a"><%= @mission.photo %></div>
+        <div class="box b">PHOTO 2</div>
       </div>
     </div>
   </div>
+</div>
 
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <div class="cardmission" style="background-color: #f7b864;">
-        <div class="card-categorym"></div>
-        <div class="card-descriptionm">
-          <h2><%= @mission.title %></h2>
-          <p>City, Country &#x26F3;</p>
+        <div class="missioncard">
+
+        <div class="missioncard-btn">
+          <h2>Apply to this mission</h2>
         </div>
-        <img class="card-userm" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        <a class="card-linkm" href="#" ></a>
+        <div class="missioncard-category"></div>
+
+        <div class="missioncard-description">
+          <h2><%= @mission.title %></h2>
+          <p><%= @mission.city %> &#x26F3;</p>
+        </div>
+
+        <img class="missioncard-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+
+        <a class="missioncard-link" href="#" ></a>
         </div>
       </div>
     </div>
@@ -47,3 +54,29 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="gridc">
+        <div class="cx1"> Former volunteers
+          <hr>
+          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+           <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+            <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+             <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+        </div>
+        <div class="cx2"> Meet the staff
+          <hr>
+          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+        </div>
+         <div class="cx3">
+          <p><%= link_to 'Back', missions_path, class: 'thin-btn' %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
