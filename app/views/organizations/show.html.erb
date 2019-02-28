@@ -68,5 +68,12 @@
   </div>
 </div>
 
+ <div class="cx3">
+          <p><%= link_to 'Back', missions_path, class: 'thin-btn' %></p>
+          <p><%= link_to 'Delete', organization_path(@organization),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: 'thin-btn' %>
+          </p>
+</div>
 
 
