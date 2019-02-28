@@ -1,7 +1,10 @@
-.banner-principal {
+.banner {
   height: 100vh;
   background-size: cover;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   h1 {
     color: white;
     font-family: 'Arapey', serif;
@@ -12,3 +15,26 @@
     color: white;
   }
 }
+
+.my-searchbar {
+  font-size: 19px;
+  background-color: #ababab36;
+  width: 500px;
+  height: 45px;
+  border-radius: 28px;
+  margin-top: 50px;
+  text-align: center;
+  border: 1px solid #a7a7a7;
+}
+
+.fa-search {
+  color: white;
+}
+
+input:placeholder {
+    font-size: 20 px;
+    color: black;
+  }
+
+
+// comment changer la couleur de la font du placeholder?

@@ -1,11 +1,19 @@
-<%= render 'banner', organizations: @organizations %>
+<%= render 'banner' %>
 
-<div class="intro">
-  <p>What we do; how we help you to find the perfect mission
-  <br>What we do; how we help you to find the perfect mission
-  <br>What we do; how we help you to find the perfect mission
-  <br>What we do; how we help you to find the perfect mission</p>
-</div>
+<div class="wrapper urgent">
+  <div class="intro">
+    <div class=".col-md-6 .col-md-offset-3">
+      <h1>What we do; how we help you to find the perfect mission
+      What we do; how we help you to find the perfect mission
+      What we do; how we help you to find the perfect mission</h1>
+    </div>
+  </div>
+
+
+  <div class="button-us">
+    <div class="btn-container">
+      <%= link_to "Add an association", new_organization_path(@organization), class: "thin-btn" %>
+    </div>
 
 <div class="wrapper" id="results">
   <div class="row">
@@ -15,23 +23,60 @@
   </div>
 </div>
 
+  </div>
 
-<div class="wrap">
-<!--  <div class="search">
-   <input type="text" class="searchTerm" placeholder="What are you looking for?">
-   <button type="submit" class="searchButton">
-     <i class="fa fa-search"></i>
-  </button>
-</div> -->
+  <h3 class="divider"><span></span><span>They need you NOW</span><span></span></h3>
 
-  <div class="search">
-    <%= form_tag search_path, method: :get do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "searchbar",
-      placeholder: "What are you looking for?"
-      %>
-      <i class="fa fa-search"></i>
-    <% end %>
+
+  <div class="fake-cards">
+    <div class="col-xs-12 col-sm-6 col-md-4 centered">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+        <div class="card-description text-center">
+          <h3>Urgent Urgent</h3>
+        </div>
+        <div class="card-ratings">
+          <p>No rating</p>
+        </div>
+        <i class="far fa-heart" id="biglove"></i>
+      </div>
+<!--       <h2>description description description description description description description description</h2> -->
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 centered">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+        <div class="card-description text-center">
+          <h3>Urgent Urgent</h3>
+        </div>
+        <div class="card-ratings">
+          <p>No rating</p>
+        </div>
+        <i class="far fa-heart" id="biglove"></i>
+      </div>
+   <!--  <h2>description description description description description description description description</h2> -->
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 centered">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+        <div class="card-description text-center">
+          <h3>Urgent Urgent</h3>
+        </div>
+        <div class="card-ratings">
+          <p>No rating</p>
+        </div>
+        <i class="far fa-heart" id="biglove"></i>
+      </div>
+    </div>
+ <!--  <h2>description description description description description description description description</h2> -->
+  </div>
+
   </div>
 </div>
+
+<%= render 'banner-all' %>
+<div class="wrapper trustyworth">
+  <h1>Trustyworth Cards</h1>
+</div>
+
+<div class="wrapper recent">
+  <h1>Cards</h1>
+  <h1>Footer</h1>
+</div>
+
