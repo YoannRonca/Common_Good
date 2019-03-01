@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 100 !important;
 }
 
 /* Logo */
@@ -42,7 +43,7 @@
   font-size: 14px;
 }
 .navbar-cg-link:hover {
-  color: #da552f;
+  color: #f4a140;
   text-decoration: none;
 }
 

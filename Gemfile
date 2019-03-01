@@ -24,8 +24,6 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
-gem 'dotenv-rails', groups: [:development, :test]
-
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

@@ -1,11 +1,11 @@
 #sidebar {
     width: 250px;
     position: fixed;
-    top: 0;
+    top: 70px;
     left: -250px;
     height: 100vh;
     z-index: 999;
-    background: #7386D5;
+    background: #f4a140;
     color: #fff;
     transition: all 0.3s;
     overflow-y: scroll;
@@ -21,7 +21,7 @@
     height: 35px;
     line-height: 35px;
     text-align: center;
-    background: #7386D5;
+    background: #f4a140;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -39,10 +39,12 @@
 .overlay {
     display: none;
     position: fixed;
+    top: 150px;
+    left: 0px;
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.7);
-    z-index: 998;
+    z-index: 10;
     opacity: 0;
     transition: all 0.5s ease-in-out;
 }
@@ -53,7 +55,7 @@
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #f4a140;
 }
 
 #sidebar ul.components {
@@ -98,7 +100,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #f4a140;
 }
 
 ul.CTAs {
@@ -122,4 +124,14 @@ a.article,
 a.article:hover {
     background: #6d7fcc !important;
     color: #fff !important;
+}
+
+.bg-light {
+  background-color: #fff !important;
+}
+
+.btn-info {
+  background-color: #f4a140 !important;
+  border-color: #f4a140 !important;
+  margin-left: 35px;
 }
