@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
+      <h2>Welcome, <%=  current_user.username %></h2>
       <h2> Apply to a mission </h2>
-      <%= simple_form_for (@mission_user) do |f| %>
+      <%= simple_form_for([@mission,@mission_user]) do |f| %>
         <%= f.input :user_id, placeholder: 'Enter your name' %>
         <%= f.input :mission_id, placeholder: 'Choose your mission' %>
 
