@@ -74,7 +74,7 @@
 </div>
 
 <div class="cx3">
-  <p><%= link_to 'Back', mission_path, class: 'thin-btn' %></p>
+  <p><%= link_to 'Back', mission_path(@mission), class: 'thin-btn' %></p>
 </div>
 
 <% if user_signed_in? && current_user.admin? %>
