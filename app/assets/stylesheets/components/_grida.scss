@@ -5,30 +5,30 @@ body {
 .grida {
     display: grid;
     grid-template-columns: 650px 1fr 1fr 1fr;
-    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-rows: 100%;
     height: 325px;
   }
 
 
-    .box {
-        background-color: #8080808a;
-        color: #fff;
-        border-radius: 1px;
-        padding: 10px;
-        font-size: 150%;
+    // .box {
+    //     background-color: #8080808a;
+    //     color: #fff;
+    //     border-radius: 1px;
+    //     padding: 10px;
+    //     font-size: 150%;
 
-    }
+    // }
 
     .a {
-        grid-column: 1 / span 2;
+        grid-column: 1 / span 4;
         grid-row: 1 / span 4;
         background-size: cover !important;
 
     }
-    .b {
-        grid-column: 3 / span 2;
-        grid-row: 1 / span 4;
-    }
+    // .b {
+    //     grid-column: 3 / span 2;
+    //     grid-row: 1 / span 4;
+    // }
 
 
 
