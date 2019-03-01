@@ -3,9 +3,9 @@
 <div class="wrapper urgent">
   <div class="intro">
     <div class=".col-md-6 .col-md-offset-3">
-      <h1>What we do; how we help you to find the perfect mission
+      <h3>What we do; how we help you to find the perfect mission
       What we do; how we help you to find the perfect mission
-      What we do; how we help you to find the perfect mission</h1>
+      What we do; how we help you to find the perfect mission</h3>
     </div>
   </div>
 
@@ -16,19 +16,18 @@
     </div>
   </div>
 
-  <h1 class="divider"><span></span><span>They need you NOW</span><span></span></h1>
+  <h3 class="divider"><span></span><span>They need you NOW</span><span></span></h3>
 
 
-  <div class="urgent-cards">
+  <div class="row urgent-cards">
     <% @missions_urgent.each do |mission| %>
     <div class="col-xs-12 col-sm-6 col-md-4 centered">
       <div class="card-homepage" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
       </div>
       <div class="card-info">
-        <h3><%= link_to mission.title, mission_path(mission) %></h3>
-        <div class="card-homepage-ratings">
-          <p>No rating</p>
-        </div>
+        <p><%= link_to mission.title, mission_path(mission) %></p>
+        <p><%= mission.city%>, <%= mission.country %></p>
+        <p>No rating</p>
         <i class="far fa-heart" id="biglove"></i>
       </div>
     </div>
@@ -40,17 +39,16 @@
 <%= render 'banner-all' %>
 
 <div class="wrapper trustyworth">
-  <h1 class="divider"><span></span><span>Top trustyworth</span><span></span></h1>
-    <div class="trustyworth-cards">
+  <h3 class="divider"><span></span><span>Top trustyworth</span><span></span></h3>
+    <div class="row trustyworth-cards">
     <% @missions_trustyworth.each do |mission| %>
     <div class="col-xs-12 col-sm-6 col-md-4 centered">
       <div class="card-homepage" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
       </div>
       <div class="card-info">
-        <h3><%= link_to mission.title, mission_path(mission) %></h3>
-        <div class="card-homepage-ratings">
-          <p>No rating</p>
-        </div>
+        <p><%= link_to mission.title, mission_path(mission) %></p>
+        <p><%= mission.city%>, <%= mission.country %></p>
+        <p>No rating</p>
         <i class="far fa-heart" id="biglove"></i>
       </div>
     </div>
@@ -60,17 +58,16 @@
 
 
 <div class="wrapper recent">
-  <h1 class="divider"><span></span><span>Most recent</span><span></span></h1>
-    <div class="recent-cards">
+  <h3 class="divider"><span></span><span>Most recent</span><span></span></h3>
+    <div class="row recent-cards">
     <% @missions_recent.each do |mission| %>
     <div class="col-xs-12 col-sm-6 col-md-4 centered">
       <div class="card-homepage" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
       </div>
       <div class="card-info">
-        <h3><%= link_to mission.title, mission_path(mission) %></h3>
-        <div class="card-homepage-ratings">
-          <p>No rating</p>
-        </div>
+        <p><%= link_to mission.title, mission_path(mission) %></p>
+        <p><%= mission.city%>, <%= mission.country %></p>
+        <p>No rating</p>
         <i class="far fa-heart" id="biglove"></i>
       </div>
     </div>
