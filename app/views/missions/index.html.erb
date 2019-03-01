@@ -19,7 +19,7 @@
   <h1 class="divider"><span></span><span>They need you NOW</span><span></span></h1>
 
 
-  <div class="urgent-cards">
+  <div class="row urgent-cards">
     <% @missions_urgent.each do |mission| %>
     <div class="col-xs-12 col-sm-6 col-md-4 centered">
       <div class="card-homepage" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
@@ -41,7 +41,7 @@
 
 <div class="wrapper trustyworth">
   <h1 class="divider"><span></span><span>Top trustyworth</span><span></span></h1>
-    <div class="trustyworth-cards">
+    <div class="row trustyworth-cards">
     <% @missions_trustyworth.each do |mission| %>
     <div class="col-xs-12 col-sm-6 col-md-4 centered">
       <div class="card-homepage" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
@@ -61,7 +61,7 @@
 
 <div class="wrapper recent">
   <h1 class="divider"><span></span><span>Most recent</span><span></span></h1>
-    <div class="recent-cards">
+    <div class="row recent-cards">
     <% @missions_recent.each do |mission| %>
     <div class="col-xs-12 col-sm-6 col-md-4 centered">
       <div class="card-homepage" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
