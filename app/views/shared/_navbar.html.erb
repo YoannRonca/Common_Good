@@ -5,51 +5,65 @@
   <% end %>
 
   <!-- Right Navigation -->
-  <div class="navbar-cg-right hidden-xs hidden-sm">
+    <div class="d-none d-lg-block">
+      <div class="navbar-cg-right  ">
 
-    <% if user_signed_in? %>
+        <% if user_signed_in? %>
 
-      <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-cg-item navbar-cg-link" %>
-      <%= link_to "Trips", "#", class: "navbar-cg-item navbar-cg-link" %>
-      <%= link_to "Messages", "#", class: "navbar-cg-item navbar-cg-link" %>
+          <!-- Links when logged in -->
+          <%= link_to "Host", "#", class: "navbar-cg-item navbar-cg-link" %>
+          <%= link_to "Trips", "#", class: "navbar-cg-item navbar-cg-link" %>
+          <%= link_to "Messages", "#", class: "navbar-cg-item navbar-cg-link" %>
 
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-cg-item">
-        <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-cg-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-cg-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
+          <!-- Avatar with dropdown menu -->
+          <div class="navbar-cg-item">
+            <div class="dropdown">
+              <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-cg-menu", "data-toggle" => "dropdown" %>
+              <ul class="dropdown-menu dropdown-menu-right navbar-cg-dropdown-menu">
+                <li>
+                  <%= link_to "#" do %>
+                    <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to "#" do %>
+                    <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                    <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+          </div>
+        <% else %>
+          <!-- Login link (when logged out) -->
+          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-cg-item navbar-cg-link" %>
+        <% end %>
       </div>
-    <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-cg-item navbar-cg-link" %>
-    <% end %>
-  </div>
+    </div>
   <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-cg-item hidden-md hidden-lg">
+  <div class="navbar-cg-item d-lg-none"">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-cg-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li>
+          <%= link_to "#" do %>
+            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "#" do %>
+            <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
