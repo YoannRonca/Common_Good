@@ -43,7 +43,7 @@
           <p><%= @mission.description %></p>
         </div>
         <div class="bx2"> Get more info about this NGO:
-          <p><%= link_to @mission.organization.name, organization_path(@organization) %></p>
+          <p><%= link_to @mission.organization.name, organization_path(@organization, mission_id: @mission.id) %></p>
         </div>
         <div class="bx3"> Languages
           <p><%= @mission.language %></p>

@@ -1,6 +1,7 @@
 class OrganizationsController < ApplicationController
   def show
     @organization = Organization.find(params[:id])
+    @mission = params[:mission_id]
   end
 
   def new
