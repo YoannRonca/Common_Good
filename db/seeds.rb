@@ -25,10 +25,10 @@ Organization.destroy_all
 
 puts 'Creating 4 users...'
 
-yoann = User.create(email: "yoann@gmail.com", password: "123456")
-livia = User.create(email: "livia@gmail.com", password: "123456")
-muriel = User.create(email: "muriel@gmail.com", password: "123456")
-bruno = User.create(email: "bruno@gmail.com", password: "123456")
+yoann = User.create(email: "yoann@gmail.com", password: "123456", admin: true)
+livia = User.create(email: "livia@gmail.com", password: "123456", admin: true)
+muriel = User.create(email: "muriel@gmail.com", password: "123456", admin: true)
+bruno = User.create(email: "bruno@gmail.com", password: "123456", admin: true)
 
 puts 'Creating 6 organizations...'
 

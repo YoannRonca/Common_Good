@@ -9,12 +9,13 @@
     </div>
   </div>
 
-
+<% if user_signed_in? && current_user.admin? %>
   <div class="button-us">
     <div class="btn-container">
       <%= link_to "Add an association", new_organization_path(@organization), class: "thin-btn" %>
     </div>
   </div>
+<% end %>
 
   <h1 class="divider"><span></span><span>They need you NOW</span><span></span></h1>
 
