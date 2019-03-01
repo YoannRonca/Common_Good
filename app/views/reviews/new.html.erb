@@ -1,0 +1,11 @@
+<div class="container footerfix">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h2>Add a review</h2>
+      <%= simple_form_for [@mission, @review] do |f| %>
+        <%= f.input :content %>
+        <%= f.submit class: "thin-btn"%>
+      <% end %>
+      </div>
+  </div>
+</div>

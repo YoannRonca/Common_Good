@@ -4,15 +4,17 @@
       <div class="grida">
         <% if @mission.photo.present? %>
           <div class="box a" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path @mission.photo, height: 300, width: 400, crop: :fill %>')">
-        <% else %>
+          <% else %>
           <div class="box a" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1527499456709-838ffdcfee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
-        <% end %>
+          <% end %>
+          </div>
+          <div class="box b">PHOTO 2</div>
         </div>
-        <div class="box b">PHOTO 2</div>
       </div>
     </div>
   </div>
 </div>
+
 
   <div class="container">
     <div class="row">
@@ -22,18 +24,17 @@
         <div class="missioncard-category"></div>
 
         <div class="missioncard-description">
-          <h2><%= @mission.title %></h2>
-          <p><%= @mission.city %> &#x26F3;</p>
+          <h2><%= @mission.title %> ji:as</h2>
+          <p><%= @mission.city %> &#x1F4CD;</p>
         </div>
 
         <img class="missioncard-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
 
-        <!-- <a class="missioncard-link" href="#" ></a> -->
         </div>
       </div>
     </div>
   </div>
-</div>
+
 
 <div class="container">
   <div class="row">
@@ -49,7 +50,7 @@
           <p><%= @mission.language %></p>
         </div>
         <div class="bx4">What are we looking for?
-          <p><%= @mission.skill %></p>
+          <p><%= @mission.skill %> </p>
         </div>
       </div>
     </div>
@@ -78,12 +79,52 @@
           <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
           <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
         </div>
-         <div class="cx3">
-          <p><%= link_to 'Back', missions_path, class: 'thin-btn' %></p>
-          <p><%= link_to 'Delete', mission_path(@mission),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" }, class: 'thin-btn' %>
+        <div class="cx4"> Reviews
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <div class="message-name">
+          <h3>Rob Trujillo</h3>
+          <p>10/07/18</p>
+        </div>
+        <div class="message-body">
+          <p><strong>Life changing experience</strong></p>
+          <p>
+            I spent 3 weeks in this mission. I will never forget the experience and found a new goal for my life.
           </p>
+        </div>
+        <div class="message-status">
+          <p class="status pending"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="gridd">
+        <div class="dx1">
+          <p><%= link_to 'Delete', mission_path(@mission),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" }, class: 'thin-btn' %>
+          </p>
+          <p><%= link_to 'Back', missions_path, class: 'thin-btn' %><p>
+        </div>
+        <div class="dx2">
+          <p><%= link_to 'Add a Review', new_mission_review_path(@mission), class: 'thin-btn' %><p>
         </div>
       </div>
     </div>
