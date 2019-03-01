@@ -8,10 +8,12 @@
   </div>
 <% end %>
 
+<% if user_signed_in? && current_user.admin? %>
 <div class="container">
   <div class="btn-container">
     <%= link_to "Add a mission", new_organization_mission_path(@organization), class: "thin-btn" %>
   </div>
+<% end %>
 
 
   <div class="card-organization">
@@ -73,9 +75,14 @@
 
 <div class="cx3">
   <p><%= link_to 'Back', mission_path, class: 'thin-btn' %></p>
+</div>
+
+<% if user_signed_in? && current_user.admin? %>
+<div class="cx3">
   <p><%= link_to 'Delete', organization_path(@organization),
                   method: :delete,
                   data: { confirm: "Are you sure?" }, class: 'thin-btn' %>
   </p>
 </div>
+<% end %>
 
