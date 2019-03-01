@@ -6,6 +6,7 @@ class OrganizationsController < ApplicationController
 
   def new
     @organization = Organization.new
+    @mission = params[:mission_id]
   end
 
   def create
