@@ -17,6 +17,7 @@ gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 
 gem 'autoprefixer-rails'
+
 gem 'bootstrap', '~> 4.3.1'
 gem 'font-awesome-sass', '~> 5.5.0'
 gem 'sassc-rails'

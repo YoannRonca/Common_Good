@@ -1,6 +1,12 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551277349/slide-2.jpg');">
+<% if @organization.photo.blank? %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551277349/slide-2.jpg');">
+      <h1><%= @organization.name %></h1>
+  </div>
+<% else %>
+  <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @organization.photo %>')">
     <h1><%= @organization.name %></h1>
-</div>
+  </div>
+<% end %>
 
 <div class="container">
   <div class="btn-container">
@@ -9,10 +15,7 @@
 
 
   <div class="card-organization">
-         <p><%= @organization.description %> ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur non debitis unde, voluptate quibusdam hic sit quia modi aperiam voluptatum obcaecati, magni, sunt nulla. Nisi architecto consectetur quisquam velit dolorem.`
-         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur non debitis unde, voluptate quibusdam hic sit quia modi aperiam voluptatum obcaecati, magni, sunt nulla. Nisi architecto consectetur quisquam velit dolorem.
-         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur non debitis unde, voluptate quibusdam hic sit quia modi aperiam voluptatum obcaecati, magni, sunt nulla. Nisi architecto consectetur quisquam velit dolorem.
-         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur non debitis unde, voluptate quibusdam hic sit quia modi aperiam voluptatum obcaecati, magni, sunt nulla. Nisi architecto consectetur quisquam velit dolorem.</p>
+         <p><%= @organization.description %></p>
   </div>
 </div>
 
@@ -68,5 +71,12 @@
   </div>
 </div>
 
+ <div class="cx3">
+          <p><%= link_to 'Back', missions_path, class: 'thin-btn' %></p>
+          <p><%= link_to 'Delete', organization_path(@organization),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: 'thin-btn' %>
+          </p>
+</div>
 
 

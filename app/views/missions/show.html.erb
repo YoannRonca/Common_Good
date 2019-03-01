@@ -5,7 +5,7 @@
         <% if @mission.photo.present? %>
           <div class="box a" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path @mission.photo, height: 300, width: 400, crop: :fill %>')">
         <% else %>
-          <div class="box a" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1536313243724-6dc3a26bee12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1625&q=80')">
+          <div class="box a" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1527499456709-838ffdcfee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
         <% end %>
         </div>
         <div class="box b">PHOTO 2</div>
@@ -18,9 +18,7 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="missioncard">
-
             <%= link_to "Apply to this mission", new_mission_mission_user_path(@mission), class: "missioncard-btn" %>
-
         <div class="missioncard-category"></div>
 
         <div class="missioncard-description">
@@ -45,7 +43,7 @@
           <p><%= @mission.description %></p>
         </div>
         <div class="bx2"> Get more info about this NGO
-          <p><%= @mission.organization %></p>
+          <p><%= link_to @mission.organization.name, organization_path(@organization) %></p>
         </div>
         <div class="bx3"> Languages
           <p><%= @mission.language %></p>
@@ -57,6 +55,9 @@
     </div>
   </div>
 </div>
+
+<br>
+<br>
 
 <div class="container">
   <div class="row">
@@ -79,6 +80,10 @@
         </div>
          <div class="cx3">
           <p><%= link_to 'Back', missions_path, class: 'thin-btn' %></p>
+          <p><%= link_to 'Delete', mission_path(@mission),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: 'thin-btn' %>
+          </p>
         </div>
       </div>
     </div>

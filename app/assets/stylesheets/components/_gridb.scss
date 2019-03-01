@@ -25,7 +25,6 @@ body {
         border-radius: 2px;
         padding: 10px;
         font-size: 150%;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
         margin: 2px;
     }
 
@@ -36,8 +35,13 @@ body {
         border-radius: 2px;
         padding: 10px;
         font-size: 150%;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
         margin: 2px;
+    }
+
+    .bx2 a {
+      display: flex;
+      justify-content: center;
+
     }
 
     .bx3 {
