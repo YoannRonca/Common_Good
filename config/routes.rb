@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   resources :missions, except: [:new, :create] do
     resources :reviews, only: [:new, :create]
   end
+  resources :missions, except: [:new, :create] do
+    resources :mission_users, only: [:new, :create]
+  end
   resource :users, only: :show
   resources :profiles, only: :index
 end

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h2> Add your NGO </h2>
+      <%= simple_form_for([@organization]) do |f| %>
+        <%= f.input :name, placeholder: 'Enter the name of your NGO' %>
+        <%= f.input :description, placeholder: 'Please descripe the work of your NGO'%>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <hr>
+        <%= f.submit class: "btn-medium"%>
+        <%= link_to "Back", missions_path, class: 'btn btn-medium' %>
+      <% end %>
+      </div>
+  </div>
+</div>

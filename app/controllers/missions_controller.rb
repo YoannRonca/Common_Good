@@ -4,6 +4,9 @@ class MissionsController < ApplicationController
 
   def index
     @missions = Mission.all
+    @missions_urgent = Mission.where(home_category: "urgent")
+    @missions_trustyworth = Mission.where(home_category: "trustyworth")
+    @missions_recent = Mission.where(home_category: "recent")
   end
 
   def show
@@ -30,13 +33,13 @@ class MissionsController < ApplicationController
   end
 
   def update
-    mission.update(mission_params)
-    redirect_to mission_path(animation)
+    @mission.update(mission_params)
+    redirect_to mission_path(@mission)
   end
 
   def destroy
-    mission.destroy
-    redirect_to mission_path
+    @mission.destroy
+    redirect_to missions_path
   end
 
   def search
