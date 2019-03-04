@@ -37,8 +37,8 @@
     <% @organization.missions.each do |mission| %>
       <div class="col-xs-12 col-sm-4">
         <%= link_to mission_path(mission) do %>
-            <% if mission.photo.present? %>
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path mission.photo, height: 300, width: 400, crop: :fill %>')">
+            <% if mission.photos.any? %>
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path mission.photos.first.photo, height: 300, width: 400, crop: :fill %>')">
             <% else %>
               <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1527499456709-838ffdcfee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
             <% end %>
@@ -63,16 +63,14 @@
 <div class= "container">
   <h3 class="title2">Meet Our Team</h3>
   <div class="related-posts">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694350/user3pg.jpg')">
-        </div>
-        <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694263/testimonials-1.jpg')">
-        </div>
-        <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694263/staff51-570x570.jpg')">
-        </div>
-        <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694263/team-2.jpg')">
-        </div>
+    <div id="team-avatar-container" style="display: flex; justify-content: center">
+      <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694350/user3pg.jpg')">
+      </div>
+      <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694263/testimonials-1.jpg')">
+      </div>
+      <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694263/staff51-570x570.jpg')">
+      </div>
+      <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694263/team-2.jpg')">
       </div>
     </div>
   </div>
