@@ -15,15 +15,17 @@
         <%= simple_form_for :query, url: search_path, method: :get do |f| %>
           <%#= f.input :Price,  as: :radio_buttons, collection: Mission::COSTOFLIFE,  class: 'form-check-inline' %>
           <div class="row">
-            <% counter = 0 %>
-            <% Mission::COSTOFLIFE.each do |item| %>
-              <% counter += 1 %>
-              <% identifier = "inlineRadio#{counter}" %>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id='<%= identifier %>' value='<%= item %>'>
-                <label class="form-check-label" for='<%= identifier %>'><%= item %></label>
-              </div>
-            <% end %>
+            <div class="col-12">
+              <% counter = 0 %>
+              <% Mission::COSTOFLIFE.each do |item| %>
+                <% counter += 1 %>
+                <% identifier = "inlineRadio#{counter}" %>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id='<%= identifier %>' value='<%= item %>'>
+                  <label class="form-check-label" for='<%= identifier %>'><%= item %></label>
+                </div>
+              <% end %>
+            </div>
           </div>
           <div class="row">
             <% counter = 0 %>

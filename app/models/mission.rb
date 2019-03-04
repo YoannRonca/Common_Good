@@ -35,7 +35,7 @@ class Mission < ApplicationRecord
   LANGUAGE = ["English", "Spanish", "Portuguese", "French", "Chinese", "German"]
   SECTOR = ["Agriculture", "Arts & Music", " Children & Youth", "Education", "Environment", "Health & Medicine", "Immigrants or Refugees", "Water & Sanitation", "Wildlife Protection"]
 
-  # SECTOR = ["Agriculture", "Arts & Music", " Children & Youth", "Civic Engagement", "Climate change", "Community Development", "Conflict Resolution", "Consumer Protection", "Crime & Safety", "Disability", "Economic Development", "Education", "Energy", "Environment", "Health & Medicine", "Human Rights & Civil Liberties", "Immigrants or Refugees", "LGBTQ", "Poverty", "Race & Ethnicity", "Religion & Spirituality", "Reproductive Health/Rights", "Sexual Abuse & Human Trafficking", "Transparency & Oversight", "Victim Support", "Water & Sanitation", "Women", "Wildlife Protection"]
+  # SECTOR = ["Agriculture", "Arts & Music", " Children & Youth", "Civic Engagement", "Climate change", "Community Development", "Conflict Resolution", "Consumer Protection", "Crime & Safety", "Disability", "Economic Development", "Education", "Energy", "Environment", "Health & Medicine", "Human Rights & Civil Liberties", "Immigrants or Refugees", "LGBTQ", "Poverty", "Race & Ethnicity", "Religion & Spirituality", "Reproductive Health/Rights", "Sexual Abuse & Human Trafficking Sanitation", "Women", "Wildlife Protection"]
 
   # validates :cost_of_life, inclusion: { in: COSTOFLIFE }
   # validates :city, presence: true
