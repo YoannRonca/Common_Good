@@ -15,12 +15,12 @@ Rails.application.routes.draw do
   resources :organizations do
     resources :missions, only: [:new, :create]
   end
+
   resources :missions, except: [:new, :create] do
     resources :reviews, only: [:new, :create]
+    resources :mission_users, only: [:index, :new, :create]
   end
-  resources :missions, except: [:new, :create] do
-    resources :mission_users, only: [:new, :create]
-  end
+
   resources :users, only: :show
   resources :profiles, only: :index
 end
