@@ -4,7 +4,7 @@
   </div>
 <% else %>
 
-  <div class="banner-all" id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="banner" id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <% @organization.photos.each_with_index do |photo, i| %>
         <div class="carousel-item <%= 'active' if i == 0 %>">
