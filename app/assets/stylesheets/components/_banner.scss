@@ -38,4 +38,39 @@ input:placeholder {
   }
 
 
+// .bannercarousel {
+//   height: 75vh !important;
+//   background-size: cover;
+//   text-align: center;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   h1 {
+//     color: white;
+//     font-family: 'Chalk';
+//     font-size: 80px;
+//     text-align: center;
+//     font-weight: bold;
+//   }
+// }
+#carouselExampleSlidesOnly{
+  .carousel-item{
+    height: 60vh !important;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      color: white;
+      font-family: 'Chalk';
+      font-size: 80px;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+  .carousel-caption{
+    bottom: unset !important;
+  }
+}
 // comment changer la couleur de la font du placeholder?
