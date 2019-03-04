@@ -10,6 +10,7 @@ gem 'rails', '5.2.2'
 gem 'redis'
 
 gem 'country_select', '~> 4.0'
+gem "pundit"
 
 gem 'pg_search'
 

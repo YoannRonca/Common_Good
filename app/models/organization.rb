@@ -1,7 +1,9 @@
 class Organization < ApplicationRecord
   has_many :missions, dependent: :destroy
+  has_many :photos, dependent: :destroy
+  accepts_nested_attributes_for :photos, allow_destroy: true
 
-  mount_uploader :photo, PhotoUploader
+  # mount_uploaders :photos, PhotoUploader
 
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
