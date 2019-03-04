@@ -8,8 +8,16 @@
   justify-content: space-around;
   h3 {
     text-align: center;
-    max-width: 800px;
-    color: gray;
+    max-width: 1000px;
+    color: #666;
+    font-family: Open Sans;
+    font-size: 30px;
+    line-height: 42px;
+    font-weight: bold;
   }
 }
 
+#wrapperesult {
+  height: auto;       /* These two lines were the key. */
+  min-height: 640px;
+}

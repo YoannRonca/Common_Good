@@ -5,11 +5,11 @@
     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1527499456709-838ffdcfee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
   <% end %>
     <div class="card-description text-center">
-      <h3><%= link_to mission.title, mission_path(mission) %></h3>
+      <h3 id="card-titile-description"><%= link_to mission.title, mission_path(mission) %></h3>
     </div>
     <div class="card-ratings">
     <% if mission.reviews.empty? %>
-      <p>No rating</p>
+      <p></p>
     <% else %>
        <i class="fas fa-star fa-sm"></i>
     <% end %>
