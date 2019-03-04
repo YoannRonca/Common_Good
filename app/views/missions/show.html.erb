@@ -22,7 +22,7 @@
         <div class="missioncard">
           <div id="apply-btn">
             <% if @mission.users.include?(current_user)  %>
-              <p>candidature en cours</p>
+              <p>Application Sent</p>
             <% else %>
               <p>
                 <%= link_to "Apply now", "/missions/#{@mission.id}/mission_users", method: 'post', class: 'btn btn-medium', remote: true %>
