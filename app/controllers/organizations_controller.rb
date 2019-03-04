@@ -6,12 +6,18 @@ class OrganizationsController < ApplicationController
 
   def new
     @organization = Organization.new
-    @mission = params[:mission_id]
+    @photo = @organization.photos.build
   end
 
   def create
     @organization = Organization.new(organization_params)
+
     if @organization.save
+      if params[:photos]
+        params[:photos].each do |photo|
+          @organization.photos.create(photo: photo)
+        end
+      end
       redirect_to organization_path(@organization)
     else
       render :new
@@ -37,6 +43,8 @@ class OrganizationsController < ApplicationController
   private
 
   def organization_params
-    params.require(:organization).permit(:name, :description, :photo)
+    params.require(:organization).permit(
+      :name, :description, photos_attributes: [:photo, :organization_id]
+    )
   end
 end
