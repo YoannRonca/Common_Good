@@ -40,12 +40,12 @@ green = Organization.create(name: "Green", description: "lorem")
 
 puts 'Creating 12 missions...'
 
-turtle = Mission.create(organization: matho, title: "Save Turtles", city: 'Bogota', home_category: "urgent")
-culture = Mission.create(organization: green, title: "Culture is life", city: 'Paris', home_category: "urgent")
-kids = Mission.create(organization: goodkids, title: "Little kids", city: 'Bogota', home_category: "urgent")
-music = Mission.create(organization: msf, title: "Music ", city: 'Paris', home_category: "trustyworth")
-art = Mission.create(organization: nation, title: "Save the art", home_category: "trustyworth")
-environment = Mission.create(organization: matho, title: "Tree Free", home_category: "trustyworth")
+turtle = Mission.create(organization: matho, title: "Save Turtles", city: 'Bogota', home_category: "urgent", climate: "Tropical")
+culture = Mission.create(organization: green, title: "Culture is life", city: 'Paris', home_category: "urgent", climate: "Dry")
+kids = Mission.create(organization: goodkids, title: "Little kids", city: 'Bogota', home_category: "urgent", climate: "Temperate")
+music = Mission.create(organization: msf, title: "Music ", city: 'Paris', home_category: "trustyworth", climate: "Dry")
+art = Mission.create(organization: nation, title: "Save the art", home_category: "trustyworth", climate: "Dry")
+environment = Mission.create(organization: matho, title: "Tree Free", home_category: "trustyworth", climate: "Dry")
 
 turtle = Mission.create(organization: matho, title: "turtlito", city: 'Fortaleza', home_category: "recent")
 culture = Mission.create(organization: green, title: "Culture", city: 'Paris', home_category: "recent")
