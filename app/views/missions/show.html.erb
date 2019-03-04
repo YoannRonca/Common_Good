@@ -81,17 +81,55 @@
           <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
           <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
         </div>
-         <div class="cx3">
-          <p><%= link_to 'Back', missions_path, class: 'thin-btn' %></p>
 
-          <% if user_signed_in? && current_user.admin? %>
-          <div class="cx3">
-          <p><%= link_to 'Delete', mission_path(@mission),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" }, class: 'thin-btn' %>
+        <div class="cx4"> Reviews
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <div class="message-name">
+          <h3>Rob Trujillo</h3>
+          <p>10/07/18</p>
+        </div>
+        <div class="message-body">
+          <p><strong>Life changing experience</strong></p>
+          <p>
+            I spent 3 weeks in this mission. I will never forget the experience and found a new goal for my life.
           </p>
-          </div>
+        </div>
+        <div class="message-status">
+          <p class="status pending"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="gridd">
+        <div class="dx1">
+          <% if user_signed_in? && current_user.admin? %>
+          <p><%= link_to 'Delete', mission_path(@mission),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" }, class: 'thin-btn' %>
+          </p>
           <% end %>
+          <p><%= link_to 'Back', missions_path, class: 'thin-btn' %><p>
+        </div>
+        <div class="dx2">
+          <p><%= link_to 'Add a Review', new_mission_review_path(@mission), class: 'thin-btn' %><p>
         </div>
       </div>
     </div>
