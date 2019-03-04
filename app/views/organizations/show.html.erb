@@ -1,11 +1,24 @@
-<% if @organization.photo.blank? %>
+<% if @organization.photos.empty? %>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551277349/slide-2.jpg');">
       <h1><%= @organization.name %></h1>
   </div>
 <% else %>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @organization.photo %>')">
-    <h1><%= @organization.name %></h1>
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <% @organization.photos.each_with_index do |photo, i| %>
+        <div class="carousel-item <%= 'active' if i == 0 %>">
+          <%= cl_image_tag photo, class: "d-block w-100"%>
+          <div class="carousel-caption d-none d-md-block">
+            <h1><%= @organization.name %></h1>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
+
+  <!-- <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%#= cl_image_path @organization.photo %>')">
+  </div> -->
 <% end %>
 
 <% if user_signed_in? && current_user.admin? %>
@@ -55,18 +68,13 @@
   <div class="related-posts">
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <div>
-          <img alt="Staff 1" src="/assets/user3pg.jpg", style="border-radius:50%"/>
+        <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694350/user3pg.jpg')">
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div>
-          <img alt="Staff 2" src="/assets/user2.jpg", style="border-radius:50%" />
+        <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694263/testimonials-1.jpg')">
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div>
-          <img alt="Staff 3" src="/assets/user1.jpg", style="border-radius:50%" />
+        <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694263/staff51-570x570.jpg')">
+        </div>
+        <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694263/team-2.jpg')">
         </div>
       </div>
     </div>
