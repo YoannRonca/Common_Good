@@ -7,9 +7,10 @@
     </div>
   <% end %>
   <div class="card-info">
-    <p><%= link_to mission.title, mission_path(mission) %></p>
-    <p><%= mission.city%>, <%= mission.country %></p>
-    <p>No rating</p>
- <!--    <i class="far fa-heart" id="biglove"></i> -->
+    <div class="texthome">
+      <p id = "home"><%= link_to mission.title, mission_path(mission) %></p>
+      <p id = "home"><%= mission.city%>, <%= mission.country %></p>
+      <p id = "home">No rating</p>
+    </div><!--    <i class="far fa-heart" id="biglove"></i> -->
   </div>
 </div>
