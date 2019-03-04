@@ -1,8 +1,8 @@
 #sidebar {
-    width: 250px;
+    width: 650px;
     position: fixed;
     top: 70px;
-    left: -250px;
+    left: -650px;
     height: 100vh;
     z-index: 999;
     background: #f4a140;
@@ -134,4 +134,101 @@ a.article:hover {
   background-color: #f4a140 !important;
   border-color: #f4a140 !important;
   margin-left: 35px;
+}
+
+.costs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countries {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-cost {
+  background-color: #000 !important;
+  border-color: #f4a140 !important;
+  width: 30%;
+  margin: 5px;
+}
+
+.btn-country {
+  background-color: #235e98 !important;
+  border-color: #f4a140 !important;
+  width: 22.2%;
+  margin: 5px;
+}
+
+.great_for {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-great_for {
+  background-color: #372539 !important;
+  border-color: #f4a140 !important;
+  width: 30.2%;
+  margin: 5px;
+}
+
+.sector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-sector {
+  background-color: #682274 !important;
+  border-color: #f4a140 !important;
+  width: 30.2%;
+  margin: 5px;
+}
+
+.language {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-language {
+  background-color: #982274 !important;
+  border-color: #f4a140 !important;
+  width: 30.2%;
+  margin: 5px;
+}
+
+.safety {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-safety {
+  background-color: #782274 !important;
+  border-color: #f4a140 !important;
+  width: 22.2%;
+  margin: 5px;
+}
+
+.climate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-climate {
+  background-color: #182274 !important;
+  border-color: #f4a140 !important;
+  width: 17.5%;
+  margin: 5px;
 }

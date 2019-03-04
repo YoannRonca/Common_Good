@@ -1,25 +1,27 @@
-<h1>Profile#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
-<%= current_user.email %>
+    <h1>Profile#show</h1>
+    <p>Find me in app/views/profiles/show.html.erb</p>
+    <%= current_user.email %>
 
-<div class="wrapper">
-  <div class="mission-list">
-    <h2>Welcome, <%= current_user.username %>:</h2>
-    <h3>Upcoming missions:</h3>
+    <div class="wrapper">
+      <div class="mission-list">
+        <h2>Welcome, <%= current_user.username %>:</h2>
+        <h3>Upcoming missions:</h3>
 
-    <ul class="list-unstyled">
-      <ul class="list-unstyled">
-        <li>Missions:</li>
-        <li>Starts at:</li>
-        <li>Ends at:</li>
-        <li>Localisation:</li>
-        <li>Status:</li>
-      </ul>
-      <% @user.missions.each do |mission| %>
-      <% end %>
+        <ul class="list-unstyled">
+          <ul class="list-unstyled">
+            <li>Missions:</li>
+            <li>Starts at:</li>
+            <li>Ends at:</li>
+            <li>Localisation:</li>
+            <li>Status:</li>
+          </ul>
+          <% @user.missions.each do |mission| %>
+          <% end %>
 
-    </ul>
-  </div>
-</div>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
 
 <!-- Faire la show de user -->

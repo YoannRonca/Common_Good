@@ -14,6 +14,9 @@ class Mission < ApplicationRecord
 
   # mount_uploaders :photos, PhotoUploader
 
+  geocoded_by :city
+  after_validation :geocode, if: :will_save_change_to_city?
+
   belongs_to :organization
   has_many :mission_users
   has_many :users, through: :mission_users
