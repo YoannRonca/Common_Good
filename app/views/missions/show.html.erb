@@ -1,17 +1,28 @@
 <div class="wrapperm">
   <div class="row">
     <div class="col-sm-12">
-      <div class="grida">
-        <% if @mission.photo.present? %>
-          <div class="box a" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path @mission.photo, height: 300, width: 400, crop: :fill %>')">
+      <div>
+        <% if @mission.photos.empty? %>
+          <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551277349/slide-2.jpg');">
+            <h1><%= @mission.title %></h1>
+          </div>
+
         <% else %>
-          <div class="box a" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1527499456709-838ffdcfee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
+
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <% @mission.photos.each_with_index do |photo, i| %>
+                <div class="carousel-item <%= 'active' if i == 0 %>">
+                  <%= cl_image_tag photo.photo, class: "d-block w-100"%>
+                  <div class="carousel-caption d-none d-md-block">
+                    <h1 class="title1"><%= @mission.title %></h1>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
         <% end %>
-        </div>
       </div>
-     <!--    <
-    div class="box b">PHOTO 2</div> -->
-  <!--     </div> -->
     </div>
   </div>
 </div>
@@ -51,7 +62,7 @@
     <div class="col-sm-12">
       <div class="gridb">
         <div class="bx1"> What you will be doing:
-          <p><%= @mission.description %></p>
+          <h5><%= @mission.description %></h5>
         </div>
         <div class="bx2"> Get more info about this NGO:
           <p><%= link_to @mission.organization.name, organization_path(@organization, mission_id: @mission.id) %></p>
@@ -82,18 +93,18 @@
       <div class="gridc">
         <div class="cx1"> Our Volunteers
           <hr>
+          <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705971/Captura_de_pantalla_2019-03-04_a_la_s_14.25.51.png' class="avatar-large"/>
+          <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705530/Captura_de_pantalla_2019-03-04_a_la_s_14.18.02.png' class="avatar-large"/>
+          <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705647/Captura_de_pantalla_2019-03-04_a_la_s_14.20.27.png' class="avatar-large"/>
+          <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694263/testimonials-1.jpg' class="avatar-large"/>
           <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+          <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551706168/Captura_de_pantalla_2019-03-04_a_la_s_14.29.10.png' class="avatar-large"/>
         </div>
         <div class="cx2"> Meet our Staff
           <hr>
-          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+          <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705795/Captura_de_pantalla_2019-03-04_a_la_s_14.22.57.png' class="avatar-large"/>
+          <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705889/Captura_de_pantalla_2019-03-04_a_la_s_14.24.30.png' class="avatar-large"/>
+          <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705842/Captura_de_pantalla_2019-03-04_a_la_s_14.23.44.png' class="avatar-large"/>
         </div>
 
         <div class="cx3"> Reviews
@@ -104,13 +115,13 @@
 </div>
 
 <div class="container">
-  <div class="row">
+  <div class="row" style="margin-left: -20px">
     <div class="col-sm-12">
       <div class="message">
         <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
         <div class="message-name">
           <h3>Rob Trujillo</h3>
-          <p>10/07/18</p>
+          <p>02/03/19</p>
         </div>
         <div class="message-body">
           <p><strong>Life changing experience</strong></p>
@@ -126,18 +137,18 @@
   </div>
 </div>
 <div class="container">
-  <div class="row">
+  <div class="row" style="margin-left: -20px">
     <div class="col-sm-12">
       <div class="message">
-        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <img class="avatar-large" src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551706475/Captura_de_pantalla_2019-03-04_a_la_s_14.34.10.png">
         <div class="message-name">
-          <h3>Rob Trujillo</h3>
-          <p>10/07/18</p>
+          <h3>Corey Taylor</h3>
+          <p>03/12/18</p>
         </div>
         <div class="message-body">
-          <p><strong>Life changing experience</strong></p>
+          <p><strong>Proud of working here</strong></p>
           <p>
-            I spent 3 weeks in this mission. I will never forget the experience and found a new goal for my life.
+            I can only urge you to apply for this mission. If you want to be involved with a community and see the direct impact of your work.
           </p>
         </div>
         <div class="message-status">
