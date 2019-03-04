@@ -11,6 +11,15 @@ class MissionsController < ApplicationController
 
   def show
     @organization = @mission.organization
+
+    @missions = Mission.where.not(latitude: nil, longitude: nil)
+
+    @markers = @missions.map do |mission|
+      {
+        lng: flat.longitude,
+        lat: flat.latitude
+      }
+    end
   end
 
   def new
