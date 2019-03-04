@@ -1,10 +1,20 @@
-<% if @organization.photo.blank? %>
+<% if @organization.photos.empty? %>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551277349/slide-2.jpg');">
-      <h1><%= @organization.name %></h1>
+    <h1><%= @organization.name %></h1>
   </div>
 <% else %>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @organization.photo %>')">
-    <h1><%= @organization.name %></h1>
+
+  <div class="banner-all" id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <% @organization.photos.each_with_index do |photo, i| %>
+        <div class="carousel-item <%= 'active' if i == 0 %>">
+          <%= cl_image_tag photo.photo, class: "d-block w-100"%>
+          <div class="carousel-caption d-none d-md-block">
+            <h1 class="title1"><%= @organization.name %></h1>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 <% end %>
 
@@ -27,8 +37,8 @@
     <% @organization.missions.each do |mission| %>
       <div class="col-xs-12 col-sm-4">
         <%= link_to mission_path(mission) do %>
-            <% if mission.photo.present? %>
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path mission.photo, height: 300, width: 400, crop: :fill %>')">
+            <% if mission.photos.any? %>
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path mission.photos.first.photo, height: 300, width: 400, crop: :fill %>')">
             <% else %>
               <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1527499456709-838ffdcfee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
             <% end %>
@@ -53,21 +63,14 @@
 <div class= "container">
   <h3 class="title2">Meet Our Team</h3>
   <div class="related-posts">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <div>
-          <img alt="Staff 1" src="/assets/user3pg.jpg", style="border-radius:50%"/>
-        </div>
+    <div id="team-avatar-container" style="display: flex; justify-content: center">
+      <div class="avatar-staff" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694350/user3pg.jpg')">
       </div>
-      <div class="col-xs-12 col-sm-4">
-        <div>
-          <img alt="Staff 2" src="/assets/user2.jpg", style="border-radius:50%" />
-        </div>
+      <div class="avatar-staff" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694350/user4.jpg')">
       </div>
-      <div class="col-xs-12 col-sm-4">
-        <div>
-          <img alt="Staff 3" src="/assets/user1.jpg", style="border-radius:50%" />
-        </div>
+      <div class="avatar-staff" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694350/user1.jpg')">
+      </div>
+      <div class="avatar-staff" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551694350/user2.jpg')">
       </div>
     </div>
   </div>

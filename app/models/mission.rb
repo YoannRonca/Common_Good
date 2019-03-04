@@ -12,7 +12,7 @@ class Mission < ApplicationRecord
       # ranked_by: ":trigram"
     }
 
-  mount_uploader :photo, PhotoUploader
+  # mount_uploaders :photos, PhotoUploader
 
   geocoded_by :city
   after_validation :geocode, if: :will_save_change_to_city?
@@ -23,6 +23,8 @@ class Mission < ApplicationRecord
   has_many :reviews
   has_many :mission_sectors
   has_many :sectors, through: :mission_sectors
+  has_many :photos, dependent: :destroy
+  accepts_nested_attributes_for :photos, allow_destroy: true
 
   # validates :city, presence: true
   # validates :country, presence: true

@@ -25,10 +25,10 @@ Organization.destroy_all
 
 puts 'Creating 4 users...'
 
-yoann = User.create(email: "yoann@gmail.com", password: "123456", admin: true)
-livia = User.create(email: "livia@gmail.com", password: "123456", admin: true)
-muriel = User.create(email: "muriel@gmail.com", password: "123456", admin: true)
-bruno = User.create(email: "bruno@gmail.com", password: "123456", admin: true)
+yoann = User.create(email: "yoann@gmail.com", password: "123456", admin: true, first_name: "yoann", last_name: "yoann", username: "yoannr")
+livia = User.create(email: "livia@gmail.com", password: "123456", admin: true, first_name: "livia", last_name: "livia", username: "livial")
+muriel = User.create(email: "muriel@gmail.com", password: "123456", admin: true, first_name: "muriel", last_name: "muriel", username: "murielb")
+bruno = User.create(email: "bruno@gmail.com", password: "123456", admin: true, first_name: "bruno", last_name: "bruno", username: "brunof")
 
 puts 'Creating 6 organizations...'
 
@@ -57,12 +57,12 @@ environment = Mission.create(organization: matho, title: "Eco", city: 'Montreal'
 
 puts 'Creating 6 mission_users...'
 
-MissionUser.create(user: yoann, mission: turtle)
-MissionUser.create(user: livia, mission: culture)
-MissionUser.create(user: muriel, mission: kids)
-MissionUser.create(user: bruno, mission: music)
-MissionUser.create(user: yoann, mission: art)
-MissionUser.create(user: livia, mission: environment)
+MissionUser.create(user: yoann, mission: turtle, status: "accepted")
+MissionUser.create(user: livia, mission: culture, status: "pending")
+MissionUser.create(user: muriel, mission: kids, status: "past")
+MissionUser.create(user: bruno, mission: music, status: "accepted")
+MissionUser.create(user: yoann, mission: art, status: "pending")
+MissionUser.create(user: livia, mission: environment, status: "pending")
 
 puts 'Creating 2 reviews...'
 
