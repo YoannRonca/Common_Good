@@ -12,7 +12,7 @@ class Mission < ApplicationRecord
       # ranked_by: ":trigram"
     }
 
-  mount_uploaders :photos, PhotoUploader
+  # mount_uploaders :photos, PhotoUploader
 
   belongs_to :organization
   has_many :mission_users
@@ -21,7 +21,7 @@ class Mission < ApplicationRecord
   has_many :mission_sectors
   has_many :sectors, through: :mission_sectors
   has_many :photos, dependent: :destroy
-  accept_nested_attributes_for :photos, allow_destroy: true
+  accepts_nested_attributes_for :photos, allow_destroy: true
 
   # validates :city, presence: true
   # validates :country, presence: true

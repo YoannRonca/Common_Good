@@ -16,13 +16,20 @@ class MissionsController < ApplicationController
   def new
     @organization = Organization.find(params[:organization_id])
     @mission = Mission.new
+    @photo = @mission.photos.build
   end
 
   def create
     @organization = Organization.find(params[:organization_id])
     @mission = Mission.new(mission_params)
     @mission.organization = @organization
-    if @mission.save!
+
+    if @mission.save
+      if params[:photos]
+        params[:photos].each do |photo|
+          @mission.photos.create(photo: photo)
+        end
+      end
       redirect_to mission_path(@mission)
     else
       render :new

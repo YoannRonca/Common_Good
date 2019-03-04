@@ -18,8 +18,12 @@
         <%= f.input :language, collection: Mission::LANGUAGE, as: :select%>
         <%= f.input :start_date%>
         <%= f.input :end_date%>
-        <%= f.file_field :photos, multiple: true %>
-        <%= f.input :photos_cache, as: :hidden %>
+
+        <%= f.fields_for :photo do |ff| %>
+          <%= ff.label :photo %>
+          <%= ff.file_field :photo, multiple: true, name: "photos[]" %>
+        <% end %>
+
         <hr>
         <%= f.submit class: "btn-medium"%>
         <%= link_to "Back", organization_path(@organization), class: 'btn btn-medium' %>

@@ -1,17 +1,28 @@
 <div class="wrapperm">
   <div class="row">
     <div class="col-sm-12">
-      <div class="grida">
+      <div>
         <% if @mission.photos.empty? %>
-          <div class="box a" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path @mission.photo, height: 300, width: 400, crop: :fill %>')">
+          <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551277349/slide-2.jpg');">
+            <h1><%= @mission.title %></h1>
+          </div>
+
         <% else %>
-          <div class="box a" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1527499456709-838ffdcfee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
+
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <% @mission.photos.each_with_index do |photo, i| %>
+                <div class="carousel-item <%= 'active' if i == 0 %>">
+                  <%= cl_image_tag photo.photo, class: "d-block w-100"%>
+                  <div class="carousel-caption d-none d-md-block">
+                    <h1><%= @mission.title %></h1>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
         <% end %>
-        </div>
       </div>
-     <!--    <
-    div class="box b">PHOTO 2</div> -->
-  <!--     </div> -->
     </div>
   </div>
 </div>
