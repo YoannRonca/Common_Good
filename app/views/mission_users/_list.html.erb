@@ -1,0 +1,24 @@
+
+<ul class="list-unstyled">
+  <% missions.each do |mission| %>
+  <li class="dash">
+  <%= link_to mission_path(mission.mission), class:"clickable-list" do %>
+    <div class="dash-upvote text-center">
+      <p>ab</p>
+    </div>
+
+      <img src=https://images.unsplash.com/photo-1527499456709-838ffdcfee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80 alt="" class="booked-image img-rounded">
+
+
+    <div class="dash-description">
+      <p><%= mission.mission.title %></p>
+      <p><%= mission.mission.city %></p>
+      <p><%= mission.mission.start_date %></p>
+      <p><%= mission.mission.end_date %></p>
+    </div>
+
+    <div class="status"><p><%= mission.status.capitalize %></p></div>
+  <% end %>
+  </li>
+  <% end %>
+</ul>
