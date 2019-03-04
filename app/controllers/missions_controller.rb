@@ -16,8 +16,8 @@ class MissionsController < ApplicationController
 
     @markers = @missions.map do |mission|
       {
-        lng: flat.longitude,
-        lat: flat.latitude
+        lng: mission.longitude,
+        lat: mission.latitude
       }
     end
   end
