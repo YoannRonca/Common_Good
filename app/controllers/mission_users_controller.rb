@@ -2,9 +2,9 @@ class MissionUsersController < ApplicationController
   def index
     @mission_users = current_user.mission_users
     # filtrer pour status
-    @mission_users_pending = MissionUser.where(status: "pending")
-    @mission_users_accepted = MissionUser.where(status: "accepted")
-    @mission_users_declined = MissionUser.where(status: "declined")
+    @mission_users_pending = @mission_users.where(status: "pending")
+    @mission_users_accepted = @mission_users.where(status: "accepted")
+    @mission_users_declined = @mission_users.where(status: "declined")
   end
 
   # def new

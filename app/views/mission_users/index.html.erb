@@ -5,74 +5,15 @@
 <div class="dashboard-list">
 
   <p>Pending applications:</p>
-
-  <% @mission_users_pending.each do |mission| %>
-  <ul class="list-unstyled">
-    <li class="dash">
-      <div class="dash-upvote text-center">
-        <p>ab</p>
-      </div>
-
-
-      <img src=https://images.unsplash.com/photo-1527499456709-838ffdcfee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80 alt="" class="booked-image img-rounded">
-
-      <div class="dash-description">
-        <p><%= mission.mission.title %></p>
-        <p><%= mission.mission.city %></p>
-        <p><%= mission.mission.start_date %></p>
-        <p><%= mission.mission.end_date %></p>
-      </div>
-
-      <div class="status"><p><%= mission.status.capitalize %></p></div>
-    </li>
-  </ul>
-  <% end %>
+  <%= render "list", missions: @mission_users_pending %>
 
   <p>Accepeted applications:</p>
-  <ul class="list-unstyled">
-  <% @mission_users_accepted.each do |mission| %>
-    <li class="dash">
-      <div class="dash-upvote text-center">
-        <p>ab</p>
-      </div>
+  <%= render "list", missions: @mission_users_accepted %>
 
-
-      <img src=https://images.unsplash.com/photo-1527499456709-838ffdcfee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80 alt="" class="booked-image img-rounded" >
-
-      <div class="dash-description">
-        <p><%= mission.mission.title %></p>
-        <p><%= mission.mission.city %></p>
-        <p><%= mission.mission.start_date %></p>
-        <p><%= mission.mission.end_date %></p>
-      </div>
-
-      <div class="status"><p><%= mission.status.capitalize %></p></div>
-    </li>
-  </ul>
-  <% end %>
 
   <p>Declined applications:</p>
-  <ul class="list-unstyled">
-  <% @mission_users_declined.each do |mission| %>
-    <li class="dash">
-      <div class="dash-upvote text-center">
-        <p>ab</p>
-      </div>
+  <%= render "list", missions: @mission_users_declined %>
 
-
-      <img src=https://images.unsplash.com/photo-1527499456709-838ffdcfee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80 alt="" class="booked-image img-rounded">
-
-      <div class="dash-description">
-        <p><%= mission.mission.title %></p>
-        <p><%= mission.mission.city %></p>
-        <p><%= mission.mission.start_date %></p>
-        <p><%= mission.mission.end_date %></p>
-      </div>
-
-      <div class="status"><p><%= mission.status.capitalize %></p></div>
-    </li>
-  </ul>
-  <% end %>
 
   <p>Past applications:</p>
   <p>None</p>
