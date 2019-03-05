@@ -1,32 +1,44 @@
-<%= render 'banner' %>
-
 <div class="container dashboard">
-<!--   <div class="header">
-    <h3>Applications</h3>
-    <h3>Profile</h3>
-  </div> -->
+  <h2>Welcome, #user</h2>
   <div class="dashboard-list">
+    <div class="status">
+      <h2>PENDING</h2>
+    </div>
 
-    <h3>Pending applications:</h3>
-    <% if @mission_users_pending == [] %>
-      <p>None</p>
-    <% else %>
-      <%= render "list", missions: @mission_users_pending %>
-    <% end %>
+    <div class="dashboard-infos">
+      <% if @mission_users_pending == [] %>
+        <p>None</p>
+      <% else %>
+        <%= render "list", missions: @mission_users_pending %>
+      <% end %>
+    </div>
+  </div>
 
-    <h3 class="list-block">Accepeted applications:</h3>
-    <% if @mission_users_accepted == [] %>
-      <p>None</p>
-    <% else %>
-      <%= render "list", missions: @mission_users_accepted %>
-    <% end %>
+  <div class="dashboard-list">
+    <div class="status">
+      <h2>ACCEPTED</h2>
+    </div>
+    <div class="dashboard-infos">
+      <% if @mission_users_accepted == [] %>
+        <p>None</p>
+      <% else %>
+        <%= render "list", missions: @mission_users_accepted %>
+      <% end %>
+    </div>
+  </div>
 
-    <h3 class="list-block">Declined applications:</h3>
-    <% if @mission_users_declined == [] %>
-      <p>None</p>
-    <% else %>
-      <%= render "list", missions: @mission_users_declined %>
-    <% end %>
+  <div class="dashboard-list">
+    <div class="status">
+      <h2>DECLINED</h3>
+    </div>
+    <div class="dashboard-infos">
+      <% if @mission_users_declined == [] %>
+        <p>None</p>
+      <% else %>
+        <%= render "list", missions: @mission_users_declined %>
+      <% end %>
+    </div>
+  </div>
 
 
     <h3 class="list-block">Past applications:</h3>
