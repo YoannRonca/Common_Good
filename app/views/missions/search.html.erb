@@ -15,10 +15,6 @@
         <%= simple_form_for :query, url: search_path, method: :get do |f| %>
           <%#= f.input :Price,  as: :radio_buttons, collection: Mission::COSTOFLIFE,  class: 'form-check-inline' %>
 
-
-
-
-
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class='filters-container'>
@@ -26,9 +22,69 @@
                 <% Mission::COSTOFLIFE.each do |item| %>
                   <% counter += 1 %>
                   <% identifier = "inlineRadio#{counter}" %>
-
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input invisible" type="radio" name="query[CostOfLife]" id='<%= identifier %>' value='<%= item %>'>
+                    <input class="form-check-input invisible" type="radio" name="filter[cost_of_life]" id='<%= identifier %>' value='<%= item %>'>
+                    <label class="form-check-label filter-radio-btn" for='<%= identifier %>'><%= item %></label>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" id="filter">
+            <div class="col-12 category-choices">
+              <div class="filters-container">
+                <% counter = 0 %>
+                <% Mission::CONTINENT.each_with_index do |item, index| %>
+                  <% counter += 1 %>
+                  <% identifier = "inlineRadio#{counter}" %>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input invisible" type="radio" name="filter[continent]" id='<%= identifier %>' value='<%= item %>'>
+                    <label class="form-check-label filter-radio-btn" for='<%= identifier %>'><%= item %></label>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="row" id="filter">
+            <div class="col-12 category-choices">
+              <div class="filters-container">
+                <% Mission::SECTOR.each do |item| %>
+                  <% counter += 1 %>
+                  <% identifier = "inlineRadio#{counter}" %>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input invisible" name='filter[sectors]' type="checkbox" id='<%= identifier %>' value='<%= item %>'>
+                    <label class="form-check-label filter-radio-btn" for='<%= identifier %>'><%= item %></label>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <% counter = 0 %>
+          </div>
+          <div class="row" id="filter">
+            <div class="col-12 category-choices">
+              <div class="filters-container">
+                <% counter = 0 %>
+                <% Mission::GREATFOR.each do |item| %>
+                  <% counter += 1 %>
+                  <% identifier = "inlineRadio#{counter}" %>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input invisible" type="radio" name="filter[great_for]" id='<%= identifier %>' value='<%= item %>'>
+                    <label class="form-check-label filter-radio-btn" for='<%= identifier %>'><%= item %></label>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="row" id="filter">
+            <div class="col-12 category-choices">
+              <div class="filters-container">
+                <% counter = 0 %>
+                <% Mission::CLIMATE.each do |item| %>
+                  <% counter += 1 %>
+                  <% identifier = "inlineRadio#{counter}" %>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input invisible" type="radio" name="filter[climate]" id='<%= identifier %>' value='<%= item %>'>
                     <label class="form-check-label filter-radio-btn" for='<%= identifier %>'><%= item %></label>
                   </div>
                 <% end %>
@@ -52,148 +108,6 @@
           <%#= f.input :Price,  as: :radio_buttons, collection: Mission::SAFETY %>
           <%= f.submit %>
         <% end %>
-
-
-
-<!--         <div class="sidebar-content">
-          <div class="costs">
-            <div class="btn-cost">
-              <p> <$500/month</p>
-            </div>
-            <div class="btn-cost">
-              <p> <$1000/month</p>
-            </div>
-            <div class="btn-cost">
-              <p> <$2000/month</p>
-            </div>
-          </div>
-          <div class="countries">
-            <div class="btn-country">
-              <p> Africa </p>
-            </div>
-            <div class="btn-country">
-              <p> Asia</p>
-            </div>
-            <div class="btn-country">
-              <p> Europe </p>
-            </div>
-            <div class="btn-country">
-              <p> North America </p>
-            </div>
-            <div class="btn-country">
-              <p> Middle East </p>
-            </div>
-            <div class="btn-country">
-              <p> South America </p>
-            </div>
-            <div class="btn-country">
-              <p> Oceania </p>
-            </div>
-            <div class="btn-country">
-              <p> Space </p>
-            </div>
-          </div>
-          <div class="sector">
-            <div class="btn-sector">
-              <p> Art & Music </p>
-            </div>
-            <div class="btn-sector">
-              <p> Climate Change </p>
-            </div>
-            <div class="btn-sector">
-              <p> Community Development </p>
-            </div>
-            <div class="btn-sector">
-              <p> Education </p>
-            </div>
-            <div class="btn-sector">
-              <p> Environment </p>
-            </div>
-            <div class="btn-sector">
-              <p> Health </p>
-            </div>
-            <div class="btn-sector">
-              <p> Refugee </p>
-            </div>
-            <div class="btn-sector">
-              <p> Water supply </p>
-            </div>
-            <div class="btn-sector">
-              <p> Wildlife </p>
-            </div>
-          </div>
-          <div class="great_for">
-            <div class="btn-great_for">
-              <p> Familie </p>
-            </div>
-            <div class="btn-great_for">
-              <p> Single </p>
-            </div>
-            <div class="btn-great_for">
-              <p> Couple </p>
-            </div>
-            <div class="btn-great_for">
-              <p> Retiree </p>
-            </div>
-            <div class="btn-great_for">
-              <p> Men </p>
-            </div>
-            <div class="btn-great_for">
-              <p> Women </p>
-            </div>
-          </div>
-          <div class="climate">
-            <div class="btn-climate">
-              <p> Tropical </p>
-            </div>
-            <div class="btn-climate">
-              <p> Temperate </p>
-            </div>
-            <div class="btn-climate">
-              <p> Continental </p>
-            </div>
-            <div class="btn-climate">
-              <p> Dry </p>
-            </div>
-            <div class="btn-climate">
-              <p> Polar </p>
-            </div>
-          </div>
-          <div class="language">
-            <div class="btn-language">
-              <p> English </p>
-            </div>
-            <div class="btn-language">
-              <p> Spanish </p>
-            </div>
-            <div class="btn-language">
-              <p> French </p>
-            </div>
-            <div class="btn-language">
-              <p> Portuguese </p>
-            </div>
-            <div class="btn-language">
-              <p> Chinese </p>
-            </div>
-            <div class="btn-language">
-              <p> German </p>
-            </div>
-          </div>
-          <div class="safety">
-            <div class="btn-safety">
-              <p> Safe </p>
-            </div>
-            <div class="btn-safety">
-              <p> Safe for women </p>
-            </div>
-            <div class="btn-safety">
-              <p> Cool but be careful </p>
-            </div>
-            <div class="btn-safety">
-              <p> Low murder rate </p>
-            </div>
-          </div>
-        </div> -->
       </nav>
 
     <!-- Page Content -->
@@ -213,14 +127,13 @@
             <%= render 'mission', mission: mission %>
           <% end %>
         </div>
+      </div>
     </div>
-  </div>
+    <svg width="535" height="255" viewBox="0 0 535 255" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M534.5 255H0V0C0 0 90.6172 100.703 183.5 143C364.304 225.335 534.5 255 534.5 255Z" fill="#F4A140"/>
+    </svg>
     <!-- Dark Overlay element -->
     <div class="overlay"></div>
 </div>
-
-<svg width="535" height="255" viewBox="0 0 535 255" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M534.5 255H0V0C0 0 90.6172 100.703 183.5 143C364.304 225.335 534.5 255 534.5 255Z" fill="#F4A140"/>
-</svg>
 
 
