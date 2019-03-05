@@ -1,24 +1,42 @@
+<%= render 'banner' %>
 
-<h2>Welcome, <%= current_user.username %>!</h2>
-<h3>Recent applications:</h3>
+<div class="container dashboard">
+<!--   <div class="header">
+    <h3>Applications</h3>
+    <h3>Profile</h3>
+  </div> -->
+  <div class="dashboard-list">
 
-<div class="dashboard-list">
+    <h3>Pending applications:</h3>
+    <% if @mission_users_pending == [] %>
+      <p>None</p>
+    <% else %>
+      <%= render "list", missions: @mission_users_pending %>
+    <% end %>
 
-  <p>Pending applications:</p>
-  <%= render "list", missions: @mission_users_pending %>
+    <h3 class="list-block">Accepeted applications:</h3>
+    <% if @mission_users_accepted == [] %>
+      <p>None</p>
+    <% else %>
+      <%= render "list", missions: @mission_users_accepted %>
+    <% end %>
 
-  <p>Accepeted applications:</p>
-  <%= render "list", missions: @mission_users_accepted %>
+    <h3 class="list-block">Declined applications:</h3>
+    <% if @mission_users_declined == [] %>
+      <p>None</p>
+    <% else %>
+      <%= render "list", missions: @mission_users_declined %>
+    <% end %>
 
 
-  <p>Declined applications:</p>
-  <%= render "list", missions: @mission_users_declined %>
+    <h3 class="list-block">Past applications:</h3>
+    <p>None</p>
 
-
-  <p>Past applications:</p>
-  <p>None</p>
-
+  </div>
 </div>
 
+  <svg width="535" height="255" viewBox="0 0 535 255" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M534.5 255H0V0C0 0 90.6172 100.703 183.5 143C364.304 225.335 534.5 255 534.5 255Z" fill="#F4A140"/>
+  </svg>
 
 
