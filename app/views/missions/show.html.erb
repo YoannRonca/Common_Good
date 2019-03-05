@@ -1,9 +1,35 @@
-<div class="wrapperm">
-  <div class="banners" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
-    <div class="banners-content">
-      <h1><%= @mission.title %></h1>
-      <p><%= @mission.city %>  &#x1F4CD; | DATE</p>
 
+<% if @mission.photos.empty? %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551277349/slide-2.jpg');">
+    <h1><%= @mission.title %></h1>
+  </div>
+<% else %>
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <% @mission.photos.each_with_index do |photo, i| %>
+        <div class="carousel-item <%= 'active' if i == 0 %>">
+          <%= cl_image_tag photo.photo, height: 500, crop: :fill, class: "d-block w-100 organization-carousel-image"%>
+          <div class="carousel-caption d-none d-md-block">
+            <h1><%= @mission.title %></h1>
+            <p><%= @mission.city %>  &#x1F4CD; | DATE</p>
+          </div>
+        </div>
+      <% end %>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+<% end %>
+
+<div class="wrapperm">
+  <div class="banners">
+    <div class="banners-content">
       <div id="apply-btn">
         <% if @mission.users.include?(current_user)  %>
           <p>Application Sent</p>
