@@ -2,7 +2,6 @@ import $ from 'jquery';
 import mCustomScrollbar from 'malihu-custom-scrollbar-plugin';
 
 const initSideBar = () => {
-  console.log($("#sidebar"))
   $("#sidebar").mCustomScrollbar({
       theme: "minimal"
   });
