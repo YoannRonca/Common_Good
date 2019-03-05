@@ -1,6 +1,6 @@
 
 
-<div class="wrapper" id="wrapperesult" >
+<div class="wrapper page-content" id="wrapperesult">
     <!-- Sidebar -->
     <nav id="sidebar">
 
@@ -11,7 +11,7 @@
             <h3>Filters</h3>
         </div>
 
-
+        <div class="scrollsidebar">
         <%= simple_form_for :query, url: search_path, method: :get do |f| %>
           <%#= f.input :Price,  as: :radio_buttons, collection: Mission::COSTOFLIFE,  class: 'form-check-inline' %>
 
@@ -91,6 +91,7 @@
               </div>
             </div>
           </div>
+        </div>
 
           <!-- <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
@@ -129,9 +130,7 @@
         </div>
       </div>
     </div>
-    <svg width="535" height="255" viewBox="0 0 535 255" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M534.5 255H0V0C0 0 90.6172 100.703 183.5 143C364.304 225.335 534.5 255 534.5 255Z" fill="#F4A140"/>
-    </svg>
+
     <!-- Dark Overlay element -->
     <div class="overlay"></div>
 </div>
