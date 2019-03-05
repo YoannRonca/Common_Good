@@ -76,6 +76,38 @@
         </div>
         <div class="col-xs-6">
           <div class="staff">Our Staff
+
+            <button type="button" class="thin-btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Contact us!</button>
+
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="exampleModalLabel">New message</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Recipient:</label>
+                          <input type="text" class="form-control" id="recipient-name" placeholder="contact@ngo.com">
+                        </div>
+                        <div class="form-group">
+                          <label for="message-text" class="col-form-label">Message:</label>
+                          <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Send message</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             <hr>
             <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705795/Captura_de_pantalla_2019-03-04_a_la_s_14.22.57.png' class="avatar-large"/>
             <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705889/Captura_de_pantalla_2019-03-04_a_la_s_14.24.30.png' class="avatar-large"/>
