@@ -36,41 +36,25 @@ input:placeholder {
     font-size: 20 px;
     color: black;
   }
-
-
-// .bannercarousel {
-//   height: 75vh !important;
-//   background-size: cover;
-//   text-align: center;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   h1 {
-//     color: white;
-//     font-family: 'Chalk';
-//     font-size: 80px;
-//     text-align: center;
-//     font-weight: bold;
-//   }
-// }
-#carouselExampleSlidesOnly{
-  .carousel-item{
-    height: 60vh !important;
-    background-size: cover;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    h1 {
-      color: white;
-      font-family: 'Chalk';
-      font-size: 80px;
-      text-align: center;
-      font-weight: bold;
-    }
+#carouselExampleControls {
+  h1 {
+    color: white;
+    font-family: 'Chalk';
+    font-size: 80px;
+    font-weight: bold;
   }
-  .carousel-caption{
-    bottom: unset !important;
+  .carousel-caption {
+    bottom: 0px;
   }
+}
+
+#organization-container .carousel-caption {
+  padding-bottom: 194px;
+}
+
+#mission-container .carousel-caption {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
 }
 // comment changer la couleur de la font du placeholder?
