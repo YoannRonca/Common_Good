@@ -28,6 +28,23 @@
   text-align: center;
 }
 
+.modal-title {
+  font-family: 'Chalk';
+}
+
+.btn-primary {
+  background-color: #f8b864;
+  opacity: 0.6;
+  border-color: #f8b864;
+}
+
+.btn-primary:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+  background-color: #f8b864;
+  border-color: #f8b864;
+}
 // .apply-btn {
 //   color: white;
 //   border: 2px solid;
