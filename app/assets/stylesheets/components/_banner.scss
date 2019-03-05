@@ -69,15 +69,17 @@ input:placeholder {
   h1 {
     color: white;
     font-family: 'Chalk';
-    font-size: 80px;
+    font-size: 120px;
     text-align: center;
-    font-weight: bold;
+    font-weight: normal;
   }
   p {
+    line-height: 80px;
     color: white;
+    font-size: 30px;
   }
   .banner-content{
-      margin-left: 120px;
+      margin-left: 110px;
       text-align: left;
       h1 {
         text-align: left;
