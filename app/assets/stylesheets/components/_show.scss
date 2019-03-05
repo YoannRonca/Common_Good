@@ -2,49 +2,62 @@
   display: flex;
   margin: 10px;
 }
-#map {
-  flex: 0 0 450px;
-  height: 100vh;
-  position: sticky !important; /* !important to override Gmaps inline CSS */
-  top: !important;
+#main-container {
+  display: flex;
 }
-
+#map {
+  height: 400px;
+  width: 100%;
+  margin-top: 25px;
+  margin-right: 25px;
+}
+#cards {
+  flex: 0 0 50%;
+  margin: 0px 33px;
+  padding: 0px 140px;
+}
 .description {
   margin-top: 30px;
   font-size: 24px;
   color: #F4A140;
+  font-family: 'Chalk';
 }
 
 .organization {
-  margin-top: 260px;
+  margin-top: 200px;
   font-size: 24px;
   color: #F4A140;
+  font-family: 'Chalk';
 }
 
 .languages {
   margin-top: 30px;
   font-size: 24px;
   color: #F4A140;
+  font-family: 'Chalk';
 }
 
 .skills {
   margin-top: 80px;
   font-size: 24px;
   color: #F4A140;
+  font-family: 'Chalk';
 }
 
 .volunteers {
-  margin-top: 80px;
-  margin-bottom: 50px;
+  margin-top: 40px;
+  margin-bottom: 5px;
   font-size: 24px;
   color: #F4A140;
+  font-family: 'Chalk';
 }
 
 .staff {
-  margin-top: 80px;
-  margin-bottom: 50px;
+  margin-top: 40px;
+  margin-bottom: 5px;
   font-size: 24px;
   color: #F4A140;
+  font-family: 'Chalk';
 }
 
 .rowshow {
@@ -53,3 +66,10 @@
   margin-right: 300px;
   margin-left: 30px;
 }
+
+.rvw {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #F4A140;
+    font-family: 'Chalk';
+  }
