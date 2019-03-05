@@ -3,25 +3,22 @@
 <div class="wrapper page-content" id="wrapperesult">
     <!-- Sidebar -->
     <nav id="sidebar">
+      <div id="dismiss">
+        <i class="fas fa-arrow-left"></i>
+      </div>
+      <div class="sidebar-header">
+        <h3>Filters</h3>
+      </div>
 
-        <div id="dismiss">
-            <i class="fas fa-arrow-left"></i>
-        </div>
-        <div class="sidebar-header">
-            <h3>Filters</h3>
-        </div>
-
-        <div class="scrollsidebar">
+      <div class="scrollsidebar">
         <%= simple_form_for :query, url: search_path, method: :get do |f| %>
-          <%#= f.input :Price,  as: :radio_buttons, collection: Mission::COSTOFLIFE,  class: 'form-check-inline' %>
-
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class='filters-container'>
                 <% counter = 0 %>
                 <% Mission::COSTOFLIFE.each do |item| %>
                   <% counter += 1 %>
-                  <% identifier = "inlineRadio#{counter}" %>
+                  <% identifier = "cost_of_life_#{counter}" %>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input invisible" type="radio" name="filter[cost_of_life]" id='<%= identifier %>' value='<%= item %>'>
                     <label class="form-check-label filter-radio-btn" for='<%= identifier %>'><%= item %></label>
@@ -34,10 +31,10 @@
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class="filters-container">
-                <% counter = 0 %>
-                <% Mission::CONTINENT.each_with_index do |item, index| %>
+
+                <% Mission::CONTINENT.each do |item| %>
                   <% counter += 1 %>
-                  <% identifier = "inlineRadio#{counter}" %>
+                  <% identifier = "continent_#{counter}" %>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input invisible" type="radio" name="filter[continent]" id='<%= identifier %>' value='<%= item %>'>
                     <label class="form-check-label filter-radio-btn" for='<%= identifier %>'><%= item %></label>
@@ -46,12 +43,13 @@
               </div>
             </div>
           </div>
+
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class="filters-container">
                 <% Mission::SECTOR.each do |item| %>
                   <% counter += 1 %>
-                  <% identifier = "inlineRadio#{counter}" %>
+                  <% identifier = "sectors_#{counter}" %>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input invisible" name='filter[sectors]' type="checkbox" id='<%= identifier %>' value='<%= item %>'>
                     <label class="form-check-label filter-radio-btn" for='<%= identifier %>'><%= item %></label>
@@ -59,15 +57,15 @@
                 <% end %>
               </div>
             </div>
-            <% counter = 0 %>
           </div>
+
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class="filters-container">
-                <% counter = 0 %>
+
                 <% Mission::GREATFOR.each do |item| %>
                   <% counter += 1 %>
-                  <% identifier = "inlineRadio#{counter}" %>
+                  <% identifier = "great_for_#{counter}" %>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input invisible" type="radio" name="filter[great_for]" id='<%= identifier %>' value='<%= item %>'>
                     <label class="form-check-label filter-radio-btn" for='<%= identifier %>'><%= item %></label>
@@ -76,13 +74,14 @@
               </div>
             </div>
           </div>
+
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class="filters-container">
-                <% counter = 0 %>
+
                 <% Mission::CLIMATE.each do |item| %>
                   <% counter += 1 %>
-                  <% identifier = "inlineRadio#{counter}" %>
+                  <% identifier = "climate_#{counter}" %>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input invisible" type="radio" name="filter[climate]" id='<%= identifier %>' value='<%= item %>'>
                     <label class="form-check-label filter-radio-btn" for='<%= identifier %>'><%= item %></label>
@@ -91,36 +90,21 @@
               </div>
             </div>
           </div>
-        </div>
 
-          <!-- <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-            <label class="form-check-label" for="inlineRadio2">2</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
-            <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
-          </div> -->
-
-          <%#= f.input :Price,  as: :radio_buttons, collection: Mission::CONTINENT %>
-          <%#= f.input :Price,  as: :radio_buttons, collection: Mission::GREATFOR %>
-          <%#= f.input :Price,  as: :radio_buttons, collection: Mission::LANGUAGE %>
-          <%#= f.input :Price,  as: :radio_buttons, collection: Mission::CLIMATE %>
-          <%#= f.input :Price,  as: :radio_buttons, collection: Mission::SAFETY %>
           <%= f.submit %>
         <% end %>
-      </nav>
+      </div>
+    </nav>
 
     <!-- Page Content -->
     <div id="content">
       <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="container-fluid">
-
-              <button type="button" id="sidebarCollapse" class="btn btn-info">
-                  <i class="fas fa-align-left"></i>
-                  <span>Add Filters</span>
-              </button>
-          </div>
+        <div class="container-fluid">
+          <button type="button" id="sidebarCollapse" class="btn btn-info">
+            <i class="fas fa-align-left"></i>
+            <span>Add Filters</span>
+          </button>
+        </div>
       </nav>
       <div class="container">
         <div class="row">
