@@ -6,19 +6,19 @@
       <p>ab</p>
     </div>
 
-      <img src=https://images.unsplash.com/photo-1527499456709-838ffdcfee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80 alt="" class="booked-image img-rounded">
-
+    <img src=https://images.unsplash.com/photo-1527499456709-838ffdcfee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80 alt="" class="booked-image img-rounded">
 
     <div class="list-items-description">
-      <p id="title"><%= mission.mission.title %></p>
+      <h3 id="title"><%= mission.mission.title %></h3>
       <p><%= mission.mission.organization.name %></p>
+    </div>
+
+    <div class="list-items-details">
       <p><%= mission.mission.city %></p>
       <p><%= mission.mission.start_date %>Start date</p>
       <p><%= mission.mission.end_date %>End date</p>
-      <p id="status"><%= mission.status.capitalize %></p>
     </div>
   <% end %>
-  <hr>
   </li>
   <% end %>
 </ul>
