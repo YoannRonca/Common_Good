@@ -1,4 +1,4 @@
-<div class="navbar-cg">
+<div class="navbar fixed-top navbar-cg">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-cg-brand" do %>
     <%= image_tag "logo.png", height: 50 %>
@@ -11,9 +11,7 @@
       <% if user_signed_in? %>
 
         <!-- Links when logged in -->
-<!--         <%= link_to "Host", "#", class: "navbar-cg-item navbar-cg-link" %> -->
-        <%= link_to "Missions", "#", class: "navbar-cg-item navbar-cg-link" %>
-        <%= link_to "Dashboard", mission_mission_users_path(current_user), class: "navbar-cg-item navbar-cg-link" %>
+        <%= link_to "My applications", mission_mission_users_path(current_user), class: "navbar-cg-item navbar-cg-link" %>
 
         <!-- Avatar with dropdown menu -->
         <div class="navbar-cg-item">

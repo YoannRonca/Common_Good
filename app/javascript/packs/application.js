@@ -20,3 +20,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
+
