@@ -53,14 +53,14 @@ class MissionsController < ApplicationController
     redirect_to mission_path(@mission)
   end
 
-  def destroy
-    @mission.destroy
-    redirect_to missions_path
-  end
-
   def search
-    if params[:query].present?
+    if params[:query]
       @missions = Mission.perform_search(params[:query])
+    elsif params[:filter]
+      # {"utf8"=>"✓", "filter"=>{"CostOfLife"=>"<$500/month", "continent"=>"North America", "sectors"=>"Education"}, "commit"=>"Save Query"}
+      filter_values = filter_params.values.compact.join("|")
+      @missions = Mission.perform_search(filter_values)
+      # TO DO: select missions with filters
     else
       @missions = Mission.all
     end
@@ -68,8 +68,14 @@ class MissionsController < ApplicationController
 
   private
 
+  def filter_params
+    params[:filter].permit('cost_of_life', 'continent', 'sectors', 'great_for', 'climate', 'language', 'safety')
+  end
+
   def mission_params
-    params.require(:mission).permit(:city, :country, :continent, :climate, :great_for, :safety, :tolerance, :skill, :language, :start_date, :end_date, :title, :description, :cost_of_life, { photos_attributes: [:photo, :mission_id] }, :home_category)
+    params.require(:mission).permit(
+      :cost_of_life, :city, :country, :continent, :climate, :great_for, :safety, :tolerance, :skill, :language, :start_date, :end_date, :title, :description, { photos_attributes: [:photo, :mission_id] }, :home_category
+    )
   end
 
   def set_organization
