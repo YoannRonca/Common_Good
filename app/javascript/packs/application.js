@@ -18,7 +18,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
-// initUpdateNavbarOnScroll();
+initUpdateNavbarOnScroll();
 
 import { toggleFilterButtons } from '../components/filter_btn';
 toggleFilterButtons();
