@@ -1,15 +1,33 @@
 #sidebar {
-    width: 650px;
-    position: fixed;
-    top: 70px;
-    left: -650px;
-    height: 100vh;
-    z-index: 999;
-    background: #f4a140;
-    color: #fff;
-    transition: all 0.3s;
-    overflow-y: scroll;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  width: 650px;
+  position: fixed;
+  top: 70px;
+  left: -650px;
+  height: 100vh;
+  z-index: 999;
+  background: #f4a140;
+  color: #fff;
+  transition: all 0.3s;
+  overflow-y: scroll;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.8);
+  .filter-radio-btn {
+    background: white;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    &:hover {
+      background: #EFCB54;
+      cursor: pointer;
+
+    }
+    &.selected {
+      background: #f4a140;
+    }
+  }
+  .filters-container {
+    padding: 20px;
+  }
 }
 
 #sidebar.active {
@@ -245,4 +263,15 @@ a.article:hover {
   border-color: #f4a140 !important;
   width: 17.5%;
   margin: 5px;
+}
+
+.caterory-choices {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+
+.form-check-label {
+
 }

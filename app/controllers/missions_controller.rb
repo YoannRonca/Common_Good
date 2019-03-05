@@ -59,6 +59,7 @@ class MissionsController < ApplicationController
   end
 
   def search
+    # raise
     if params[:query].present?
       @missions = Mission.perform_search(params[:query])
     else

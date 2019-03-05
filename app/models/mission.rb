@@ -28,7 +28,7 @@ class Mission < ApplicationRecord
 
   COSTOFLIFE = ["<$500/month", "<$1000/month", "<$2000/month"]
   HOME_CATEGORY = ["urgent", "trustyworth", "recent"]
-  CONTINENT = ["Africa", "Asia", "Europe", "North America", "Middle East" "South America", "Oceania"]
+  CONTINENT = ["Africa", "Asia", "Europe", "North America", "Middle East", "South America", "Oceania"]
   CLIMATE = ["Tropical", "Dry", "Temperate", "Continental", "Polar"]
   GREATFOR = ["Families", "Single", "Couple", "Retirees", "Men", "Women"]
   SAFETY = ["Safe", "Safe for Women", "Cool but be careful", "Low murder rate"]

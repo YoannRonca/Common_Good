@@ -14,83 +14,28 @@
 
         <%= simple_form_for :query, url: search_path, method: :get do |f| %>
           <%#= f.input :Price,  as: :radio_buttons, collection: Mission::COSTOFLIFE,  class: 'form-check-inline' %>
-          <div class="row">
-            <% counter = 0 %>
-            <% Mission::COSTOFLIFE.each do |item| %>
-              <% counter += 1 %>
-              <% identifier = "inlineRadio#{counter}" %>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id='<%= identifier %>' value='<%= item %>'>
-                <label class="form-check-label" for='<%= identifier %>'><%= item %></label>
+
+
+
+
+
+          <div class="row" id="filter">
+            <div class="col-12 category-choices">
+              <div class='filters-container'>
+                <% counter = 0 %>
+                <% Mission::COSTOFLIFE.each do |item| %>
+                  <% counter += 1 %>
+                  <% identifier = "inlineRadio#{counter}" %>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input invisible" type="radio" name="query[CostOfLife]" id='<%= identifier %>' value='<%= item %>'>
+                    <label class="form-check-label filter-radio-btn" for='<%= identifier %>'><%= item %></label>
+                  </div>
+                <% end %>
               </div>
-            <% end %>
+            </div>
           </div>
-          <div class="row">
-            <% counter = 0 %>
-            <% Mission::CONTINENT.each do |item| %>
-              <% counter += 1 %>
-              <% identifier = "inlineRadio#{counter}" %>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id='<%= identifier %>' value='<%= item %>'>
-                <label class="form-check-label" for='<%= identifier %>'><%= item %></label>
-              </div>
-            <% end %>
-          </div>
-          <div class="row">
-            <% counter = 0 %>
-            <% Mission::SECTOR.each do |item| %>
-              <% counter += 1 %>
-              <% identifier = "inlineRadio#{counter}" %>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id='<%= identifier %>' value='<%= item %>'>
-                <label class="form-check-label" for='<%= identifier %>'><%= item %></label>
-              </div>
-            <% end %>
-          </div>
-          <div class="row">
-            <% counter = 0 %>
-            <% Mission::GREATFOR.each do |item| %>
-              <% counter += 1 %>
-              <% identifier = "inlineRadio#{counter}" %>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id='<%= identifier %>' value='<%= item %>'>
-                <label class="form-check-label" for='<%= identifier %>'><%= item %></label>
-              </div>
-            <% end %>
-          </div>
-          <div class="row">
-            <% counter = 0 %>
-            <% Mission::CLIMATE.each do |item| %>
-              <% counter += 1 %>
-              <% identifier = "inlineRadio#{counter}" %>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id='<%= identifier %>' value='<%= item %>'>
-                <label class="form-check-label" for='<%= identifier %>'><%= item %></label>
-              </div>
-            <% end %>
-          </div>
-          <div class="row">
-            <% counter = 0 %>
-            <% Mission::LANGUAGE.each do |item| %>
-              <% counter += 1 %>
-              <% identifier = "inlineRadio#{counter}" %>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id='<%= identifier %>' value='<%= item %>'>
-                <label class="form-check-label" for='<%= identifier %>'><%= item %></label>
-              </div>
-            <% end %>
-          </div>
-          <div class="row">
-            <% counter = 0 %>
-            <% Mission::SAFETY.each do |item| %>
-              <% counter += 1 %>
-              <% identifier = "inlineRadio#{counter}" %>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id='<%= identifier %>' value='<%= item %>'>
-                <label class="form-check-label" for='<%= identifier %>'><%= item %></label>
-              </div>
-            <% end %>
-          </div>
+
           <!-- <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
             <label class="form-check-label" for="inlineRadio2">2</label>
@@ -273,3 +218,9 @@
     <!-- Dark Overlay element -->
     <div class="overlay"></div>
 </div>
+
+<svg width="535" height="255" viewBox="0 0 535 255" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M534.5 255H0V0C0 0 90.6172 100.703 183.5 143C364.304 225.335 534.5 255 534.5 255Z" fill="#F4A140"/>
+</svg>
+
+

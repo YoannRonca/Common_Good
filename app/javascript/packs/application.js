@@ -20,3 +20,5 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 
+import { toggleFilterButtons } from '../components/filter_btn';
+toggleFilterButtons();
