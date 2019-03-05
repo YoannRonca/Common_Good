@@ -57,8 +57,8 @@ class MissionsController < ApplicationController
     if params[:query]
       @missions = Mission.perform_search(params[:query])
     elsif params[:filter]
-      # {"utf8"=>"✓", "filter"=>{"CostOfLife"=>"<$500/month", "continent"=>"North America", "sectors"=>"Education"}, "commit"=>"Save Query"}
       filter_values = filter_params.values.compact.join("|")
+      # raise
       @missions = Mission.perform_search(filter_values)
       # TO DO: select missions with filters
     else
@@ -69,7 +69,7 @@ class MissionsController < ApplicationController
   private
 
   def filter_params
-    params[:filter].permit('cost_of_life', 'continent', 'sectors', 'great_for', 'climate', 'language', 'safety')
+    params[:filter].permit('sectors', 'cost_of_life', 'continent', 'sectors', 'great_for', 'climate', 'language', 'safety')
   end
 
   def mission_params

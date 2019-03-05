@@ -40,20 +40,17 @@ green = Organization.create(name: "Green", description: "lorem")
 
 puts 'Creating 12 missions...'
 
-turtle = Mission.create(organization: matho, title: "Save Turtles", city: 'Bogota', home_category: "urgent", climate: "Tropical")
-culture = Mission.create(organization: green, title: "Culture is life", city: 'Paris', home_category: "urgent", climate: "Dry")
-kids = Mission.create(organization: goodkids, title: "Little kids", city: 'Bogota', home_category: "urgent", climate: "Temperate")
-music = Mission.create(organization: msf, title: "Music ", city: 'Paris', home_category: "trustyworth", climate: "Dry")
-art = Mission.create(organization: nation, title: "Save the art", home_category: "trustyworth", climate: "Dry")
-environment = Mission.create(organization: matho, title: "Tree Free", home_category: "trustyworth", climate: "Dry")
-
-turtle = Mission.create(organization: matho, title: "turtlito", city: 'Fortaleza', home_category: "recent")
-culture = Mission.create(organization: green, title: "Culture", city: 'Paris', home_category: "recent")
-kids = Mission.create(organization: goodkids, title: "Ninos", city: 'Marseille', home_category: "recent")
-music = Mission.create(organization: msf, title: "Safesound ", city: 'Paris', home_category: "recent")
-art = Mission.create(organization: nation, title: "VivaCultura", city: 'Lima', home_category: "recent")
-environment = Mission.create(organization: matho, title: "Eco", city: 'Montreal', home_category: "recent")
-
+turtle = Mission.create(organization: matho, title: "Save Turtles", city: 'Bogota', home_category: "urgent", climate: "Tropical", cost_of_life: "<$1000/month", continent: "Africa", great_for: "Single", safety: "Low murder rate", language: "French")
+culture = Mission.create(organization: green, title: "Culture is life", city: 'Paris', home_category: "urgent", climate: "Dry", cost_of_life: "<$500/month", continent: "South America", great_for: "Single", safety: "Low murder rate", language: "Spanish")
+kids = Mission.create(organization: goodkids, title: "Little kids", city: 'Bogota', home_category: "urgent", climate: "Temperate", cost_of_life: "<$2000/month", continent: "South America", great_for: "Couple", safety: "Low murder rate", language: "Spanish"))
+music = Mission.create(organization: msf, title: "Music ", city: 'Paris', home_category: "trustyworth", climate: "Dry", cost_of_life: "<$500/month", continent: "Asia", great_for: "Single", safety: "Low murder rate", language: "Spanish"))
+art = Mission.create(organization: nation, title: "Save the art", home_category: "trustyworth", climate: "Dry", cost_of_life: "<$500/month", continent: "Europe", great_for: "Single", safety: "Low murder rate", language: "Spanish"))
+environment = Mission.create(organization: matho, title: "Tree Free", home_category: "trustyworth", climate: "Dry", cost_of_life: "<$1000/month", continent: "South America", great_for: "Single", safety: "Low murder rate", language: "Spanish"))
+mama = Mission.create(organization: matho, title: "turtlito", city: 'Fortaleza', home_category: "recent", cost_of_life: "<$500/month", continent: "South America", great_for: "Single", safety: "Low murder rate", language: "Spanish"))
+kakatoa = Mission.create(organization: goodkids, title: "Ninos", city: 'Marseille', home_category: "recent", cost_of_life: "<$2000/month", continent: "South America", great_for: "Single", safety: "Low murder rate", language: "Spanish"))
+africanmusic = Mission.create(organization: msf, title: "Safesound ", city: 'Paris', home_category: "recent", cost_of_life: "<$1000/month", continent: "South America", great_for: "Single", safety: "Low murder rate", language: "Spanish"))
+modernart = Mission.create(organization: nation, title: "VivaCultura", city: 'Lima', home_category: "recent", cost_of_life: "<$1000/month", continent: "South America", great_for: "Single", safety: "Low murder rate", language: "Spanish"))
+monkey = Mission.create(organization: matho, title: "Eco", city: 'Montreal', home_category: "recent", cost_of_life: "<$1000/month", continent: "South America", great_for: "Single", safety: "Low murder rate", language: "Spanish"))
 
 puts 'Creating 6 mission_users...'
 
