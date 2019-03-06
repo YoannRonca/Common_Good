@@ -1,51 +1,14 @@
-<div class="container dashboard">
-  <h2>Welcome, #user</h2>
-  <div class="dashboard-list">
-    <div class="status">
-      <h2>PENDING</h2>
-    </div>
+<body class="dashboardcg">
+  <div class="container dashboard">
+    <h1>Welcome, <%= current_user.username.capitalize %></h1>
+    <p>Check out your previous applications:</p>
 
-    <div class="dashboard-infos">
-      <% if @mission_users_pending == [] %>
-        <p>None</p>
-      <% else %>
-        <%= render "list", missions: @mission_users_pending %>
-      <% end %>
+    <div class="dashboard-content">
+      <%= render "list", missions: @mission_users %>
     </div>
   </div>
 
-  <div class="dashboard-list">
-    <div class="status">
-      <h2>ACCEPTED</h2>
-    </div>
-    <div class="dashboard-infos">
-      <% if @mission_users_accepted == [] %>
-        <p>None</p>
-      <% else %>
-        <%= render "list", missions: @mission_users_accepted %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="dashboard-list">
-    <div class="status">
-      <h2>DECLINED</h3>
-    </div>
-    <div class="dashboard-infos">
-      <% if @mission_users_declined == [] %>
-        <p>None</p>
-      <% else %>
-        <%= render "list", missions: @mission_users_declined %>
-      <% end %>
-    </div>
-  </div>
-
-
-    <h3 class="list-block">Past applications:</h3>
-    <p>None</p>
-
-  </div>
-</div>
+</body>
 
 
 
