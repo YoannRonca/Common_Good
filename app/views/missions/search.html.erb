@@ -12,6 +12,8 @@
 
       <div class="scrollsidebar">
         <%= simple_form_for :query, url: search_path, method: :get do |f| %>
+
+        <h1> gufiefd</h1>
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class='filters-container'>
@@ -27,7 +29,7 @@
               </div>
             </div>
           </div>
-
+<h1> gufiefd</h1>
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class="filters-container">
@@ -43,7 +45,7 @@
               </div>
             </div>
           </div>
-
+<h1> gufiefd</h1>
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class="filters-container">
@@ -90,6 +92,36 @@
               </div>
             </div>
           </div>
+          <div class="row" id="filter">
+            <div class="col-12 category-choices">
+              <div class="filters-container">
+                <% counter = 0 %>
+                <% Mission::LANGUAGE.each do |item| %>
+                  <% counter += 1 %>
+                  <% identifier = "inlineRadio#{counter}" %>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input invisible" type="radio" name="filter[language]" id='<%= identifier %>' value='<%= item %>'>
+                    <label class="form-check-label filter-radio-btn" for='<%= identifier %>'><%= item %></label>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="row" id="filter">
+            <div class="col-12 category-choices">
+              <div class="filters-container">
+                <% counter = 0 %>
+                <% Mission::SAFETY.each do |item| %>
+                  <% counter += 1 %>
+                  <% identifier = "inlineRadio#{counter}" %>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input invisible" type="radio" name="filter[safety]" id='<%= identifier %>' value='<%= item %>'>
+                    <label class="form-check-label filter-radio-btn" for='<%= identifier %>'><%= item %></label>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
 
           <%= f.submit %>
         <% end %>
@@ -112,7 +144,7 @@
           </div>
         </div>
       </nav>
-      <div class="container">
+      <div class="container cards-search-container">
         <div class="row">
           <% @missions.each do |mission| %>
             <%= render 'mission', mission: mission %>

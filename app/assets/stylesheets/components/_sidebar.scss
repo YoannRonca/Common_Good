@@ -1,18 +1,15 @@
 #sidebar {
   width: 650px;
   position: fixed;
-  top: 70px;
+  top: 0px;
   left: -650px;
   height: 100vh;
   z-index: 999;
   background: #f4a140;
   color: #fff;
   transition: all 0.3s;
-  overflow-y: scroll;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   background: rgba(0, 0, 0, 0.8);
-  -webkit-overflow-scrolling: touch;
-  overflow: scroll;
   .filter-radio-btn {
     background: white;
     color: black;
@@ -38,6 +35,7 @@
 }
 
 
+
 #dismiss {
     width: 35px;
     height: 35px;
@@ -61,7 +59,7 @@
 .overlay {
     display: none;
     position: fixed;
-    top: 150px;
+    top: 0px;
     left: 0px;
     width: 100vw;
     height: 100vh;
@@ -158,10 +156,6 @@ a.article:hover {
   margin-left: 35px;
 }
 
-#wrapperesult {
-  margin-top: 70px;
-}
-
 .container-fluid {
   display: block !important;
   h2 {
@@ -180,4 +174,9 @@ a.article:hover {
   display: flex;
   justify-content: space-between;
   align-items: flex-end !important;
+}
+
+.scrollsidebar {
+  height: calc(100vh - 120px);
+  overflow-y: scroll;
 }
