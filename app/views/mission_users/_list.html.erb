@@ -1,37 +1,48 @@
 <ul class="list-unstyled">
   <% missions.each do |mission| %>
-  <li class="list-items">
-  <%= link_to mission_path(mission.mission), class:"clickable-list" do %>
-<!--     <div class="list-items-upvote text-center">
-      <p>**</p>
-    </div> -->
+    <li class="list-items">
+      <%#= link_to mission_path mission.mission, class: "clickable-list" do %>
+    <!--     <div class="list-items-upvote text-center">
+          <p>**</p>
+        </div> -->
+        <div class="img-mission" style="background-image: url('<%= cl_image_path mission.mission.photos.first.photo %>');"></div>
+        <!-- <img src=<%= mission.mission.photos.first %> alt="" class="booked-image img-rounded"> -->
 
-    <img src=<%= mission.mission.photos.first %> alt="" class="booked-image img-rounded">
+        <div class="infos">
+          <div class="list-items-description">
+            <h3 id="title"><%= mission.mission.title %></h3>
+            <p><%= mission.mission.organization.name %></p>
+          </div>
 
-    <div class="infos">
-      <div class="list-items-description">
-        <h3 id="title"><%= mission.mission.title %></h3>
-        <p><%= mission.mission.organization.name %></p>
-      </div>
+          <div class="list-items-details">
+            <p><i class="fas fa-map-pin"></i> <%= mission.mission.city %></p>
+            <p><i class="fas fa-calendar-alt"></i> <%= mission.mission.start_date %></p>
+            <p><i class="far fa-calendar-alt" id="calend2"></i> <%= mission.mission.end_date %></p>
+          </div>
 
-      <div class="list-items-details">
-        <p><i class="fas fa-map-pin"></i> <%= mission.mission.city %></p>
-        <p><i class="fas fa-calendar-alt"></i> <%= mission.mission.start_date %>Start date</p>
-        <p><i class="far fa-calendar-alt" id="calend2"></i> <%= mission.mission.end_date %>End date</p>
-      </div>
-
-      <div class="list-status">
-        <p><%= mission.status.upcase %></p>
-      </div>
-    </div>
-
-  <% end %>
-  </li>
+          <div class="list-status">
+            <div class="button-status">
+              <p><%= mission.status.upcase %></p>
+            </div>
+            <div class="remove">
+              <p>
+                <% if user_signed_in? && current_user.admin? %>
+                <%= link_to "Delete", mission_mission_user_path(mission.mission, mission),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" }, class: 'btn btn-medium' %>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+      <%# end %>
+      <%= link_to "", mission_path(mission.mission), class: "card-link" %>
+    </li>
   <% end %>
 
   <li class="list-items fake">
 
-    <img src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551866724/CommonGood/10-Favela-2.jpg" alt="" class="booked-image img-rounded">
+    <img src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551866724/CommonGood/10-Favela-2.jpg" alt="" class="img-mission">
 
     <div class="infos">
       <div class="list-items-description">
@@ -45,9 +56,16 @@
         <p><i class="far fa-calendar-alt" id="calend2"></i> 04/10/2019</p>
       </div>
 
-      <div class="list-status green">
-        <p>ACCEPTED</p>
+      <div class="list-status">
+        <div class="button-status green">
+          <p>ACCEPTED</p>
+        </div>
+        <div class="remove">
+          <p>Delete</p>
+        </div>
       </div>
+
     </div>
   </li>
 </ul>
+

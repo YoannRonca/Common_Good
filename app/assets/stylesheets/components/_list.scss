@@ -8,26 +8,33 @@
   background-color: #dbdcdc;
   margin-top: 200px;
   h1 {
-    font-family: 'Chalk'
+    font-family: 'Chalk';
+    margin-bottom: 40px;
   }
 }
 
 .list-items {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
   border-radius: 10px;
   background-color: white;
   margin: 18px;
-  img {
+  .img-mission {
+    background-size: cover;
+    width: 280px;
     border-radius: 10px 0 0 10px;
     height: 200px;
   }
 }
 
 .fake {
-  display: flex;
+  // display: flex;
   justify-content: space-between;
 }
 
 .clickable-list {
+  background-color: red;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,6 +53,16 @@
 
 .list-status {
   margin-left: 75px;
+  p {
+    font-size: 14px;
+  }
+}
+
+.remove {
+  text-align: center;
+}
+
+.button-status {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
@@ -158,3 +175,14 @@
 //     color: #ea825e;
 //   }
 // }
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
