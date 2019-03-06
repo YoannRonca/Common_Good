@@ -25,6 +25,15 @@
   </div>
 <% end %>
 
+
+<% if user_signed_in? && current_user.admin? %>
+  <div class="button-us">
+    <div class="btn-container">
+      <%= link_to "Edit this association", edit_organization_path(@organization), class: "thin-btn" %>
+    </div>
+  </div>
+<% end %>
+
   <% if user_signed_in? && current_user.admin? %>
     <div class="container">
       <div class="btn-container">
