@@ -1,0 +1,8 @@
+meta_product_name: "Common Good"
+meta_title: "Common Good - Be the change the world needs"
+meta_description: "Common Good is a platform that connects
+NGOs and volunteers. This platform allows volunteers to find the mission
+that suits them best thanks to a very performant search engine and a dedicated
+community. "
+meta_image: "volunteer.jpg" # should exist in `app/assets/images/`
+ # required for Twitter Cards
