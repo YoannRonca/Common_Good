@@ -13,6 +13,8 @@
         <%= simple_form_for :query, url: search_path, method: :get do |f| %>
 
         <h1> MY PREFERENCES </h1>
+        <br>
+        <h2> PRICE PER MONTH </h2>
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class='filters-container'>
@@ -28,7 +30,8 @@
               </div>
             </div>
           </div>
-          <h1> gufiefd</h1>
+          <br>
+          <h2> GEOGRAPHIC ZONE </h2>
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class="filters-container">
@@ -44,7 +47,8 @@
               </div>
             </div>
           </div>
-<h1> gufiefd</h1>
+          <br>
+          <h2> NGO'S SECTOR </h2>
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class="filters-container">
@@ -59,7 +63,8 @@
               </div>
             </div>
           </div>
-
+          <br>
+          <h2> GREAT FOR </h2>
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class="filters-container">
@@ -75,11 +80,11 @@
               </div>
             </div>
           </div>
-
+          <br>
+          <h2> CLIMATE </h2>
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class="filters-container">
-
                 <% Mission::CLIMATE.each do |item| %>
                   <% counter += 1 %>
                   <% identifier = "climate_#{counter}" %>
@@ -91,6 +96,8 @@
               </div>
             </div>
           </div>
+          <br>
+          <h2> SPOKEN LANGUAGE </h2>
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class="filters-container">
@@ -106,6 +113,8 @@
               </div>
             </div>
           </div>
+          <br>
+          <h2> SAFEFY SITUATION </h2>
           <div class="row" id="filter">
             <div class="col-12 category-choices">
               <div class="filters-container">
@@ -121,7 +130,6 @@
               </div>
             </div>
           </div>
-
           <%= f.submit %>
         <% end %>
       </div>
