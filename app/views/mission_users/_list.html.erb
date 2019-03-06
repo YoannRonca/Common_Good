@@ -2,23 +2,52 @@
   <% missions.each do |mission| %>
   <li class="list-items">
   <%= link_to mission_path(mission.mission), class:"clickable-list" do %>
-    <div class="list-items-upvote text-center">
-      <p>ab</p>
+<!--     <div class="list-items-upvote text-center">
+      <p>**</p>
+    </div> -->
+
+    <img src=<%= mission.mission.photos.first %> alt="" class="booked-image img-rounded">
+
+    <div class="infos">
+      <div class="list-items-description">
+        <h3 id="title"><%= mission.mission.title %></h3>
+        <p><%= mission.mission.organization.name %></p>
+      </div>
+
+      <div class="list-items-details">
+        <p><i class="fas fa-map-pin"></i> <%= mission.mission.city %></p>
+        <p><i class="fas fa-calendar-alt"></i> <%= mission.mission.start_date %>Start date</p>
+        <p><i class="far fa-calendar-alt" id="calend2"></i> <%= mission.mission.end_date %>End date</p>
+      </div>
+
+      <div class="list-status">
+        <p><%= mission.status.upcase %></p>
+      </div>
     </div>
 
-    <img src=https://images.unsplash.com/photo-1527499456709-838ffdcfee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80 alt="" class="booked-image img-rounded">
-
-    <div class="list-items-description">
-      <h3 id="title"><%= mission.mission.title %></h3>
-      <p><%= mission.mission.organization.name %></p>
-    </div>
-
-    <div class="list-items-details">
-      <p><%= mission.mission.city %></p>
-      <p><%= mission.mission.start_date %>Start date</p>
-      <p><%= mission.mission.end_date %>End date</p>
-    </div>
   <% end %>
   </li>
   <% end %>
+
+  <li class="list-items fake">
+
+    <img src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551866724/CommonGood/10-Favela-2.jpg" alt="" class="booked-image img-rounded">
+
+    <div class="infos">
+      <div class="list-items-description">
+        <h3 id="title">Education Program</h3>
+        <p>Project Favela</p>
+      </div>
+
+      <div class="list-items-details">
+        <p><i class="fas fa-map-pin"></i> Rio de Janeiro</p>
+        <p><i class="fas fa-calendar-alt"></i> 16/09/2019</p>
+        <p><i class="far fa-calendar-alt" id="calend2"></i> 04/10/2019</p>
+      </div>
+
+      <div class="list-status green">
+        <p>ACCEPTED</p>
+      </div>
+    </div>
+  </li>
 </ul>

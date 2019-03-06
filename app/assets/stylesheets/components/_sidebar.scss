@@ -37,6 +37,7 @@
     left: 0;
 }
 
+
 #dismiss {
     width: 35px;
     height: 35px;
@@ -157,117 +158,26 @@ a.article:hover {
   margin-left: 35px;
 }
 
-.costs {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.countries {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.btn-cost {
-  background-color: #000 !important;
-  border-color: #f4a140 !important;
-  width: 30%;
-  margin: 5px;
-}
-
-.btn-country {
-  background-color: #235e98 !important;
-  border-color: #f4a140 !important;
-  width: 22.2%;
-  margin: 5px;
-}
-
-.great_for {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.btn-great_for {
-  background-color: #372539 !important;
-  border-color: #f4a140 !important;
-  width: 30.2%;
-  margin: 5px;
-}
-
-.sector {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.btn-sector {
-  background-color: #682274 !important;
-  border-color: #f4a140 !important;
-  width: 30.2%;
-  margin: 5px;
-}
-
-.language {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.btn-language {
-  background-color: #982274 !important;
-  border-color: #f4a140 !important;
-  width: 30.2%;
-  margin: 5px;
-}
-
-.safety {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.btn-safety {
-  background-color: #782274 !important;
-  border-color: #f4a140 !important;
-  width: 22.2%;
-  margin: 5px;
-}
-
-.climate {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.btn-climate {
-  background-color: #182274 !important;
-  border-color: #f4a140 !important;
-  width: 17.5%;
-  margin: 5px;
-}
-
 #wrapperesult {
   margin-top: 70px;
+}
+
+.container-fluid {
+  display: block !important;
+  h2 {
+    font-family: 'Chalk';
+    color: #333333;
+    font-size: 56px;
+  }
+  h3 {
+    font-family: 'Source Sans Pro';
+    color: #333333;
+    font-size: 24px;
+  }
+}
+
+.searchpage-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end !important;
 }

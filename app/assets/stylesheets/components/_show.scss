@@ -18,36 +18,64 @@
 }
 .description {
   margin-top: 30px;
-  font-size: 24px;
+  font-size: 32px;
   color: #F4A140;
   font-family: 'Chalk';
 }
 
-.organization {
-  margin-top: 200px;
+.description p {
+  margin-top: 20px;
   font-size: 24px;
+  color: #333333;
+  font-family: 'Source Sans Pro';
+}
+
+.organization {
+  margin-top: 30px;
+  font-size: 32px;
   color: #F4A140;
   font-family: 'Chalk';
+}
+
+.organization p {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333333;
+  font-family: 'Source Sans Pro';
 }
 
 .languages {
   margin-top: 30px;
-  font-size: 24px;
+  font-size: 32px;
   color: #F4A140;
   font-family: 'Chalk';
 }
 
-.skills {
-  margin-top: 80px;
+.languages p {
+  margin-top: 20px;
   font-size: 24px;
+  color: #333333;
+  font-family: 'Source Sans Pro';
+}
+
+.skills {
+  margin-top: 30px;
+  font-size: 32px;
   color: #F4A140;
   font-family: 'Chalk';
+}
+
+.skills p {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333333;
+  font-family: 'Source Sans Pro';
 }
 
 .volunteers {
   margin-top: 40px;
   margin-bottom: 5px;
-  font-size: 24px;
+  font-size: 32px;
   color: #F4A140;
   font-family: 'Chalk';
 }
@@ -55,7 +83,7 @@
 .staff {
   margin-top: 40px;
   margin-bottom: 5px;
-  font-size: 24px;
+  font-size: 32px;
   color: #F4A140;
   font-family: 'Chalk';
 }
@@ -63,13 +91,13 @@
 .rowshow {
   display: flex;
   justify-content: space-between;
-  margin-right: 300px;
-  margin-left: 30px;
+  margin-right: 240px;
+  margin-left: 11px;
+  margin-top: -25px;
 }
 
 .rvw {
-    margin-top: 10px;
-    font-size: 24px;
+    font-size: 32px;
     color: #F4A140;
     font-family: 'Chalk';
   }

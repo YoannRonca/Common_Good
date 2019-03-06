@@ -46,11 +46,13 @@ class MissionsController < ApplicationController
   end
 
   def edit
+    @mission = Mission.find(params[:id])
   end
 
   def update
-    @mission.update(mission_params)
-    redirect_to mission_path(@mission)
+    mission = Mission.find(params[:id])
+    mission.update(mission_params)
+    redirect_to mission_path(mission)
   end
 
   def search
