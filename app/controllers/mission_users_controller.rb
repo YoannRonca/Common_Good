@@ -28,4 +28,10 @@ class MissionUsersController < ApplicationController
       end
     end
   end
+
+  def destroy
+    mission_user = MissionUser.find(params[:id])
+    mission_user.destroy
+    redirect_to mission_users_path
+  end
 end
