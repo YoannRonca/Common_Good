@@ -14,8 +14,13 @@
     background: white;
     color: black;
     border-radius: 5px;
-    // padding: 10px !important;
-    width: 160px;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    width: 155px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-weight: bold;
     &:hover {
       background: #EFCB54;
       cursor: pointer;
@@ -179,4 +184,14 @@ a.article:hover {
   height: calc(100vh - 120px);
   overflow-y: scroll;
   padding: 20px;
+  h1 {
+    font-weight: bold;
+    font-family: 'Chalk';
+    font-size: 48px;
+  }
+  h2 {
+    font-weight: bold;
+    font-family: 'Chalk';
+    font-size: 32px;
+  }
 }
