@@ -7,7 +7,7 @@
     <div class="carousel-inner">
       <% @organization.photos.each_with_index do |photo, i| %>
         <div class="h500 carousel-item <%= 'active' if i == 0 %>">
-          <%= cl_image_tag photo.photo, height: 500, crop: :fill, class: "d-block w-100 organization-carousel-image"%>
+          <%= cl_image_tag photo.photo, class: "d-block w-100 organization-carousel-image"%>
           <div class="carousel-caption d-none d-md-block">
             <h1 class="org-banner-title"><%= @organization.name %></h1>
           </div>
