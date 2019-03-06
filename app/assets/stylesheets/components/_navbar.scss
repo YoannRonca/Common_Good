@@ -3,7 +3,7 @@
   border-top: 5px solid orange;
   background-color: transparent;
   transition: all 0.3s ease;
-  height: 100px;
+  height: 70px;
   padding: 10px 30px 10px 30px;
   display: flex;
   align-items: center;
@@ -17,7 +17,7 @@
 
 /* Logo */
 .navbar-cg-brand img {
-  height: 75px;
+  height: 60px;
   margin-left: 75px;
 }
 
@@ -46,7 +46,7 @@
 /* Navbar link */
 .navbar-cg-link {
   color: white;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: bold;
   margin-right: -10px;
   font-family: 'Source Sans Pro';
