@@ -11,12 +11,12 @@
       <% if user_signed_in? %>
 
         <!-- Links when logged in -->
-        <%= link_to "My applications", mission_mission_users_path(current_user), class: "navbar-cg-item navbar-cg-link" %>
+        <%= link_to "Applications", mission_mission_users_path(current_user), class: "navbar-cg-item navbar-cg-link" %>
 
         <!-- Avatar with dropdown menu -->
         <div class="navbar-cg-item">
           <div class="dropdown">
-            <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-cg-menu", "data-toggle" => "dropdown" %>
+            <%= image_tag "https://res.cloudinary.com/dgkabaqi8/image/upload/v1551862510/Captura_de_pantalla_2019-03-06_a_la_s_9.54.46.png", class: "avatar dropdown-toggle", id: "navbar-cg-menu", "data-toggle" => "dropdown" %>
             <ul class="dropdown-menu dropdown-menu-right navbar-cg-dropdown-menu">
               <li>
                 <%= link_to "#" do %>

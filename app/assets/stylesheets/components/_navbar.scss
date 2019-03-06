@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: space-between;
   z-index: 100 !important;
+  margin-top: 15px;
 }
 
 .navbar-cg-white {
@@ -17,14 +18,16 @@
 
 /* Logo */
 .navbar-cg-brand img {
-  height: 50px;
+  height: 75px;
+  margin-left: 75px;
 }
 
 /* User Avatar */
 .navbar-cg .avatar {
-  height: 35px;
-  width: 35px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
+   margin-right: 40px;
 }
 
 /* Right section */
@@ -38,12 +41,16 @@
 .navbar-cg-item {
   cursor: pointer;
   padding: 0 20px;
+  font-family: 'Source Sans Pro';
 }
 
 /* Navbar link */
 .navbar-cg-link {
   color: white;
-  font-size: 14px;
+  font-size: 25px;
+  font-weight: bold;
+  margin-right: -10px;
+  font-family: 'Source Sans Pro';
 }
 .navbar-cg-link:hover {
   color: #f4a140;
