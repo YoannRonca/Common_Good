@@ -1,6 +1,6 @@
 <div class="col-12 col-md-6 centered">
   <% if mission.photos.any? %>
-    <div class="card search-card" style="background-image: linear-gradient(180deg, rgba(51, 51, 51, 0) 0%,rgba(51, 51, 51, 0.4) 100%), url('<%= cl_image_path mission.photos, height: 300, width: 400, crop: :fill %>')">
+    <div class="card search-card" style="background-image: linear-gradient(180deg, rgba(51, 51, 51, 0) 0%,rgba(51, 51, 51, 0.4) 100%), url('<%= cl_image_path mission.photos.first.photo, height: 300, width: 400, crop: :fill %>')">
       <div class="card-box-description">
         <div class="card-description text-center">
           <h3 id="card-title-description-search"><%= link_to mission.title, mission_path(mission) %></h3>
@@ -11,7 +11,7 @@
       </div>
     </div>
   <% else %>
-    <div class="card search-card" style="background-image: linear-gradient(180deg, rgba(51, 51, 51, 0) 0%,rgba(51, 51, 51, 0.4) 100%), url('https://images.unsplash.com/photo-1527499456709-838ffdcfee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
+    <div class="card search-card" style="background-image: linear-gradient(180deg, rgba(51, 51, 51, 0) 0%,rgba(51, 51, 51, 0.4) 100%), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551885501/Common%20Good%20-%20Nice%20photos/volunteer.jpg')">
       <div class="card-box-description">
         <div class="card-description text-center">
           <h3 id="card-title-description-search"><%= link_to mission.title, mission_path(mission) %></h3>
