@@ -1,113 +1,161 @@
-.body {
-  background-color: #E5E5E5;
+.dashboardcg {
+  background-color: #dbdcdc;
 }
 
 .dashboard {
-  font-family: $body-font !important;
-  margin-top: 70px;
-  h1, h2, h3 {
-    color: #F4A140;
-  }
-  h3 {
-    margin-top: 30px;
-    font-size: 24px;
-  }
-}
-
-.dashboard-list {
-  display: flex;
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 4px;
-  h3 {
-    font-weight: 400;
-    font-size: 22px;
-  }
-}
-
-.status {
-  display: flex;
-  // align-items: center;
-  // justify-content: space-around;
-  // width: 240px;
-  // height: 190px;
-  // border-radius: 3px;
-  h2 {
-    text-decoration: underline;
-    color: #FDB631;
-  }
-}
-
-.dashboard-infos {
-  width: 85%;
-}
-
-.clickable-list {
-  text-decoration: none;
-  color: $gray;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  transition: all 0.3s ease;
-  margin: 2px;
-  #title {
-    color: black;
-  }
-  #status {
-    color: $orange;
-  }
-  &:hover {
-    background: #f1f1f1;
+  //   font-family: $body-font !important;
+  min-height: 720px;
+  background-color: #dbdcdc;
+  margin-top: 200px;
+  h1 {
+    font-family: 'Chalk'
   }
 }
 
 .list-items {
-  border: 1px solid #f1f1f1;
-  margin: 10px;
-  border-radius: 4px;
-  // box-shadow: 5px 5px 5px 0px #C4C6C6;
+  border-radius: 10px;
+  background-color: white;
+  margin: 18px;
   img {
-    height: 120px;
-    width: 200px;
-    border-radius: 4px;
+    border-radius: 10px 0 0 10px;
+    height: 200px;
+    // width: 200px;
   }
 }
 
-.list-items-details {
+.fake {
   display: flex;
-  justify-content: space-around;
-  p {
-    color: gray;
-  }
+  justify-content: space-between;
 }
 
-.list-items:hover .list-items-upvote {
-  font-size: 27px;
+.clickable-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.list-items-upvote {
-  font-size: 20px;
-  transition: all 0.3s ease;
-  p {
-    opacity: 0;
-  }
-}
-
-.list-items-description {
-  flex: 1 0 auto;
-  padding: 20px;
-}
-
-.list-items-controls {
-  a {
-    font-size: 15px;
-    color: #CCCCCC;
-  }
+.infos {
+  text-decoration: none;
+  color: gray;
+  margin-right: 20px;
+  margin-left: 10px;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .status {
+  margin-left: 75px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  border-radius: 7px;
+  width: 220px;
+  height: 80px;
+  background-color: orange;
   p {
-    color: #ea825e;
+    color: white;
+    font-weight: bold;
+    margin: auto;
   }
 }
+
+.green {
+  background-color: #25b76e !important;
+}
+
+.list-items-description {
+  font-family: 'Chalk';
+  p {
+    font-family: 'Chalk';
+    color: black;
+  }
+  h3 {
+    text-decoration: underline;
+    font-family: 'Chalk';
+    color: orange;
+  }
+}
+
+.fa-map-pin {
+  color: red;
+}
+
+.fa-calendar-alt {
+  color: #00b1bd;
+}
+
+#calend2 {
+  color: gray !important;
+}
+
+// .clickable-list {
+//   text-decoration: none;
+//   color: $gray;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   padding: 10px;
+//   transition: all 0.3s ease;
+//   margin: 2px;
+//   #title {
+//     color: black;
+//   }
+//   #status {
+//     color: $orange;
+//   }
+//   &:hover {
+//     background: #f1f1f1;
+//   }
+// }
+
+// .list-items {
+//   border: 1px solid #f1f1f1;
+//   margin: 10px;
+//   border-radius: 4px;
+//   // box-shadow: 5px 5px 5px 0px #C4C6C6;
+//   img {
+//     height: 120px;
+//     width: 200px;
+//     border-radius: 4px;
+//   }
+// }
+
+// .list-items-details {
+//   display: flex;
+//   justify-content: space-around;
+//   p {
+//     color: gray;
+//   }
+// }
+
+// .list-items:hover .list-items-upvote {
+//   font-size: 27px;
+// }
+
+// .list-items-upvote {
+//   font-size: 20px;
+//   transition: all 0.3s ease;
+//   p {
+//     opacity: 0;
+//   }
+// }
+
+// .list-items-description {
+//   flex: 1 0 auto;
+//   padding: 20px;
+// }
+
+// .list-items-controls {
+//   a {
+//     font-size: 15px;
+//     color: #CCCCCC;
+//   }
+// }
+
+// .status {
+//   p {
+//     color: #ea825e;
+//   }
+// }
