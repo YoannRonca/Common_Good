@@ -7,13 +7,16 @@ const initUpdateNavbarOnScroll = () => {
     const heightToScroll = banner.scrollHeight;
     if (navbar) {
       window.addEventListener('scroll', () => {
-        if (window.scrollY >= (heightToScroll - navbarHeight)) {
+        if (window.scrollY >= (heightToScroll - navbarHeight) && !navbar.classList.contains('navbar-cg-white')) {
           navbar.classList.add('navbar-cg-white');
-        } else {
+        }
+        if (window.scrollY <= (heightToScroll - navbarHeight) && navbar.classList.contains('navbar-cg-white')){
           navbar.classList.remove('navbar-cg-white');
         }
       });
     }
+  } else {
+    navbar.classList.add('navbar-cg-white');
   }
 };
 

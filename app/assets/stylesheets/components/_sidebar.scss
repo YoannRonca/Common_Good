@@ -41,7 +41,6 @@
     height: 35px;
     line-height: 35px;
     text-align: center;
-    background: #f4a140;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -74,8 +73,8 @@
 }
 
 #sidebar .sidebar-header {
-    padding: 20px;
-    background: #f4a140;
+  padding: 20px;
+  height: 50px;
 }
 
 #sidebar ul.components {
@@ -179,4 +178,5 @@ a.article:hover {
 .scrollsidebar {
   height: calc(100vh - 120px);
   overflow-y: scroll;
+  padding: 20px;
 }
