@@ -100,10 +100,16 @@
     <div id="content">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-          <button type="button" id="sidebarCollapse" class="btn btn-info">
-            <i class="fas fa-align-left"></i>
-            <span>Add Filters</span>
-          </button>
+          <div>
+            <h2> CORRESPONDING MISSIONS</h2>
+          </div>
+          <div class="searchpage-infos">
+            <h3> <%= Mission.count %> missions match your search </h3>
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+              <i class="fas fa-align-left"></i>
+              <span>Add Filters</span>
+            </button>
+          </div>
         </div>
       </nav>
       <div class="container">
