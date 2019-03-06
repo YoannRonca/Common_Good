@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h2> Edit <%= @organization.name %> </h2>
+      <%= simple_form_for([@organization]) do |f| %>
+        <%= f.input :name, placeholder: 'Enter the name of your NGO' %>
+        <%= f.input :description, placeholder: 'Please describe the work of your NGO'%>
+
+        <%= f.fields_for :photo do |ff| %>
+          <%= ff.label :photo %>
+          <%= ff.file_field :photo, multiple: true, name: "photos[]" %>
+        <% end %>
+
+        <hr>
+        <%= f.submit class: "btn-medium"%>
+        <%= link_to "Back", organizations_path, class: 'btn btn-medium' %>
+      <% end %>
+      </div>
+  </div>
+</div>
