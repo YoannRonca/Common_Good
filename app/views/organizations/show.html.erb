@@ -42,7 +42,7 @@
     </div>
   <% end %>
 
-  <div class="card-organization">
+  <div class="container card-organization">
          <p><%= @organization.description %></p>
   </div>
 </div>
@@ -53,23 +53,14 @@
     <% @organization.missions.each do |mission| %>
       <div class="col-xs-12 col-sm-4">
         <%= link_to mission_path(mission) do %>
-            <% if mission.photos.any? %>
-              <div class="card-homepage" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path mission.photos.first.photo, height: 300, width: 400, crop: :fill %>')">
-            <% else %>
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551885501/Common%20Good%20-%20Nice%20photos/volunteer.jpg')">
-            <% end %>
-              <div class="card-description text-center">
-                <h3><%= link_to mission.title, mission_path(mission) %></h3>
-              </div>
-              <div class="card-ratings">
-              <% if mission.reviews.empty? %>
-                <p>No rating</p>
-              <% else %>
-                 <i class="fas fa-star fa-sm"></i>
-              <% end %>
-              </div>
-              <i class="far fa-heart" id="biglove"></i>
+          <% if mission.photos.any? %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path mission.photos.first.photo, height: 300, width: 400, crop: :fill %>')">
+              <h3 class="card-box-description"><%= mission.title %></h3>
             </div>
+          <% else %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551885501/Common%20Good%20-%20Nice%20photos/volunteer.jpg')">
+            </div>
+          <% end %>
         <% end %>
       </div>
     <% end %>
