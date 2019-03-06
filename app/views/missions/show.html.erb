@@ -9,7 +9,7 @@
         <% @mission.photos.each_with_index do |photo, i| %>
           <div class="carousel-item <%= 'active' if i == 0 %>">
             <%= cl_image_tag photo.photo, height: 500, crop: :fill, class: "d-block w-100 organization-carousel-image"%>
-            <div class="carousel-caption d-none d-md-block">
+            <div class="carousel-caption d-none d-md-block" id="mission-info">
               <h1><%= @mission.title %></h1>
               <p><%= @mission.city %>  &#x1F4CD; | DATE</p>
 
@@ -41,7 +41,7 @@
     <div id="cards">
       <div class="description"> Mission description
         <hr>
-        <h2><%= @mission.description %></h2>
+        <p><%= @mission.description %></p>
       </div>
       <div class="organization"> Learn more about the NGO
         <hr>
@@ -49,11 +49,11 @@
       </div>
       <div class="languages"> Mission Language
         <hr>
-        <h2><%= @mission.language %></h2>
+        <p><%= @mission.language %></p>
       </div>
       <div class="skills">What do we need from you?
         <hr>
-        <h2><%= @mission.skill %></h2>
+        <p><%= @mission.skill %></p>
       </div>
     </div>
 
@@ -65,7 +65,7 @@
 
   <div class=container>
     <div class="rowshow">
-      <div class="col-xs-6">
+      <div class="col-xs-12">
         <div class="volunteers">Former volunteers
             <hr>
             <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705971/Captura_de_pantalla_2019-03-04_a_la_s_14.25.51.png' class="avatar-large"/>
@@ -120,17 +120,15 @@
     <br>
   <div class="container">
     <div class="col-sm-6">
-      <div class="container">
         <div class="rvw">Reviews</div>
         <hr>
-      </div>
     </div>
   </div>
 
 
 
-    <div class="container">
-    <div class="row" style="margin-left: -10px">
+  <div class="container">
+    <div class="row">
       <div class="col-sm-12">
         <div class="message">
           <img class="avatar-large" src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551775519/Captura_de_pantalla_2019-03-05_a_la_s_9.44.45.png">
@@ -152,7 +150,7 @@
     </div>
   </div>
   <div class="container">
-    <div class="row" style="margin-left: -10px">
+    <div class="row">
       <div class="col-sm-12">
         <div class="message">
           <img class="avatar-large" src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551706475/Captura_de_pantalla_2019-03-04_a_la_s_14.34.10.png">
