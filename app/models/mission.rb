@@ -20,7 +20,7 @@ class Mission < ApplicationRecord
   belongs_to :organization
   has_many :mission_users
   has_many :users, through: :mission_users
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :mission_sectors
   has_many :sectors, through: :mission_sectors
   has_many :photos, dependent: :destroy
@@ -49,7 +49,6 @@ class Mission < ApplicationRecord
   # validates :language, presence: true
   # validates :start_date, presence: true
   # validates :end_date, presence: true
-
 
   def self.perform_search(keyword)
     if keyword.present?

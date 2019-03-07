@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-4 offset-sm-4">
+      <h2> Add your NGO </h2>
+      <%= simple_form_for([@mission, @review]) do |f| %>
+        <%= f.input :transparency, collection: Review::TRANSPARENCY, as: :select %>
+        <%= f.input :social_impact, collection: Review::SOCIAL, as: :select%>
+        <%= f.input :staff_note, collection: Review::STAFF, as: :select%>
+        <%= f.input :content, placeholder: 'Please describe your experience'%>
+        <%= f.input :photo  %>
+        <%= f.input :photo_cache, as: :hidden  %>
+        <%#= f.fields_for :photo do |ff| %>
+          <%#= ff.label :photo %>
+          <%#= ff.file_field :photo, name: "photo" %>
+        <%# end %>
+
+        <hr>
+        <%= f.submit class: "btn-medium"%>
+        <%= link_to "Back", missions_path, class: 'btn btn-medium' %>
+      <% end %>
+      </div>
+  </div>
+</div>

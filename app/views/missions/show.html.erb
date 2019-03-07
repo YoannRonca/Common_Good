@@ -37,7 +37,6 @@
     </div>
   <% end %>
 
-
     <article class="flex-container">
       <section class="flex" id="finn">
         <div class="description"> Mission description
@@ -59,54 +58,69 @@
         </div>
       </section>
 
-
       <section class="flex" id="jake">
         <div class="container">
           <div class="col-sm-12">
               <div class="rvw">Reviews</div>
               <hr>
         </div>
+
+        <% if user_signed_in? && current_user.admin? %>
+          <div class="button-us">
+            <div class="btn-container">
+              <%= link_to "Add a review", new_mission_review_path(@mission), class: "thin-btn" %>
+            </div>
+          </div>
+        <% end %>
+
         <div class="container">
           <div class="row">
             <div class="col-xs-6 col-lg-12">
               <div class="message">
-                <img class="avatar-large" src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551775519/Captura_de_pantalla_2019-03-05_a_la_s_9.44.45.png">
+                <% @mission.reviews.each do |review| %>
+                  <% if review.photo.present? %>
+                    <img class="avatar-large" src=<%= review.photo %> >
+                  <% else %>
+                    <img class="avatar-large" src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551706475/Captura_de_pantalla_2019-03-04_a_la_s_14.34.10.png">
+                  <% end %>
+                  <div class="message-name">
+                    <h3><%= review.name %></h3>
+                    <p>02/03/19</p>
+                  </div>
+                  <div class="message-body">
+                    <p><strong>Life changing experience</strong></p>
+                    <p><%= review.content %></p>
+                  </div>
+                  <% if user_signed_in? && current_user.admin? %>
+                  <div class="sup-review">
+                    <%= link_to 'Delete', mission_review_path(@mission, review),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" }, class: 'thin-btn' %>
+                      <% end %>
+                  <% end %>
+                  </div>
+                  <div class="message-status">
+                    <p class="status pending"></p>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="message">
+                <img class="avatar-large" src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551706475/Captura_de_pantalla_2019-03-04_a_la_s_14.34.10.png">
                 <div class="message-name">
-                  <h3>Rob Trujillo</h3>
-                  <p>02/03/19</p>
+                  <h3>Corey Taylor</h3>
+                  <p>04/11/18</p>
                 </div>
                 <div class="message-body">
-                  <p><strong>Life changing experience</strong></p>
-                  <p>
-                    I spent 3 weeks in this mission. I will never forget the experience and found a new goal for my life.
-                  </p>
+                  <p><strong>Proud of working here</strong></p>
+                  <p>I can only urge you to apply for this mission. If you want to be involved with a community and see the direct impact of your work.</p>
                 </div>
                 <div class="message-status">
                   <p class="status pending"></p>
                 </div>
               </div>
             </div>
-             <div class="container">
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="message">
-                    <img class="avatar-large" src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551706475/Captura_de_pantalla_2019-03-04_a_la_s_14.34.10.png">
-                    <div class="message-name">
-                      <h3>Corey Taylor</h3>
-                      <p>03/12/18</p>
-                    </div>
-                    <div class="message-body">
-                      <p><strong>Proud of working here</strong></p>
-                      <p>
-                        I can only urge you to apply for this mission. If you want to be involved with a community and see the direct impact of your work.
-                      </p>
-                    </div>
-                    <div class="message-status">
-                      <p class="status pending"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
           </div>
         </div>
       </section>
@@ -114,9 +128,7 @@
 
     <div class= container>
     <div class="rowshow">
-
       <div class="col-xs-6">
-
         <div class="volunteers">Our Staff
             <hr>
             <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705971/Captura_de_pantalla_2019-03-04_a_la_s_14.25.51.png' class="avatar-large"/>
@@ -127,13 +139,10 @@
         </div>
         <div class="col-xs-6">
           <div class="staff"> Our Volunteers
-
             <hr>
-
             <button data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" id="contact">
               <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705795/Captura_de_pantalla_2019-03-04_a_la_s_14.22.57.png' class="avatar-large" id="rafa"/>
             </button>
-
               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -162,7 +171,6 @@
                   </div>
                 </div>
               </div>
-
             <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705889/Captura_de_pantalla_2019-03-04_a_la_s_14.24.30.png' class="avatar-large"/>
             <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705842/Captura_de_pantalla_2019-03-04_a_la_s_14.23.44.png' class="avatar-large"/>
           </div>
