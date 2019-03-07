@@ -23,7 +23,3 @@ initUpdateNavbarOnScroll();
 import { toggleFilterButtons } from '../components/filter_btn';
 toggleFilterButtons();
 
-import { clickStaff } from '../components/staff';
-clickStaff();
-
-

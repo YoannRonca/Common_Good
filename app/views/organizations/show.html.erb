@@ -47,26 +47,29 @@
   </div>
 </div>
 
-<div class="container marged-bottom" style= "background-color: #f7b864">
-  <h2 class="title1">Our Missions</h2>
-  <div class="row">
-    <% @organization.missions.each do |mission| %>
-      <div class="col-xs-12 col-sm-4">
-        <%= link_to mission_path(mission) do %>
-          <% if mission.photos.any? %>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path mission.photos.first.photo, height: 300, width: 400, crop: :fill %>')">
-              <h3 class="card-box-description"><%= mission.title %></h3>
-            </div>
-          <% else %>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551885501/Common%20Good%20-%20Nice%20photos/volunteer.jpg')">
-            </div>
-          <% end %>
+<div class="container">
+  <h3 class="title2">Our Missions</h3>
+  <div class="related-posts">
+    <div class="container marged-bottom" style= "background-color: #f7b864">
+      <div class="row">
+        <% @organization.missions.each do |mission| %>
+          <div class="col-xs-12 col-sm-4">
+            <%= link_to mission_path(mission) do %>
+              <% if mission.photos.any? %>
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path mission.photos.first.photo, height: 300, width: 400, crop: :fill %>')">
+                  <h3 class="card-box-description"><%= mission.title %></h3>
+                </div>
+              <% else %>
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551885501/Common%20Good%20-%20Nice%20photos/volunteer.jpg')">
+                </div>
+              <% end %>
+            <% end %>
+          </div>
         <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
-
   <div class= "container">
     <h3 class="title2">Meet Our Team</h3>
     <div class="related-posts">
