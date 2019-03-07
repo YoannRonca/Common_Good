@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-6 col-md-4 centered">
+<div class="col-12 col-sm-6 col-md-4 centered">
   <% if mission.photos.present? %>
     <div class="card-homepage" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path mission.photos.first.photo, height: 300, width: 400, crop: :fill %>')">
     </div>
@@ -10,9 +10,9 @@
     <div class="texthome">
       <p id="c-title"><%= link_to mission.title, mission_path(mission) %></p>
       <p id="c-description"><%= mission.description%></p>
-      <p id="c-location"><%= mission.city%>, <%= mission.country %></p>
+      <p id="c-location"><i class="fas fa-map-pin"></i> <%= mission.city%>, <%= mission.country %></p>
       <% if mission.start_date != nil && mission.end_date != nil %>
-        <p id="c-date"><%= mission.start_date.strftime('%d/%m/%Y') %> - <%= mission.end_date.strftime('%d/%m/%Y') %></p>
+        <p><i class="fas fa-calendar-alt"></i> <%= mission.start_date.strftime('%d/%m/%Y') %> - <%= mission.end_date.strftime('%d/%m/%Y') %></p>
       <% end %>
       <p>No rating</p>
     </div><!--    <i class="far fa-heart" id="biglove"></i> -->

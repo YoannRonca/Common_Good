@@ -1,29 +1,39 @@
+.urgent, .trustyworth, .recent {
+  padding: 80px !important;
+}
+
 .card-homepage {
-  margin-top: 30px;
   height: 225px;
-  width: 350px;
+  width: 100%;
   border-radius: 1px;
-  margin-top: 30px;
   background-size: cover;
 }
 
 .card-info {
   background-color: white;
   height: 120px;
-  width: 350px;
   border-radius: 3px;
   margin-bottom: 50px;
-  border-left: 1px solid #e6e6e2;
-  border-right: 1px solid #e6e6e2;
-  border-bottom: 1px solid #e6e6e2;
   .texthome {
     margin-top: none;
     padding-left: 10px;
   }
-
   a {
     text-decoration: none;
     color: black;
     font-weight: bold;
+  }
+  p {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+  }
+}
+
+.c-description {
+  p {
+    font-size: 14px;
   }
 }
