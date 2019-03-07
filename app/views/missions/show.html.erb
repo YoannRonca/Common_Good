@@ -123,11 +123,6 @@
               </div>
 
 
-
-
-
-
-
             <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705889/Captura_de_pantalla_2019-03-04_a_la_s_14.24.30.png' class="avatar-large"/>
             <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705842/Captura_de_pantalla_2019-03-04_a_la_s_14.23.44.png' class="avatar-large"/>
           </div>
@@ -143,30 +138,52 @@
     </div>
   </div>
 
+  <% if user_signed_in? && current_user.admin? %>
+    <div class="button-us">
+      <div class="btn-container">
+        <%= link_to "Add a review", new_mission_review_path(@mission), class: "thin-btn" %>
+      </div>
+    </div>
+  <% end %>
 
 
   <div class="container">
     <div class="row">
       <div class="col-xs-6 col-lg-12">
         <div class="message">
-          <img class="avatar-large" src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551775519/Captura_de_pantalla_2019-03-05_a_la_s_9.44.45.png">
-          <div class="message-name">
-            <h3>Rob Trujillo</h3>
-            <p>02/03/19</p>
-          </div>
-          <div class="message-body">
-            <p><strong>Life changing experience</strong></p>
-            <p>
-              I spent 3 weeks in this mission. I will never forget the experience and found a new goal for my life.
-            </p>
-          </div>
-          <div class="message-status">
-            <p class="status pending"></p>
-          </div>
+          <% @mission.reviews.each do |review| %>
+            <% if review.photo.present? %>
+              <img class="avatar-large" src=<%= review.photo %> >
+            <% else %>
+              <img class="avatar-large" src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551706475/Captura_de_pantalla_2019-03-04_a_la_s_14.34.10.png">
+            <% end %>
+            <div class="message-name">
+              <h3>Rob Trujillo</h3>
+              <p>02/03/19</p>
+            </div>
+            <div class="message-body">
+              <p><strong>Life changing experience</strong></p>
+              <p>
+                <%= review.content %>
+              </p>
+            </div>
+            <% if user_signed_in? && current_user.admin? %>
+            <div class="sup-review">
+              <%= link_to 'Delete', mission_review_path(@mission, review),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: 'thin-btn' %>
+                <% end %>
+            <% end %>
+
+            </div>
+            <div class="message-status">
+              <p class="status pending"></p>
+            </div>
         </div>
       </div>
     </div>
   </div>
+
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
