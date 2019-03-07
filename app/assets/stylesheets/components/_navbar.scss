@@ -50,6 +50,10 @@
   font-weight: bold;
   margin-right: -10px;
   font-family: 'Source Sans Pro';
+    p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
 }
 .navbar-cg-link:hover {
   color: #f4a140;
