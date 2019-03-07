@@ -68,6 +68,9 @@
         <% end %>
       </div>
     </div>
+    <div>
+      <%= link_to "back", request.referer, class: "thin-btn" %>
+    </div>
   </div>
 </div>
   <div class= "container">
@@ -85,11 +88,6 @@
       </div>
     </div>
   </div>
-
-<div class="cx3">
-  <!-- <p><%#= link_to 'Back', mission_path(@mission), class: 'thin-btn' %></p> -->
-<%= link_to "back", request.referer, class: "thin-btn" %>
-</div>
 
 <% if user_signed_in? && current_user.admin? %>
 <div class="cx3">
