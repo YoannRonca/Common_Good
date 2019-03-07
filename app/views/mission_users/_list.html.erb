@@ -5,8 +5,9 @@
     <!--     <div class="list-items-upvote text-center">
           <p>**</p>
         </div> -->
-        <div class="img-mission" style="background-image: url('<%= cl_image_path mission.mission.photos.first.photo %>');"></div>
-        <!-- <img src=<%= mission.mission.photos.first %> alt="" class="booked-image img-rounded"> -->
+        <% if mission.mission.photos.blank? == false %>
+          <div class="img-mission" style="background-image: url('<%= cl_image_path mission.mission.photos.first.photo %>');"></div>
+        <% end %>
 
         <div class="infos">
           <div class="list-items-description">
@@ -16,8 +17,8 @@
 
           <div class="list-items-details">
             <p><i class="fas fa-map-pin"></i> <%= mission.mission.city %></p>
-            <p><i class="fas fa-calendar-alt"></i> <%= mission.mission.start_date %></p>
-            <p><i class="far fa-calendar-alt" id="calend2"></i> <%= mission.mission.end_date %></p>
+            <p><i class="fas fa-calendar-alt"></i> <%= mission.mission.start_date.strftime('%d/%m/%Y') %></p>
+            <p><i class="far fa-calendar-alt" id="calend2"></i> <%= mission.mission.end_date.strftime('%d/%m/%Y') %></p>
           </div>
 
           <div class="list-status">

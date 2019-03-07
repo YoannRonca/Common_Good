@@ -60,6 +60,8 @@
 
 .remove {
   text-align: center;
+  position: relative;
+  z-index: 10;
 }
 
 .button-status {
