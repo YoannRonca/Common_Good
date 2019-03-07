@@ -37,41 +37,82 @@
     </div>
   <% end %>
 
-  <div id="main-container">
-    <div id="cards">
-    <% if user_signed_in? && current_user.admin? %>
-      <div class="button-us">
-        <div class="btn-container">
-          <%= link_to "Edit this mission", edit_mission_path(@mission), class: "thin-btn" %>
+
+    <article class="flex-container">
+      <section class="flex" id="finn">
+        <div class="description"> Mission description
+          <hr>
+          <p id="style-date"><%= @mission.start_date.strftime('%d/%m/%Y') %> - <%= @mission.end_date.strftime('%d/%m/%Y') %></p>
+          <p><%= @mission.description %></p>
         </div>
-      </div>
-    <% end %>
-      <div class="description"> Mission description
-        <hr>
-        <p id="style-date"><%= @mission.start_date.strftime('%d/%m/%Y') %> - <%= @mission.end_date.strftime('%d/%m/%Y') %></p>
-        <p><%= @mission.description %></p>
-      </div>
-      <div class="organization"> Learn more about the NGO
-        <hr>
-        <p><%= link_to @mission.organization.name, organization_path(@organization, mission_id: @mission.id), class: "linkorg" %></p>
-      </div>
-      <div class="languages"> Mission Language
-        <hr>
-        <p><%= @mission.language %></p>
-      </div>
-      <div class="skills">What we need
-        <hr>
-        <p><%= @mission.skill %></p>
-      </div>
-    </div>
+        <div class="organization"> Learn more about the NGO
+          <hr>
+          <p><%= link_to @mission.organization.name, organization_path(@organization, mission_id: @mission.id), class: "linkorg" %></p>
+        </div>
+        <div class="languages"> Mission Language
+          <hr>
+          <p><%= @mission.language %></p>
+        </div>
+        <div class="skills">What we need
+          <hr>
+          <p><%= @mission.skill %></p>
+        </div>
+      </section>
 
-    <div class="mission-map" id="map"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-  </div>
 
-  <div class= container>
+      <section class="flex" id="jake">
+        <div class="container">
+          <div class="col-sm-12">
+              <div class="rvw">Reviews</div>
+              <hr>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6 col-lg-12">
+              <div class="message">
+                <img class="avatar-large" src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551775519/Captura_de_pantalla_2019-03-05_a_la_s_9.44.45.png">
+                <div class="message-name">
+                  <h3>Rob Trujillo</h3>
+                  <p>02/03/19</p>
+                </div>
+                <div class="message-body">
+                  <p><strong>Life changing experience</strong></p>
+                  <p>
+                    I spent 3 weeks in this mission. I will never forget the experience and found a new goal for my life.
+                  </p>
+                </div>
+                <div class="message-status">
+                  <p class="status pending"></p>
+                </div>
+              </div>
+            </div>
+             <div class="container">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="message">
+                    <img class="avatar-large" src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551706475/Captura_de_pantalla_2019-03-04_a_la_s_14.34.10.png">
+                    <div class="message-name">
+                      <h3>Corey Taylor</h3>
+                      <p>03/12/18</p>
+                    </div>
+                    <div class="message-body">
+                      <p><strong>Proud of working here</strong></p>
+                      <p>
+                        I can only urge you to apply for this mission. If you want to be involved with a community and see the direct impact of your work.
+                      </p>
+                    </div>
+                    <div class="message-status">
+                      <p class="status pending"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <div class= container>
     <div class="rowshow">
 
       <div class="col-xs-6">
@@ -122,12 +163,6 @@
                 </div>
               </div>
 
-
-
-
-
-
-
             <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705889/Captura_de_pantalla_2019-03-04_a_la_s_14.24.30.png' class="avatar-large"/>
             <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705842/Captura_de_pantalla_2019-03-04_a_la_s_14.23.44.png' class="avatar-large"/>
           </div>
@@ -135,65 +170,16 @@
       </div>
     </div>
 
-    <br>
-  <div class="container">
-    <div class="col-sm-12">
-        <div class="rvw">Reviews</div>
-        <hr>
-    </div>
-  </div>
-
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-6 col-lg-12">
-        <div class="message">
-          <img class="avatar-large" src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551775519/Captura_de_pantalla_2019-03-05_a_la_s_9.44.45.png">
-          <div class="message-name">
-            <h3>Rob Trujillo</h3>
-            <p>02/03/19</p>
-          </div>
-          <div class="message-body">
-            <p><strong>Life changing experience</strong></p>
-            <p>
-              I spent 3 weeks in this mission. I will never forget the experience and found a new goal for my life.
-            </p>
-          </div>
-          <div class="message-status">
-            <p class="status pending"></p>
-          </div>
-        </div>
+    <div class="container">
+      <div class="mission-map" id="map" style="border-radius: 5px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="message">
-          <img class="avatar-large" src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551706475/Captura_de_pantalla_2019-03-04_a_la_s_14.34.10.png">
-          <div class="message-name">
-            <h3>Corey Taylor</h3>
-            <p>03/12/18</p>
-          </div>
-          <div class="message-body">
-            <p><strong>Proud of working here</strong></p>
-            <p>
-              I can only urge you to apply for this mission. If you want to be involved with a community and see the direct impact of your work.
-            </p>
-          </div>
-          <div class="message-status">
-            <p class="status pending"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
     <div class="deco">
       <svg width="535" height="255" viewBox="0 0 535 255" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M534.5 255H0V0C0 0 90.6172 100.703 183.5 143C364.304 225.335 534.5 255 534.5 255Z" fill="#F4A140"/>
       </svg>
     </div>
-
   </div>
-</div>
