@@ -21,13 +21,17 @@
   font-size: 32px;
   color: #F4A140;
   font-family: 'Chalk';
+  p {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #333333;
+    font-family: 'Source Sans Pro';
+  }
 }
 
-.description p {
-  margin-top: 20px;
-  font-size: 24px;
-  color: #333333;
-  font-family: 'Source Sans Pro';
+#style-date {
+  color: gray;
+  font-size: 20px;
 }
 
 .organization {
