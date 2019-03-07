@@ -52,7 +52,7 @@
       </div>
       <div class="organization"> Learn more about the NGO
         <hr>
-        <p><%= link_to @mission.organization.name, organization_path(@organization, mission_id: @mission.id) %></p>
+        <p><%= link_to @mission.organization.name, organization_path(@organization, mission_id: @mission.id), class: "linkorg" %></p>
       </div>
       <div class="languages"> Mission Language
         <hr>
@@ -70,9 +70,9 @@
     </div>
   </div>
 
-  <div class=container>
+  <div class= container>
     <div class="rowshow">
-      <div class="col-xs-12">
+      <div class="col-xs-6">
         <div class="volunteers">Volunteers
             <hr>
             <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705971/Captura_de_pantalla_2019-03-04_a_la_s_14.25.51.png' class="avatar-large"/>
@@ -134,7 +134,7 @@
 
     <br>
   <div class="container">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
         <div class="rvw">Reviews</div>
         <hr>
     </div>
@@ -144,7 +144,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-xs-6 col-lg-12">
         <div class="message">
           <img class="avatar-large" src="https://res.cloudinary.com/dgkabaqi8/image/upload/v1551775519/Captura_de_pantalla_2019-03-05_a_la_s_9.44.45.png">
           <div class="message-name">
