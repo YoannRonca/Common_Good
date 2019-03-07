@@ -7,7 +7,7 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <% @mission.photos.each_with_index do |photo, i| %>
-          <div class="h500 carousel-item <%= 'active' if i == 0 %>">
+          <div class="h600 carousel-item <%= 'active' if i == 0 %>">
             <%= cl_image_tag photo.photo, class: "d-block w-100 organization-carousel-image"%>
             <div class="carousel-caption d-none d-md-block" id="mission-info">
               <h1><%= @mission.title %></h1>
@@ -72,7 +72,7 @@
 
   <div class= container>
     <div class="rowshow">
-      
+
       <div class="col-xs-6">
 
         <div class="volunteers">Our Staff
