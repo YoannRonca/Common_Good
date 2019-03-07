@@ -11,7 +11,7 @@
             <%= cl_image_tag photo.photo, class: "d-block w-100 organization-carousel-image"%>
             <div class="carousel-caption d-none d-md-block" id="mission-info">
               <h1><%= @mission.title %></h1>
-              <p><%= @mission.city %>  &#x1F4CD; | DATE</p>
+              <p><%= @mission.city %>  &#x1F4CD; </p>
 
               <div id="apply-btn">
                 <% if @mission.users.include?(current_user)  %>
@@ -58,7 +58,7 @@
         <hr>
         <p><%= @mission.language %></p>
       </div>
-      <div class="skills">What do we need from you?
+      <div class="skills">What we need
         <hr>
         <p><%= @mission.skill %></p>
       </div>
@@ -73,7 +73,7 @@
   <div class=container>
     <div class="rowshow">
       <div class="col-xs-12">
-        <div class="volunteers">Volunteers
+        <div class="volunteers">Our Volunteers
             <hr>
             <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705971/Captura_de_pantalla_2019-03-04_a_la_s_14.25.51.png' class="avatar-large"/>
             <img src='https://res.cloudinary.com/dgkabaqi8/image/upload/v1551705530/Captura_de_pantalla_2019-03-04_a_la_s_14.18.02.png' class="avatar-large"/>
