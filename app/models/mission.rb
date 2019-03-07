@@ -51,7 +51,6 @@ class Mission < ApplicationRecord
   # validates :end_date, presence: true
 
 
-
   def self.perform_search(keyword)
     if keyword.present?
       keywords = keyword.split('|').join(' ')
