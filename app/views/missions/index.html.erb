@@ -19,8 +19,8 @@
 
 
   <div class="row urgent-cards">
-    <% @missions_urgent.each do |mission| %>
-      <%= render "missions/card", mission: mission %>
+    <% @missions_urgent.each_with_index do |mission, index| %>
+      <%= render "missions/card", mission: mission, index: index %>
     <% end %>
   </div>
 </div>
@@ -31,8 +31,8 @@
 <div class="wrapper trustyworth">
   <h3 class="divider titlesHP"><span></span><span>Top Trustworthy NGOs</span><span></span></h3>
     <div class="row trustyworth-cards">
-    <% @missions_trustyworth.each do |mission| %>
-      <%= render "missions/card", mission: mission %>
+    <% @missions_trustyworth.each_with_index do |mission, index| %>
+      <%= render "missions/card", mission: mission, index: index %>
     <% end %>
   </div>
 </div>
@@ -41,8 +41,8 @@
 <div class="wrapper recent">
   <h3 class="divider titlesHP"><span></span><span>Added Recently</span><span></span></h3>
     <div class="row recent-cards">
-    <% @missions_recent.each do |mission| %>
-      <%= render "missions/card", mission: mission %>
+    <% @missions_recent.each_with_index do |mission, index| %>
+      <%= render "missions/card", mission: mission, index: index %>
     <% end %>
   </div>
 </div>

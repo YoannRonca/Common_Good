@@ -1,6 +1,9 @@
 <div class="col-12 col-sm-6 col-md-4 centered">
   <%= link_to mission_path(mission) do %>
     <div class="card-homepage" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= mission.photos.present? ? cl_image_path(mission.photos.first.photo, height: 300, width: 400, crop: :fill) : 'https://res.cloudinary.com/dgkabaqi8/image/upload/v1551885501/Common%20Good%20-%20Nice%20photos/volunteer.jpg' %>')">
+        <div class="classement-2">
+          <p><%= index + 1 %></p>
+        </div>
       <div class="c-info">
         <div><%= mission.title %></div>
         <div><i class="fas fa-map-pin"></i> <%= mission.city%>, <%= mission.country %></div>

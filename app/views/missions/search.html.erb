@@ -153,8 +153,8 @@
       </nav>
       <div class="container cards-search-container">
         <div class="row">
-          <% @missions.each do |mission| %>
-            <%= render 'mission', mission: mission %>
+          <% @missions.each_with_index do |mission, index| %>
+            <%= render 'mission', mission: mission, index: index %>
           <% end %>
         </div>
       </div>
