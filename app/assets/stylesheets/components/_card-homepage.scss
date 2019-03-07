@@ -3,18 +3,35 @@
 }
 
 .card-homepage {
+  position: relative;
   height: 225px;
   width: 100%;
   border-radius: 1px;
   background-size: cover;
 }
 
-.card-info {
+.c-info {
+  font-size: 14px;
+  position: absolute;
+  bottom: 10px !important;
+  left: 10px;
+  color: white !important;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .fa-map-pin, .fa-calendar-alt {
+    color: orange !important;
+  }
+}
+
+.card-descrip {
   background-color: white;
-  height: 120px;
+  height: 90px;
   border-radius: 3px;
   margin-bottom: 50px;
   .texthome {
+    padding: 10px;
     margin-top: none;
     padding-left: 10px;
   }
@@ -25,15 +42,9 @@
   }
   p {
     font-size: 14px;
-    white-space: nowrap;
+    color: gray;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 250px;
-  }
-}
-
-.c-description {
-  p {
-    font-size: 14px;
+    // max-width: 250px;
   }
 }

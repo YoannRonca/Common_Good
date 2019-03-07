@@ -1,20 +1,24 @@
 <div class="col-12 col-sm-6 col-md-4 centered">
   <% if mission.photos.present? %>
     <div class="card-homepage" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path mission.photos.first.photo, height: 300, width: 400, crop: :fill %>')">
+      <div class="c-info">
+        <div><%= link_to mission.title, mission_path(mission) %></div>
+        <div><i class="fas fa-map-pin"></i> <%= mission.city%>, <%= mission.country %></div>
+        <% if mission.start_date != nil && mission.end_date != nil %>
+          <div><i class="fas fa-calendar-alt"></i> <%= mission.start_date.strftime('%d/%m/%Y') %> - <%= mission.end_date.strftime('%d/%m/%Y') %></div>
+        <% end %>
+      </div>
     </div>
   <% else %>
     <div class="card-homepage" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dgkabaqi8/image/upload/v1551885501/Common%20Good%20-%20Nice%20photos/volunteer.jpg')">
     </div>
   <% end %>
-  <div class="card-info">
+  <div class="card-descrip">
     <div class="texthome">
-      <p id="c-title"><%= link_to mission.title, mission_path(mission) %></p>
-      <p id="c-description"><%= mission.description%></p>
-      <p id="c-location"><i class="fas fa-map-pin"></i> <%= mission.city%>, <%= mission.country %></p>
-      <% if mission.start_date != nil && mission.end_date != nil %>
-        <p><i class="fas fa-calendar-alt"></i> <%= mission.start_date.strftime('%d/%m/%Y') %> - <%= mission.end_date.strftime('%d/%m/%Y') %></p>
+      <p id="c-description"><% if mission.photos.present? %>
+      <%= mission.description.truncate(120)%>
       <% end %>
-      <p>No rating</p>
+      </p>
     </div><!--    <i class="far fa-heart" id="biglove"></i> -->
   </div>
 </div>
