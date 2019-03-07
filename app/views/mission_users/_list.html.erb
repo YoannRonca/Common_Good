@@ -27,7 +27,7 @@
             </div>
             <div class="remove">
               <p>
-                <% if user_signed_in? && current_user.admin? %>
+                <% if user_signed_in? %>
                 <%= link_to "Delete", mission_mission_user_path(mission.mission, mission),
                     method: :delete,
                     data: { confirm: "Are you sure?" }, class: 'btn btn-medium' %>
