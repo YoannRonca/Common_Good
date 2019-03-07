@@ -8,9 +8,13 @@
   <% end %>
   <div class="card-info">
     <div class="texthome">
-      <p id = "home"><%= link_to mission.title, mission_path(mission) %></p>
-      <p id = "home"><%= mission.city%>, <%= mission.country %></p>
-      <p id = "home">No rating</p>
+      <p id="c-title"><%= link_to mission.title, mission_path(mission) %></p>
+      <p id="c-description"><%= mission.description%></p>
+      <p id="c-location"><%= mission.city%>, <%= mission.country %></p>
+      <% if mission.start_date != nil && mission.end_date != nil %>
+        <p id="c-date"><%= mission.start_date.strftime('%d/%m/%Y') %> - <%= mission.end_date.strftime('%d/%m/%Y') %></p>
+      <% end %>
+      <p>No rating</p>
     </div><!--    <i class="far fa-heart" id="biglove"></i> -->
   </div>
 </div>
