@@ -6,6 +6,7 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
+  @extend .no-outline-on-focus:focus;
 }
 .avatar-bordered {
   width: 30px;
@@ -28,5 +29,9 @@
 #contact {
  border: 0px;
  background-color: #F5F5F5;
+  @extend .no-outline-on-focus:focus;
+}
 
+.no-outline-on-focus:focus{
+  outline: none;
 }
