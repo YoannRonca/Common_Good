@@ -10,14 +10,14 @@
     max-width: 1000px;
     color: #666;
     font-family: Open Sans;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 30px;
   }
 }
 
 #wrapperesult {
   height: auto;       /* These two lines were the key. */
-  min-height: 910px !important;
+  min-height: 630px !important;
   margin-top: 100px !important;
   padding: 20px 70px;
 }

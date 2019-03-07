@@ -4,7 +4,6 @@
   background-color: transparent;
   transition: all 0.5s ease;
   height: 80px;
-  padding: 10px 30px 10px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,7 +17,7 @@
 /* Logo */
 .navbar-cg-brand img {
   height: 60px;
-  margin-left: 75px;
+  margin-left: 67px;
 }
 
 /* User Avatar */
@@ -50,6 +49,10 @@
   font-weight: bold;
   margin-right: -10px;
   font-family: 'Source Sans Pro';
+    p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
 }
 .navbar-cg-link:hover {
   color: #f4a140;

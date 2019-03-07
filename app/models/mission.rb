@@ -26,16 +26,16 @@ class Mission < ApplicationRecord
   has_many :photos, dependent: :destroy
   accepts_nested_attributes_for :photos, allow_destroy: true
 
-  COSTOFLIFE = ["<$500/month", "<$1000/month", "<$2000/month"]
+  COSTOFLIFE = ["< $500", "< $1000", "< $2000"]
   HOME_CATEGORY = ["urgent", "trustyworth", "recent"]
   CONTINENT = ["Africa", "Asia", "Europe", "North America", "Middle East", "South America", "Oceania"]
   CLIMATE = ["Tropical", "Dry", "Temperate", "Continental", "Polar"]
   GREATFOR = ["Families", "Single", "Couple", "Retirees", "Men", "Women"]
-  SAFETY = ["Safe", "Safe for Women", "Cool but be careful", "Low murder rate"]
+  SAFETY = ["LOW", "MEDIUM", "HIGH"]
   LANGUAGE = ["English", "Spanish", "Portuguese", "French", "Chinese", "German"]
   SECTOR = ["Agriculture", "Arts & Music", " Children & Youth", "Education", "Environment", "Health & Medicine", "Refugees", "Water & Sanitation", "Wildlife Protection"]
 
-  # SECTOR = ["Agriculture", "Arts & Music", " Children & Youth", "Civic Engagement", "Climate change", "Community Development", "Conflict Resolution", "Consumer Protection", "Crime & Safety", "Disability", "Economic Development", "Education", "Energy", "Environment", "Health & Medicine", "Human Rights & Civil Liberties", "Immigrants or Refugees", "LGBTQ", "Poverty", "Race & Ethnicity", "Religion & Spirituality", "Reproductive Health/Rights", "Sexual Abuse & Human Trafficking", "Transparency & Oversight", "Victim Support", "Water & Sanitation", "Women", "Wildlife Protection"]
+  SECTOR = ["Agriculture", "Arts & Music", " Children & Youth", "Civic Engagement", "Climate change", "Community Development", "Conflict Resolution", "Consumer Protection", "Crime & Safety", "Disability", "Economic Development", "Education", "Energy", "Environment", "Health & Medicine", "Human Rights & Civil Liberties", "Immigrants or Refugees", "LGBTQ", "Poverty", "Race & Ethnicity", "Religion & Spirituality", "Reproductive Health/Rights", "Sexual Abuse & Human Trafficking", "Transparency & Oversight", "Victim Support", "Water & Sanitation", "Women", "Wildlife Protection"]
 
   # validates :cost_of_life, inclusion: { in: COSTOFLIFE }
   # validates :city, presence: true

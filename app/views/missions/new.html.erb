@@ -18,7 +18,6 @@
         <%= f.input :language, collection: Mission::LANGUAGE, as: :select%>
         <%= f.input :start_date%>
         <%= f.input :end_date%>
-
         <%= f.fields_for :photo do |ff| %>
           <%= ff.label :photo %>
           <%= ff.file_field :photo, multiple: true, name: "photos[]" %>
