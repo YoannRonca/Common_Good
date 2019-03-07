@@ -68,34 +68,14 @@ Review.create(content: "Hello World Great Gig!", transparency: 4, social_impact:
 
 puts 'Finished!'
 
-
 ["Agriculture",
 "Arts & Music",
-" Children & Youth",
-"Civic Engagement",
-"Climate change",
-"Community Development",
-"Conflict Resolution",
-"Consumer Protection",
-"Crime & Safety",
-"Disability",
-"Economic Development",
+"Children & Youth",
 "Education",
-"Energy",
 "Environment",
 "Health & Medicine",
-"Human Rights & Civil Liberties",
-"Immigrants or Refugees",
-"LGBTQ",
-"Poverty",
-"Race & Ethnicity",
-"Religion & Spirituality",
-"Reproductive Health/Rights",
-"Sexual Abuse & Human Trafficking",
-"Transparency & Oversight",
-"Victim Support",
+"Refugees",
 "Water & Sanitation",
-"Women",
 "Wildlife Protection"].each do |sector|
   Sector.create! name: sector
 end
