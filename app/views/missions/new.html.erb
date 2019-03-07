@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <h2> Add your mission </h2>
-      <%= simple_form_for([@organization, Mission.new]) do |f| %>
+      <%= simple_form_for([@organization, @mission]) do |f| %>
         <%= f.input :title, placeholder: 'Enter your title' %>
         <%= f.input :continent, collection: Mission::CONTINENT, as: :select %>
         <%= f.input :home_category, collection: Mission::HOME_CATEGORY, as: :select %>
@@ -13,7 +13,6 @@
         <%= f.input :tolerance%>
         <%= f.input :skill%>
         <%= f.input :city %>
-     <!--    <%= f.association #:#sectors, as: :check_boxes %> -->
         <%= f.input :climate, collection: Mission::CLIMATE, as: :select%>
         <%= f.input :safety, collection: Mission::SAFETY, as: :select%>
         <%= f.input :language, collection: Mission::LANGUAGE, as: :select%>
