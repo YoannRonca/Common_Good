@@ -25,6 +25,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:transparency, :social_impact, :staff_note, :content, :photo)
+    params.require(:review).permit(:name, :date, :title, :content, :average, :transparency, :social_impact, :staff_note, :photo)
   end
 end
