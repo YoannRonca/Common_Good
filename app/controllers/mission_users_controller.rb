@@ -1,6 +1,6 @@
 class MissionUsersController < ApplicationController
   def index
-    @mission_users = current_user.mission_users
+    @mission_users = current_user.mission_users.order(created_at: :desc)
     # filtrer pour status
     @mission_users_pending = @mission_users.where(status: "pending")
     @mission_users_accepted = @mission_users.where(status: "accepted")
