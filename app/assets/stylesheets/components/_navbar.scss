@@ -15,9 +15,11 @@
 }
 
 /* Logo */
-.navbar-cg-brand img {
-  height: 60px;
-  margin-left: 67px;
+.navbar-cg-brand {
+  img {
+    height: 60px;
+    margin-left: 67px;
+  }
 }
 
 /* User Avatar */
@@ -40,6 +42,12 @@
   cursor: pointer;
   padding: 0 20px;
   font-family: 'Source Sans Pro';
+}
+
+.navbar-cg-link {
+  a {
+  font-family: "Raleway", "Helvetica", "sans-serif";
+  }
 }
 
 /* Navbar link */
