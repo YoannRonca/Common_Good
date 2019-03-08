@@ -18,7 +18,7 @@ class Mission < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_city?
 
   belongs_to :organization
-  has_many :mission_users
+  has_many :mission_users, dependent: :destroy
   has_many :users, through: :mission_users
   has_many :reviews, dependent: :destroy
   has_many :mission_sectors
