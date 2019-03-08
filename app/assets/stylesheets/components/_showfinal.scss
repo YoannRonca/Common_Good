@@ -26,6 +26,12 @@ body {
   text-align: center;
   flex-direction: column;
   padding: 20px;
+    p {
+  font-size: 20px;
+  line-height: 20px;
+  max-width: 80%;
+  margin: 20px auto;
+  }
 }
 
 figure {
@@ -40,11 +46,13 @@ figure {
   }
 }
 
-p {
+
+.message-body p{
   font-size: 14px;
-  line-height: 20px;
-  max-width: 80%;
-  margin: 20px auto;
+  }
+
+.message-name p{
+font-size: 14px;
 }
 
 a {
