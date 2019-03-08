@@ -31,7 +31,7 @@ class Mission < ApplicationRecord
   CONTINENT = ["Africa", "Asia", "Europe", "North America", "Middle East", "South America", "Oceania"]
   CLIMATE = ["Tropical", "Dry", "Temperate", "Continental", "Polar"]
   GREATFOR = ["Families", "Single", "Couple", "Retirees", "Men", "Women"]
-  SAFETY = ["LOW", "MEDIUM", "HIGH"]
+  SAFETY = ["Low", "Medium", "High"]
   LANGUAGE = ["English", "Spanish", "Portuguese", "French", "Chinese", "German"]
   SECTOR = ["Agriculture", "Arts & Music", " Children & Youth", "Education", "Environment", "Health & Medicine", "Refugees", "Water & Sanitation", "Wildlife Protection"]
 
